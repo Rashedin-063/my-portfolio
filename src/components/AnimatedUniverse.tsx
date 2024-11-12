@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import React, { useEffect } from 'react';
 
@@ -163,7 +163,14 @@ const AnimatedUniverse: React.FC = () => {
 
   return (
     <div className='relative w-full h-screen bg-black'>
-      <canvas id='universe' className='absolute top-0 left-0'></canvas>
+      <canvas
+        id='universe'
+        className='absolute top-0 left-0'
+        style={{
+          background:
+            'radial-gradient(1600px at 70% 120%, rgba(33, 39, 80, 1) 10%, #020409 100%)',
+        }}
+      ></canvas>
       <div className='relative z-10 flex justify-center items-center h-full text-white'>
         <h1 className='text-5xl font-bold'>Welcome to the Universe</h1>
       </div>
