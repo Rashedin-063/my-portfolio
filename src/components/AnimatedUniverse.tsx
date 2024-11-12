@@ -2,9 +2,10 @@
 
 import React, { useEffect } from 'react';
 
+
 const AnimatedUniverse: React.FC = () => {
   useEffect(() => {
-    // Universe animation logic goes here
+    // Your universe animation logic goes here
     const starDensity = 0.216;
     const speedCoeff = 0.05;
     let width: number;
@@ -52,8 +53,8 @@ const AnimatedUniverse: React.FC = () => {
       this.reset = function () {
         this.giant = getProbability(3);
         this.comet = this.giant || first ? false : getProbability(10);
-        this.x = getRandInterval(0, width - 10);
-        this.y = getRandInterval(0, height);
+        this.x = getRandInterval(0, width); // Updated: Stars can spawn across full width
+        this.y = getRandInterval(0, height); // Updated: Stars can spawn across full height
         this.r = getRandInterval(1.1, 2.6);
         this.dx =
           getRandInterval(speedCoeff, 6 * speedCoeff) +
@@ -126,11 +127,10 @@ const AnimatedUniverse: React.FC = () => {
       this.move = function () {
         this.x += this.dx;
         this.y += this.dy;
-        if (this.fadingOut === false) {
+
+        // Reset star when out of bounds
+        if (this.x > width || this.y < 0 || this.x < 0 || this.y > height) {
           this.reset();
-        }
-        if (this.x > width - width / 4 || this.y < 0) {
-          this.fadingOut = true;
         }
       };
 
@@ -162,15 +162,8 @@ const AnimatedUniverse: React.FC = () => {
   }, []);
 
   return (
-    <div className='relative w-full h-screen bg-black'>
-      <canvas
-        id='universe'
-        className='absolute top-0 left-0'
-        style={{
-          background:
-            'radial-gradient(1600px at 70% 120%, rgba(33, 39, 80, 1) 10%, #020409 100%)',
-        }}
-      ></canvas>
+    <div className='relative w-full h-screen bg-radial-custom'>
+      <canvas id='universe' className='absolute top-0 left-0'></canvas>
       <div className='relative z-10 flex justify-center items-center h-full text-white'>
         <h1 className='text-5xl font-bold'>Welcome to the Universe</h1>
       </div>

@@ -4,10 +4,11 @@ import AnimatedUniverse from '@/components/AnimatedUniverse';
 
 const Home: NextPage = () => {
   return (
-    <div className='bg-indigo-950'>
-  
-      <AnimatedUniverse/>
+    <>
+    <div className='universe-container'>
+      <AnimatedUniverse />
     </div>
+    </>
   );
 };
 

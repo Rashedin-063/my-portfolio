@@ -1,11 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
 html, body {
   height: 100%;
   color: white;
+  font-family: 'Lato', sans-serif;
 }
 
 /* Universe Container */
@@ -25,7 +21,12 @@ html, body {
   z-index: -10000;
 }
 
-
+/* Custom Radial Gradient */
+.universe-container {
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(1600px at 70% 120%, rgba(33, 39, 80, 1) 10%, #020409 100%);
+}
 
 /* Content Styles */
 #universe {
@@ -33,6 +34,19 @@ html, body {
   height: 100%;
 }
 
+/* Optional content styling */
+.main-page-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.main-page-content h1 {
+  font-family: 'Bungee Hairline', sans-serif;
+  font-size: 60px;
+}
 
 .main-page-content h2 {
   font-family: 'Lato', sans-serif;
