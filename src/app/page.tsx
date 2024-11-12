@@ -1,11 +1,17 @@
+// pages/index.tsx
+import { NextPage } from 'next';
+import AnimatedUniverse from '@/components/AnimatedUniverse';
 
-
-const HomePage: React.FC = () => {
+const Home: NextPage = () => {
   return (
-    <div>
-     Welcome to my portfolio! I'm a full-stack developer.
+    <div className='bg-indigo-950'>
+  
+      <AnimatedUniverse/>
     </div>
   );
 };
 
-export default HomePage;
+export default Home;
+
+
+
