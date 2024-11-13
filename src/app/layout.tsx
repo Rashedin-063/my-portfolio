@@ -32,6 +32,7 @@ export default function RootLayout({
       >
         <AnimatedUniverse>
           {children}
+    
         </AnimatedUniverse>
       </body>
     </html>
