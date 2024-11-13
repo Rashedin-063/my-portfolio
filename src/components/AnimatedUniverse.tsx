@@ -1,170 +1,79 @@
-'use client';
+"use client"
 
 import React, { useEffect } from 'react';
 
-
 const AnimatedUniverse: React.FC = () => {
   useEffect(() => {
-    // Your universe animation logic goes here
+    // Your existing universe animation logic
     const starDensity = 0.216;
     const speedCoeff = 0.05;
     let width: number;
     let height: number;
     let starCount: number;
-    let circleRadius: number;
-    let circleCenter: { x: number; y: number };
-    let first = true;
-    const giantColor = '180,184,240';
-    const starColor = '226,225,142';
-    const cometColor = '226,225,224';
+    let stars: any[] = [];
+
     const canva = document.getElementById('universe') as HTMLCanvasElement;
-    const stars: any[] = [];
+    const universe = canva.getContext('2d');
 
-    windowResizeHandler();
-    window.addEventListener('resize', windowResizeHandler, false);
-
-    createUniverse();
-
-    function createUniverse() {
-      const universe = canva.getContext('2d');
-      for (let i = 0; i < starCount; i++) {
-        stars[i] = new Star();
-        stars[i].reset();
-      }
-      draw();
-    }
-
-    function draw() {
-      const universe = canva.getContext('2d');
-      universe?.clearRect(0, 0, width, height);
-
-      for (let i = 0; i < stars.length; i++) {
-        const star = stars[i];
-        star.move();
-        star.fadeIn();
-        star.fadeOut();
-        star.draw();
-      }
-
-      window.requestAnimationFrame(draw);
-    }
-
-    function Star() {
-      this.reset = function () {
-        this.giant = getProbability(3);
-        this.comet = this.giant || first ? false : getProbability(10);
-        this.x = getRandInterval(0, width); // Updated: Stars can spawn across full width
-        this.y = getRandInterval(0, height); // Updated: Stars can spawn across full height
-        this.r = getRandInterval(1.1, 2.6);
-        this.dx =
-          getRandInterval(speedCoeff, 6 * speedCoeff) +
-          (this.comet + 1 - 1) * speedCoeff * getRandInterval(50, 120) +
-          speedCoeff * 2;
-        this.dy =
-          -getRandInterval(speedCoeff, 6 * speedCoeff) -
-          (this.comet + 1 - 1) * speedCoeff * getRandInterval(50, 120);
-        this.fadingOut = null;
-        this.fadingIn = true;
-        this.opacity = 0;
-        this.opacityTresh = getRandInterval(
-          0.2,
-          1 - (this.comet + 1 - 1) * 0.4
-        );
-        this.do = getRandInterval(0.0005, 0.002) + (this.comet + 1 - 1) * 0.001;
-      };
-
-      this.fadeIn = function () {
-        if (this.fadingIn) {
-          this.fadingIn = this.opacity > this.opacityTresh ? false : true;
-          this.opacity += this.do;
-        }
-      };
-
-      this.fadeOut = function () {
-        if (this.fadingOut) {
-          this.fadingOut = this.opacity < 0 ? false : true;
-          this.opacity -= this.do / 2;
-          if (this.x > width || this.y < 0) {
-            this.fadingOut = false;
-            this.reset();
-          }
-        }
-      };
-
-      this.draw = function () {
-        const universe = canva.getContext('2d');
-        universe?.beginPath();
-
-        if (this.giant) {
-          universe!.fillStyle = `rgba(${giantColor},${this.opacity})`;
-          universe!.arc(this.x, this.y, 2, 0, 2 * Math.PI, false);
-        } else if (this.comet) {
-          universe!.fillStyle = `rgba(${cometColor},${this.opacity})`;
-          universe!.arc(this.x, this.y, 1.5, 0, 2 * Math.PI, false);
-
-          // Comet tail
-          for (let i = 0; i < 30; i++) {
-            universe!.fillStyle = `rgba(${cometColor},${
-              this.opacity - (this.opacity / 20) * i
-            })`;
-            universe!.rect(
-              this.x - (this.dx / 4) * i,
-              this.y - (this.dy / 4) * i - 2,
-              2,
-              2
-            );
-            universe!.fill();
-          }
-        } else {
-          universe!.fillStyle = `rgba(${starColor},${this.opacity})`;
-          universe!.rect(this.x, this.y, this.r, this.r);
-        }
-
-        universe?.closePath();
-        universe?.fill();
-      };
-
-      this.move = function () {
-        this.x += this.dx;
-        this.y += this.dy;
-
-        // Reset star when out of bounds
-        if (this.x > width || this.y < 0 || this.x < 0 || this.y > height) {
-          this.reset();
-        }
-      };
-
-      (function () {
-        setTimeout(function () {
-          first = false;
-        }, 50);
-      })();
-    }
-
-    function getProbability(percents: number) {
-      return Math.floor(Math.random() * 1000) + 1 < percents * 10;
-    }
-
-    function getRandInterval(min: number, max: number) {
-      return Math.random() * (max - min) + min;
-    }
-
+    // Canvas resizing and star regeneration logic
     function windowResizeHandler() {
       width = window.innerWidth;
       height = window.innerHeight;
       starCount = width * starDensity;
-      circleRadius = width > height ? height / 2 : width / 2;
-      circleCenter = { x: width / 2, y: height / 2 };
-
-      canva.setAttribute('width', width.toString());
-      canva.setAttribute('height', height.toString());
+      canva.width = width;
+      canva.height = height;
+      stars = Array.from({ length: starCount }, () => new Star());
     }
+
+    class Star {
+      x: number = Math.random() * width;
+      y: number = Math.random() * height;
+      dx: number = (Math.random() - 0.5) * speedCoeff * 8; // Increased range for x direction
+      dy: number = (Math.random() - 0.5) * speedCoeff * 8; // Increased range for y direction
+      opacity: number = Math.random();
+
+      move() {
+        this.x += this.dx;
+        this.y += this.dy;
+        if (this.x > width || this.y > height) {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+        }
+      }
+
+      draw() {
+        if (universe) {
+          universe.fillStyle = `rgba(226, 225, 224, ${this.opacity})`;
+          universe.fillRect(this.x, this.y, 1.5, 1.5);
+        }
+      }
+    }
+
+    function animate() {
+      if (universe) {
+        universe.clearRect(0, 0, width, height);
+        stars.forEach((star) => {
+          star.move();
+          star.draw();
+        });
+      }
+      requestAnimationFrame(animate);
+    }
+
+    windowResizeHandler();
+    window.addEventListener('resize', windowResizeHandler);
+    animate();
+
+    return () => window.removeEventListener('resize', windowResizeHandler);
   }, []);
 
   return (
     <div className='relative w-full h-screen bg-radial-custom'>
-      <canvas id='universe' className='absolute top-0 left-0'></canvas>
-      <div className='relative z-10 flex justify-center items-center h-full text-white'>
+      <canvas
+        id='universe'
+        className='absolute top-0 left-0 w-full h-full'
+      ></canvas>
+      <div className='relative z-10 flex items-center justify-center h-full text-white'>
         <h1 className='text-5xl font-bold'>Welcome to the Universe</h1>
       </div>
     </div>

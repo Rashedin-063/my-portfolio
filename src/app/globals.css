@@ -3,39 +3,4 @@
 @tailwind utilities;
 
 
-html, body {
-  height: 100%;
-  color: white;
-}
 
-/* Universe Container */
-.universe {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  filter: contrast(120%);
-  background-color: black;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -10000;
-}
-
-
-
-/* Content Styles */
-#universe {
-  width: 100%;
-  height: 100%;
-}
-
-
-.main-page-content h2 {
-  font-family: 'Lato', sans-serif;
-  font-size: 16px;
-  letter-spacing: 2px;
-}
