@@ -13,6 +13,8 @@ const config: Config = {
           'radial-gradient(1600px at 70% 120%, rgba(33, 39, 80, 1) 1%, #020409 100%)',
       },
       colors: {
+        'main-bgGradient':
+          'bg-gradient-to-r from-[#0E1225] via-[#161A36] to-[#181D3C]',
         background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
