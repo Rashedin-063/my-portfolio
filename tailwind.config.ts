@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'custom-gradient':
-          'linear-gradient(to right, #000000,  #000220, #02082B, #040A2E,  #060C34, #080E39)',
+          'linear-gradient(to right, #000118,  #000220, #02082B, #040A2E,  #060C34, #080E39)',
+       'custom-radial' : 'radial-gradient(1600px at 70% 120%, rgba(33, 39, 80, 1) 1%, #020409 100%)',
       },
 
       colors: {

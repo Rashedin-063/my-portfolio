@@ -1,8 +1,13 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import '../styles/universe.css';
 
-const AnimatedUniverse: React.FC = () => {
+export default function AnimatedUniverse({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   useEffect(() => {
     import('../data/startUniverseAnimation.js')
       .then((module) => {
@@ -12,13 +17,14 @@ const AnimatedUniverse: React.FC = () => {
   }, []);
 
   return (
-    <div className='relative w-full min-h-screen '>
-      <canvas
-        id='universe'
-        className='absolute top-0 left-0 w-full h-full z-0 pointer-events-none'
-      ></canvas>
+    <div className='relative w-full h-screen overflow-hidden'>
+      {/* Fixed canvas for the background animation */}
+      <canvas id='universe' className='fixed top-0 left-0 w-full h-full z-0' />
+
+      {/* Scrollable content wrapper */}
+      <div className='relative z-10 w-full h-full overflow-y-auto'>
+        {children}
+      </div>
     </div>
   );
-};
-
-export default AnimatedUniverse;
+}

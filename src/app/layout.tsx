@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-
+import AnimatedUniverse from '@/components/AnimatedUniverse';
 import "./globals.css";
 import "../styles/universe.css"
 
@@ -28,9 +28,11 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased page bg-indigo-950`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased page bg-custom-radial`}
       >
-        {children}
+        <AnimatedUniverse>
+          {children}
+        </AnimatedUniverse>
       </body>
     </html>
   );

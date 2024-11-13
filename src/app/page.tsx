@@ -1,14 +1,17 @@
 // pages/index.tsx
 import { NextPage } from 'next';
-import AnimatedUniverse from '@/components/AnimatedUniverse';
 import NewComponent from '@/components/NewComponent';
+import Footer from '@/components/Footer';
 
 const Home: NextPage = () => {
   return (
-    <div className='bg-custom-gradient'>
-      <AnimatedUniverse />
+    <div className=''>
+      {/* <AnimatedUniverse /> */}
 
       <NewComponent />
+      <NewComponent />
+      <NewComponent />
+      <Footer/>
     </div>
   );
 };
