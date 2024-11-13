@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import React, { useEffect } from 'react';
 
@@ -12,9 +12,11 @@ const AnimatedUniverse: React.FC = () => {
   }, []);
 
   return (
-    <div className='relative w-full min-h-screen bg-radial-custom'>
-      <canvas id='universe' className='absolute top-0 left-0 w-full h-full z-0 pointer-events-none'></canvas>
-     
+    <div className='relative w-full min-h-screen '>
+      <canvas
+        id='universe'
+        className='absolute top-0 left-0 w-full h-full z-0 pointer-events-none'
+      ></canvas>
     </div>
   );
 };
