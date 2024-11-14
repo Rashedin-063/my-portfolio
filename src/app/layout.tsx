@@ -32,10 +32,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <AnimatedUniverse>
+      <AnimatedUniverse>
             {children}
-          </AnimatedUniverse>
-        </ThemeProvider>
+          </AnimatedUniverse> </ThemeProvider>
       </body>
     </html>
   );
