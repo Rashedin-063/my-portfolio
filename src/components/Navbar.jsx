@@ -1,6 +1,11 @@
-import Menu from "./ui/Menu";
+'use client';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Fade } from 'react-awesome-reveal';
 
 const Navbar = () => {
+
+   const pathname = usePathname();
 
   const items = [
     { to: '/', label: 'Home' },
@@ -11,48 +16,28 @@ const Navbar = () => {
   ];
 
   return (
-    <div className='text-center h-20 mr-8 text-yellow-sunshine'>
-      <div className='navbar'>
-        {/* navbar start */}
-        <div className='navbar-start'>
-          <div className='dropdown lg:hidden'>
-            {/* icon */}
-            <div
-              tabIndex={0}
-              role='button'
-              className='hover:bg-gray-800 p-2 hover:rounded-full'
-            >
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-8 w-8'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth='2'
-                  d='M4 6h16M4 12h8m-8 6h16'
-                />
-              </svg>
-            </div>
-            <ul
-              tabIndex={0}
-              className='menu menu-sm dropdown-content z-[1] mt-3 shadow border-2 w-40 rounded-xl bg-blue-800 bg-opacity-25 ml-10'
-            >
-              <Menu items={items} />
-            </ul>
-          </div>
-        </div>
-        <div className='navbar-center '></div>
-        <div className='navbar-end'>
-          <ul className='menu menu-horizontal px-1 hidden lg:flex'>
-            <Menu items={items} />
+    <div className=' h-20 mr-8 text-yellow-sunshine sticky top-0 py-4'>
+      <ul className=' px-1'>
+        <Fade cascade damping={0.3}>
+          <ul className='flex justify-center items-center gap-6 text-sm md:text-base font-playWrite italic  border border-indigo-800 py-3 w-3/4 mx-auto rounded-xl border-opacity-75 drop-shadow-2xl'>
+            {items.map(({ to, label }) => (
+              <li key={to}>
+                <Link
+                  href={to}
+                  className={
+                    pathname === to
+                      ? 'text-green-lantern font-semibold animate-pulse-3'
+                      : 'hover:transition hover:duration-700 hover:font-semibold'
+                  }
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
-        </div>
-      </div>
+        </Fade>
+      </ul>
     </div>
   );
-}
-export default Navbar
+};
+export default Navbar;
