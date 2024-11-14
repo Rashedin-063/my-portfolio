@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 
+  body {
+  @apply font-josefinSans;
+}
+
+
 .fixed-container {
   position: relative;
   width: 100%;
