@@ -21,8 +21,12 @@ const config: Config = {
       },
 
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
+        'yellow-sunshine': '#FCF596',
+        'midnight-gray': '	##3c3c3c',
+        'deep-ocean': '#004080',
+        'green-lantern': '#73EC8B',
+        'white-pearl': '#FBF8EF',
+        'charcoal-gray': '#000000',
       },
     },
   },

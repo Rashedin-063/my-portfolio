@@ -7,6 +7,8 @@ export const indieFlower = Indie_Flower({
   variable: '--indie-flower',
 });
 
+
+
 export const josefinSans = Josefin_Sans({
   weight: ['300', '400', '500', '600', '700'],
   style: ['normal', 'italic'],

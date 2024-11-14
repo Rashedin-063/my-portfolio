@@ -16,17 +16,17 @@ const Navbar = () => {
   ];
 
   return (
-    <div className=' h-20 mr-8 text-yellow-sunshine sticky top-0 py-4 font-indieFlower'>
-      <ul className=' px-1'>
+    <div className=' h-20 text-yellow-sunshine sticky top-0 py-4 font-chakraPetc'>
+      <ul>
         <Fade cascade damping={0.3}>
-          <ul className='flex justify-center items-center gap-4 lg:gap-6 text-sm md:text-base font-playWrite italic  border border-indigo-800 p-3 w-[80%] lg:w-1/3 mx-auto rounded-xl border-opacity-75 drop-shadow-2xl'>
+          <ul className='flex justify-center items-center gap-6 lg:gap-8 text-sm md:text-base  border border-indigo-800 p-3 w-full md:w-2/3 m lg:w-[50%] xl:w-[40%] mx-auto rounded-xl border-opacity-75 drop-shadow-2xl'>
             {items.map(({ to, label }) => (
               <li key={to}>
                 <Link
                   href={to}
                   className={
                     pathname === to
-                      ? 'text-green-lantern font-semibold animate-pulse-3'
+                      ? 'text-green-lantern font-bold text-base md:text-lg'
                       : 'hover:transition hover:duration-700 hover:font-semibold'
                   }
                 >
