@@ -4,6 +4,7 @@ import { chakraPetch, indieFlower, josefinSans } from '@/styles/fontConfig';
 import AnimatedUniverse from '@/components/AnimatedUniverse';
 import "./globals.css";
 import "../styles/universe.css"
+import { ThemeProvider } from "./provider";
 
 
 
@@ -25,7 +26,16 @@ export default function RootLayout({
       <body
         className={`${indieFlower.variable} ${josefinSans.variable} ${chakraPetch.variable} antialiased page bg-custom-radial`}
       >
-        <AnimatedUniverse>{children}</AnimatedUniverse>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='dark'
+          enableSystem
+          disableTransitionOnChange
+        >
+          <AnimatedUniverse>
+            {children}
+          </AnimatedUniverse>
+        </ThemeProvider>
       </body>
     </html>
   );

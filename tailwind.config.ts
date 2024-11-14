@@ -24,7 +24,7 @@ const config: Config = {
         'yellow-sunshine': '#FCF596',
         'midnight-gray': '	##3c3c3c',
         'deep-ocean': '#004080',
-        'green-lantern': '#73EC8B',
+        'green-lantern': '#16A240',
         'white-pearl': '#FBF8EF',
         'charcoal-gray': '#000000',
       },
@@ -33,3 +33,6 @@ const config: Config = {
   plugins: [],
 };
 export default config;
+
+
+// 73EC8B
