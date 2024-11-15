@@ -5,7 +5,7 @@ import { BsEnvelopePaper } from 'react-icons/bs';
 
 const LeftSidebar = () => {
   return (
-    <div className='flex flex-col items-center justify-center py-4 md:py-6 xl:py-8 gap-5 rounded-full  mt-20  border border-indigo-800 px-2 fixed bg-transparent border-opacity-75 drop-shadow-2xl z-50'>
+    <div className='flex flex-col items-center justify-center py-4 md:py-6 xl:py-8 gap-5 rounded-full  mt-20  border border-indigo-800 bg-custom-gradient px-2 fixed border-opacity-75 drop-shadow-2xl z-50'>
       <Link
         href='https://www.linkedin.com/in/rashedin-islam-web-developer'
         target='_blank'

@@ -3,11 +3,7 @@
 import React, { useEffect } from 'react';
 import '../styles/universe.css';
 
-export default function AnimatedUniverse({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function AnimatedUniverse() {
   useEffect(() => {
     import('../data/startUniverseAnimation.js')
       .then((module) => {
@@ -17,14 +13,8 @@ export default function AnimatedUniverse({
   }, []);
 
   return (
-    <div className='relative w-full h-screen overflow-hidden'>
-      {/* Fixed canvas for the background animation */}
-      <canvas id='universe' className='fixed top-0 left-0 w-full h-full z-0' />
-
-      {/* Scrollable content wrapper */}
-      <div className='relative z-10 w-full h-full overflow-y-auto'>
-        {children}
-      </div>
+    <div className='fixed inset-0 pointer-events-none z-0'>
+      <canvas id='universe' className='w-full h-full' />
     </div>
   );
 }

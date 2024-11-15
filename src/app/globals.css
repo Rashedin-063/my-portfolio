@@ -7,6 +7,10 @@
   @apply font-josefinSans;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 .fixed-container {
   position: relative;
