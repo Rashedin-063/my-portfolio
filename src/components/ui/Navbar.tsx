@@ -14,7 +14,7 @@ const Navbar = () => {
               <li key={to}>
                 <a
                   href={to}
-                  className=' border-b border-deep-ocean px-4 pb-1 rounded-lg hover:border-b-2 hover:border-white-pearl'
+                  className=' border-b border-indigo-600 px-4 pb-1 rounded-lg hover:border-b-2 hover:border-white-pearl'
                 >
                   {label}
                 </a>

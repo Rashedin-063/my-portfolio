@@ -1,6 +1,5 @@
-// pages/index.tsx
 import { NextPage } from 'next';
-import NewComponent from '@/components/NewComponent';
+import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/ui/Navbar';
 import LeftSidebar from '@/components/ui/LeftSidebar';
@@ -9,6 +8,7 @@ import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Blogs from '@/components/Blogs';
 import Contact from '@/components/Contact';
+import SplashScreen from "../components/ui/SplashScreen";
 
 
 
@@ -30,7 +30,8 @@ const Home: NextPage = () => {
       </div>
       {/* main content */}
       <div className='max-w-7xl px-4 mx-auto space-y-16'>
-        <NewComponent />
+        <SplashScreen/>
+        <Hero/>
         <About />
         <Projects />
         <Blogs />
