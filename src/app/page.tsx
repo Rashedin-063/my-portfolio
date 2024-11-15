@@ -25,7 +25,7 @@ const Home: NextPage = () => {
         <LeftSidebar />
       </div>
       {/* right sidebar */}
-      <div className='absolute right-6 md:right-8 top-60 '>
+      <div className='absolute right-6 md:right-8 lg:right-10 xl:right-12 top-60 '>
         <RightSidebar />
       </div>
       {/* main content */}

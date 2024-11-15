@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <div className='text-yellow-sunshine py-4 font-chakraPetch'>
-      <ul>
+    
         <Fade cascade damping={0.3} triggerOnce={true}>
           <ul className='flex justify-between items-center text-sm md:text-base p-3 mx-4 md:mx-32 lg:mx-auto lg:gap-8 xl:gap-10 rounded-xl border-opacity-75 drop-shadow-2xl '>
             {navItems.slice(1, 5).map(({ to, label }) => (
@@ -22,7 +22,6 @@ const Navbar = () => {
             ))}
           </ul>
         </Fade>
-      </ul>
     </div>
   );
 };
