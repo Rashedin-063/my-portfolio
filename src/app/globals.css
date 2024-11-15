@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .border-gradient {
+    border-image: linear-gradient(to right, #000118, #000220, #02082B, #040A2E, #060C34, #080E39) 1;
+  }
+}
 
   body {
   @apply font-josefinSans;

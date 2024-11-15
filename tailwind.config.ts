@@ -14,10 +14,10 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'custom-gradient':
-          'linear-gradient(to right, #000118,  #000220, #02082B, #040A2E,  #060C34, #080E39)',
         'custom-radial':
           'radial-gradient(1600px at 70% 120%, rgba(33, 39, 80, 1) 1%, #020409 100%)',
+        'custom-gradient':
+          'linear-gradient(to right, #000118,  #000220, #02082B, #040A2E,  #060C34, #080E39)',
       },
       fontFamily: {
         indieFlower: ['var(--indie-flower)', 'cursive'],
@@ -31,7 +31,6 @@ const config: Config = {
         'deep-ocean': '#004080',
         'green-lantern': '#16A240',
         'white-pearl': '#FBF8EF',
-        'charcoal-gray': '#000000',
       },
     },
   },
@@ -52,5 +51,3 @@ function addVariablesForColors({ addBase, theme }: any) {
 
 export default config;
 
-
-// 73EC8B
