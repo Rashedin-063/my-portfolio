@@ -1,4 +1,4 @@
-import '../styles/rightSidebar.css'
+import '../../styles/rightSidebar.css'
 const RightSidebar = () => {
   return (
     <div className='  fixed mt-48'>

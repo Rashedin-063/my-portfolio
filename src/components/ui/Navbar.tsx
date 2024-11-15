@@ -1,22 +1,16 @@
 'use client';
 import { Fade } from 'react-awesome-reveal';
+import {navItems} from '@/data/index'
 
 
 const Navbar = () => {
-  const items = [
-    { to: '#home', label: 'Home' },
-    { to: '#about', label: 'About' },
-    { to: '#projects', label: 'Projects' },
-    { to: '#blogs', label: 'Blogs' },
-    { to: '#contact', label: 'Contact' },
-  ];
 
   return (
     <div className='text-yellow-sunshine py-4 font-chakraPetch'>
       <ul>
-        <Fade cascade damping={0.3}>
+        <Fade cascade damping={0.3} triggerOnce={true}>
           <ul className='flex justify-center items-center gap-1 md:gap-6 lg:gap-8 text-sm md:text-base p-3 mx-8 md:mx-auto rounded-xl border-opacity-75 drop-shadow-2xl'>
-            {items.map(({ to, label }) => (
+            {navItems.map(({ to, label }) => (
               <li key={to}>
                 <a
                   href={to}

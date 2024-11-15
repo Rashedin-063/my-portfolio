@@ -2,12 +2,12 @@
 import { NextPage } from 'next';
 import NewComponent from '@/components/NewComponent';
 import Footer from '@/components/Footer';
-import Navbar from '../components/Navbar';
-import LeftSidebar from '@/components/LeftSidebar';
-import RightSidebar from '../components/RightSidebar';
+import Navbar from '@/components/ui/Navbar';
+import LeftSidebar from '@/components/ui/LeftSidebar';
+import RightSidebar from '../components/ui/RightSidebar';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
-import Blogs from '@/components/ui/Blogs';
+import Blogs from '@/components/Blogs';
 import Contact from '@/components/Contact';
 
 

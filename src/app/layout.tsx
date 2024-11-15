@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { chakraPetch, indieFlower, josefinSans } from '@/styles/fontConfig';
 
-import AnimatedUniverse from '@/components/AnimatedUniverse';
+import AnimatedUniverse from '@/components/ui/AnimatedUniverse';
 import './globals.css';
 import '../styles/universe.css';
 import { ThemeProvider } from './provider';
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' >
+    <html lang='en'>
       <head>
         <link rel='icon' href='/logo.png' sizes='any' type='image/png' />
       </head>

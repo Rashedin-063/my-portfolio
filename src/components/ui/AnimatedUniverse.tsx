@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import '../styles/universe.css';
+import '../../styles/universe.css';
 
 export default function AnimatedUniverse() {
   useEffect(() => {
-    import('../data/startUniverseAnimation.js')
+    import('../../data/startUniverseAnimation.js')
       .then((module) => {
         module.startUniverseAnimation();
       })
