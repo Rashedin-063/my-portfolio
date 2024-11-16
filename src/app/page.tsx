@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/ui/Navbar';
-import LeftSidebar from '@/components/ui/LeftSidebar';
+import { LeftSidebar2 } from '@/components/ui/LeftSideBar2';
 import RightSidebar from '../components/ui/RightSidebar';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
@@ -22,14 +22,14 @@ const Home: NextPage = () => {
 
  {/* left sidebar */}
       <div className='absolute top-20 md:left-2 lg:left-4'>
-        <LeftSidebar />
+        <LeftSidebar2 />
       </div>
       {/* right sidebar */}
-      <div className='absolute right-6 md:right-8 lg:right-10 xl:right-12 top-60 '>
+      <div className='absolute right-4 md:right-8 lg:right-10 xl:right-12 top-60 '>
         <RightSidebar />
       </div>
       {/* main content */}
-      <div className='max-w-7xl px-4 mx-auto space-y-16'>
+      <div className='max-w-7xl px-4 lg:px-8 mx-auto space-y-16'>
         <SplashScreen/>
         <Hero/>
         <About />

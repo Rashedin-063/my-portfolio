@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Hero = () => {
 
 return (
-  <div className='h-screen flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start  gap-12 lg:px-24 rounded-xl'>
+  <div id="hero" className='h-screen flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start  gap-12 lg:px-24 rounded-xl'>
     <div
       className='space-y-4 font-chakraPetch text-yellow-sunshine opacity-95 text-center lg:text-start'
     >
@@ -42,7 +42,7 @@ return (
         width='300'
         placeholder='blur'
         priority
-        className='h-40 w-40 md:w-48 md:h-48  rounded-full border border-4 border-yellow-sunshine border-opacity-75 object-cover p-2'
+        className='h-40 w-40 md:w-48 md:h-48 rounded-full  border-4 border-yellow-sunshine border-opacity-75 object-cover p-2'
       />
     </div>
   </div>

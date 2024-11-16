@@ -1,5 +1,5 @@
 export const navItems = [
-  { to: '#newC', label: 'Home' },
+  { to: '#hero', label: 'Home' },
   { to: '#about', label: 'About' },
   { to: '#projects', label: 'Projects' },
   { to: '#blogs', label: 'Blogs' },
