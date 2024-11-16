@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import Hero from '@/components/Hero';
+// import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/ui/Navbar';
 import { LeftSidebar2 } from '@/components/ui/LeftSideBar2';
@@ -29,14 +29,16 @@ const Home: NextPage = () => {
         <RightSidebar />
       </div>
       {/* main content */}
-      <div className='max-w-7xl px-4 lg:px-8 mx-auto space-y-16'>
-        <SplashScreen/>
-        <Hero/>
+      <div>
+  <SplashScreen/>
+      <div className='max-w-7xl  mx-auto px-4 lg:px-8 space-y-16'>
         <About />
         <Projects />
         <Blogs />
         <Contact />
       </div>
+      </div>
+      
       <div className='container mx-auto'>
         <Footer />
       </div>

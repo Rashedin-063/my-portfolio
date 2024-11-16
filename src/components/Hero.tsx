@@ -4,19 +4,19 @@ import Image from 'next/image';
 const Hero = () => {
 
 return (
-  <div id="hero" className='h-screen flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start  gap-12 lg:px-24 rounded-xl'>
+  <div id="hero" className='h-screen flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 lg:px-24 rounded-xl mt-20 lg:mt-0'>
     <div
       className='space-y-4 font-chakraPetch text-yellow-sunshine opacity-95 text-center lg:text-start'
     >
-      <h2 className='text-4xl font-semibold mb-4'>Hello there,</h2>
-      <h2 className='text-4xl font-semibold'>
+      <h2 className='text-3xl md:text-4xl font-semibold mb-4'>Hello there,</h2>
+      <h2 className='text-3xl md:text-4xl font-semibold'>
         This is{' '}
-        <span className='text-green-lantern font-bold text-5xl opacity-100'>
+        <span className='text-green-lantern font-bold text-4xl md:text-5xl opacity-100'>
           Rashedin Islam
         </span>
       </h2>
       <div className='mt-4 text-2xl font-semibold text-yellow-sunshine'>
-        <span className='text-xl text-gray-200 '>I am a junior </span>
+        <span className='text-xl text-gray-200 text-white-pearl'>I am a junior </span>
         {/* <Typewriter
             words={[
               'Frontend Developer',

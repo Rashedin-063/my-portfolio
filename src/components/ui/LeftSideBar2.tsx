@@ -150,7 +150,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        'w-10 lg:w-12  group fixed top-24',
+        'w-10 lg:w-12  group fixed top-28 lg:top-24',
         className
       )}
     >
