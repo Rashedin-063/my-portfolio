@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Hero = () => {
 
 return (
-  <div id="hero" className='h-screen flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 lg:px-24 rounded-xl mt-20 lg:mt-0'>
+  <div id="hero" className='h-screen flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 lg:px-24 rounded-xl -mt-12 lg:-mt-0 lg:ml-8 xl:ml-24'>
     <div
       className='space-y-4 font-chakraPetch text-yellow-sunshine opacity-95 text-center lg:text-start'
     >
@@ -16,7 +16,7 @@ return (
         </span>
       </h2>
       <div className='mt-4 text-2xl font-semibold text-yellow-sunshine'>
-        <span className='text-xl text-gray-200 text-white-pearl'>I am a junior </span>
+        <span className='text-xl  text-white-pearl'>I am a junior </span>
         {/* <Typewriter
             words={[
               'Frontend Developer',

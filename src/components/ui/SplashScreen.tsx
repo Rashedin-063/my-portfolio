@@ -1,7 +1,6 @@
-'use client';
-import { useState, useEffect } from 'react';
-import Hero from '@/components/Hero';
-import { FaHandsClapping } from 'react-icons/fa6';
+"use client";
+import { useState, useEffect } from "react";
+import { FaHandsClapping } from "react-icons/fa6";
 
 const SplashScreen: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
@@ -10,51 +9,32 @@ const SplashScreen: React.FC = () => {
   useEffect(() => {
     const handleLoad = () => {
       setLoading(false);
-      setTimeout(() => setHidden(true), 500); // Delay to allow animation
+      setTimeout(() => setHidden(true), 800); // Delay to match animation duration
     };
 
-    if (document.readyState === 'complete') {
+    if (document.readyState === "complete") {
       handleLoad();
     } else {
-      window.addEventListener('load', handleLoad);
+      window.addEventListener("load", handleLoad);
     }
 
-    return () => window.removeEventListener('load', handleLoad);
+    return () => window.removeEventListener("load", handleLoad);
   }, []);
 
   return (
     <div
-      className={`relative w-full h-[800px]  lg:min-h-screen overflow-hidden -mt-20 lg:-mt-0`}
+      className={`absolute top-0 left-0 w-full h-screen overflow-hidden z-50 ${
+        loading ? "" : "opacity-0 translate-y-[-100%]"
+      } transition-all duration-700 ease-in-out`}
     >
-      {/* Splash Screen */}
-      {!hidden && (
-        <div
-          className={`absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center z-50 bg-custom-gradient transition-transform duration-500 -mt-20 lg:-mt-8 font-josefinSans ${
-            loading
-              ? ''
-              : 'translate-y-[-100%] lg:translate-y-0 lg:translate-x-[-100%]'
-          }`}
-        >
-          <div className='flex text-white-pearl text-center lg:text-xl'>
-            <h3>&quot;Creativity is intelligence having fun.&quot;</h3>
-          </div>
-          <h1 className='text-2xl lg:text-4xl text-yellow-sunshine font-semibold flex gap-2 tracking-wider'>
-            Welcome to my portfolio
-           
-              <FaHandsClapping />
-          
-          </h1>
+      <div className="flex flex-col items-center justify-center w-full h-full bg-custom-gradient text-white">
+        <div className="text-xl lg:text-2xl mb-4 text-center">
+          <h3>&quot;Creativity is intelligence having fun.&quot;</h3>
         </div>
-      )}
-      {/* Main Content */}
-      <div
-        className={`relative ${
-          loading
-            ? 'opacity-0'
-            : 'opacity-100 transition-opacity duration-500 px-4 lg:px-8 mt-4'
-        }`}
-      >
-        <Hero />
+        <h1 className="text-4xl text-yellow-sunshine font-semibold flex gap-2 tracking-wider">
+          Welcome to my portfolio
+          <FaHandsClapping />
+        </h1>
       </div>
     </div>
   );
