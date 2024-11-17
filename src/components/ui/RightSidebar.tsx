@@ -1,13 +1,12 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import '../../styles/rightSidebar.css';
 import { FaRegStar } from 'react-icons/fa6';
 import { FaStar } from 'react-icons/fa';
 import { navItems } from '@/data/index';
 import { Fade } from 'react-awesome-reveal';
 
-// Debounce function to limit updates to the state
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function debounce<T extends (...args: any[]) => void>(
   fn: T,
@@ -60,7 +59,7 @@ const RightSidebar = () => {
               ${
                 activeSection === to.replace('#', '')
                   ? ' text-yellow-sunshine animate-pulse'
-                  : ' text-green-lantern hover:text-[#73EC8B]'
+                  : 'text-indigo-600 hover:text-indigo-300'
               }
             `}
           >

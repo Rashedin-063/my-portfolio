@@ -1,6 +1,8 @@
-import ProfileImg from '../../public/profileImage.jpg';
+// import ProfileImg from '../../public/profileImage.jpg';
+import ProfileImg2 from '../../public/sketch.png';
 import Image from 'next/image';
 import { FlipWords } from './ui/FlipWords';
+
 
 const Hero = () => {
 
@@ -12,10 +14,11 @@ const Hero = () => {
 
 
 return (
-  <div id="hero" className='h-screen flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 lg:px-24 rounded-xl -mt-12 lg:-mt-0 lg:ml-8 xl:ml-24'>
-    <div
-      className='space-y-4 font-chakraPetch text-white-pearl text-center lg:text-start'
-    >
+  <div
+    id='hero'
+    className='h-screen flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 lg:px-24 rounded-xl -mt-12 lg:-mt-0 lg:ml-8 xl:ml-24'
+  >
+    <div className='space-y-4 font-chakraPetch text-white-pearl text-center lg:text-start'>
       <h2 className='text-3xl md:text-4xl font-semibold mb-4'>Hello there,</h2>
       <h2 className='text-3xl md:text-4xl font-semibold'>
         This is{' '}
@@ -28,18 +31,15 @@ return (
         <FlipWords words={words} />
       </div>
     </div>
-    <div
-     
- 
-    >
+    <div>
       <Image
-        src={ProfileImg}
+        src={ProfileImg2}
         alt="Rashedin Islam's Profile Photo"
         height='300'
         width='300'
         placeholder='blur'
         priority
-        className='h-40 w-40 md:w-48 md:h-48 lg:h-60 lg:w-60 rounded-full  border-4 border-yellow-dusk border-opacity-75 object-cover p-2'
+        className='h-48 w-48 md:w-60 md:h-60 lg:h-[300px] lg:w-[300px] rounded-full border-4 border-[#A19C8E] object-cover p-2 hover:p-0 transition-all duration-100 ease-in'
       />
     </div>
   </div>
