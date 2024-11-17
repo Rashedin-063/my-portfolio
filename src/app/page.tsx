@@ -1,4 +1,6 @@
 import { NextPage } from 'next';
+import dynamic from 'next/dynamic';
+
 import Footer from '@/components/Footer';
 import Navbar from '@/components/ui/Navbar';
 import { LeftSidebar } from '@/components/ui/LeftSideBar';
@@ -8,7 +10,13 @@ import Projects from '@/components/Projects';
 import Blogs from '@/components/Blogs';
 import Contact from '@/components/Contact';
 import SplashScreen from '../components/ui/SplashScreen';
-import Hero from '@/components/Hero'; // Import Hero component
+// import Hero from '@/components/Hero'; 
+
+
+
+const Hero = dynamic(() => import('@/components/Hero'), {
+  ssr: false,
+});
 
 const Home: NextPage = () => {
   return (
