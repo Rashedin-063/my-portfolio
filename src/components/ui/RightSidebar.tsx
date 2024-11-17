@@ -44,13 +44,13 @@ const RightSidebar = () => {
       if (section) observer.observe(section as Element);
     });
 
-    return () => observer.disconnect(); // Cleanup observer on unmount
-  }, []); // Empty dependency array to set up observer once
+    return () => observer.disconnect(); 
+  }, []); 
 
   return (
     <div className={`fixed mt-36 ${activeSection}`}>
       <div className="flex flex-col justify-center items-center relative">
-          <Fade cascade damping={0.3} triggerOnce={true}>
+          <Fade delay={500} cascade damping={0.3} triggerOnce={true}>
       
          {navItems.map(({ to }) => (
           <a
