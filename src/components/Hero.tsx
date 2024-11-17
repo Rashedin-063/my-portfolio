@@ -7,6 +7,7 @@ import { FlipWords } from './ui/FlipWords';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import ArrowButton from "./ui/Btn";
+import { FaHandsClapping } from "react-icons/fa6";
 
 
   const words = [
@@ -36,17 +37,23 @@ return (
   >
     {/* Left Content */}
     <div className='space-y-4 font-chakraPetch text-white-pearl text-center lg:text-start'>
-      <h2
-        className='text-2xl md:text-3xl font-semibold flex flex-col gap-y-[2px]'
+     <div>
+       <h2
+        className='text-2xl md:text-3xl font-semibold flex gap-2 items-center justify-center lg:justify-start'
         data-aos='fade-down'
         data-aos-delay='100'
         data-aos-easing='ease-out-cubic'
       >
-        Hi, I am{' '}
-        <span className='font-bold text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-text'>
-          Rashedin Islam
-        </span>
+       <FaHandsClapping/> Hello, I am{' '}
       </h2>
+
+        <h1
+          className='font-bold text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-text mt-1'
+          data-aos='fade-right'
+        data-aos-delay='300'
+        data-aos-easing='ease-out-cubic'
+        >  Rashedin Islam</h1>
+     </div>
 
       <div
         className='mt-4 text-xl font-semibold text-yellow-sunshine space-y-1'
@@ -62,7 +69,7 @@ return (
       </div>
 
       <p
-        className='text-sm lg:text-base text-[#FBFBFB] max-w-lg pt-4'
+        className='text-sm lg:text-base text-[#FBFBFB] max-w-lg pt-2 lg:pt-4'
         data-aos='zoom-in'
         data-aos-easing='ease-out-cubic'
         data-aos-delay='700'
