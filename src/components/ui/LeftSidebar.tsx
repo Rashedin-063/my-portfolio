@@ -65,7 +65,7 @@ const Skeleton = () => {
   return (
     // displaying icons
     <div className=' overflow-hidden h-full relative flex items-center justify-center'>
-      <div className='flex flex-col flex-shrink-0 justify-center items-center gap-2 lg:gap-4 z-50 '>
+      <div className='flex flex-col flex-shrink-0 justify-center items-center gap-2 lg:gap-4 z-50'>
         <Container className='h-8 w-8 circle-5'>
           <Github />
         </Container>

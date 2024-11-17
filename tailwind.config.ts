@@ -18,6 +18,8 @@ const config: Config = {
           'radial-gradient(1600px at 70% 120%, rgba(33, 39, 80, 1) 1%, #020409 100%)',
         'custom-gradient':
           'linear-gradient(to right, #000118,  #000220, #02082B, #040A2E,  #060C34, #080E39)',
+        'gradient-text':
+          'radial-gradient(circle at -1% 57.5%, rgb(19, 170, 82) 0%, rgb(0, 102, 43) 90%)',
       },
       fontFamily: {
         indieFlower: ['var(--indie-flower)', 'cursive'],
@@ -26,8 +28,8 @@ const config: Config = {
       },
 
       colors: {
-        'yellow-sunshine': '#fff487',
-        'midnight-gray': '	##3c3c3c',
+        'yellow-sunshine': '#FFD93D',
+        'yellow-dusk': '	#fff487',
         'deep-ocean': '#004080',
         'green-lantern': '#16A240',
         'white-pearl': '#FBF8EF',
