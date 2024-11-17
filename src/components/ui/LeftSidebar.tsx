@@ -1,99 +1,65 @@
 'use client';
 import Link from 'next/link';
-import { animate, motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
-import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
+import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FcDocument } from 'react-icons/fc';
 import { BsEnvelopePaper } from 'react-icons/bs';
 
+
+
 export function LeftSidebar() {
   return (
     <Card>
-      <CardSkeletonContainer>
-        <Skeleton />
+      <CardSkeletonContainer>     
+          <StaticIcons />
       </CardSkeletonContainer>
     </Card>
   );
 }
 
-const Skeleton = () => {
-  const [isHovered, setIsHovered] = useState(false);
-  const scale = [1, 1.2, 1];
-  const transform = ['translateY(0px)', 'translateY(-4px)', 'translateY(0px)'];
-  const sequence = [
-    [
-      '.circle-1',
-      {
-        scale,
-        transform,
-      },
-      { duration: 0.8 },
-    ],
-    [
-      '.circle-3',
-      {
-        scale,
-        transform,
-      },
-      { duration: 0.8 },
-    ],
-    [
-      '.circle-4',
-      {
-        scale,
-        transform,
-      },
-      { duration: 0.8 },
-    ],
-    [
-      '.circle-5',
-      {
-        scale,
-        transform,
-      },
-      { duration: 0.8 },
-    ],
+const StaticIcons = () => {
+  const icons = [
+    {
+      component: <Github />,
+      link: 'https://github.com/Rashedin-063',
+    },
+    {
+      component: <Linkedin />,
+      link: 'https://www.linkedin.com/in/rashedin-islam-web-developer',
+    },
+    {
+      component: <Email />,
+      link: 'mailto:rashedinislam.06@gmail.com',
+    },
+    {
+      component: <Resume />,
+      link: 'https://drive.google.com/file/d/1IGL8bjSDCWHndTXuTmlA6mCoKOTl5guH/view?usp=sharing',
+    },
   ];
 
-  useEffect(() => {
-    if (!isHovered) {
-      animate(sequence, {
-        repeat: Infinity,
-        repeatDelay: 1,
-      });
-    }
-  }, [isHovered]);
-
   return (
-    // displaying icons
-    <div
-      className="overflow-hidden h-full relative flex items-center justify-center"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <div className="flex flex-col flex-shrink-0 justify-center items-center gap-2 lg:gap-4">
-        <Container className="h-8 w-8 circle-5">
-          <Github />
-        </Container>
-
-        <Container className="h-8 w-8 circle-3">
-          <Linkedin />
-        </Container>
-        <Container className="h-8 w-8 circle-4">
-          <Email />
-        </Container>
-        <Container className="h-8 w-8 circle-1">
-          <Resume />
-        </Container>
+    <div className='overflow-hidden h-full relative flex items-center justify-center'>
+      <div className='flex flex-col flex-shrink-0  gap-2 lg:gap-4'>
+        {icons.map((icon, index) => (
+          <motion.div
+            className='h-8 w-8 cursor-pointer hover:scale-110 transition-all duration-300 z-50'
+            key={index}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <Link href={icon.link} target='_blank'>
+              {icon.component}
+            </Link>
+          </motion.div>
+        ))}
       </div>
-
-      {/* displayin animation */}
-      <div className="h-[160px] w-px absolute top-20 m-auto z-40 animate-move">
-        <div className="w-10 h-40  translate-y-1/8 absolute bottom-0 -left-10">
+      {/* Sparkle Animation */}
+      <div className='h-[160px] w-px absolute top-20 m-auto z-10'>
+        <div className='w-10 h-40 translate-y-1/8 absolute bottom-0 -left-10'>
           <Sparkles />
         </div>
-        <div className="w-10 h-40 top-0 -translate-y-1/2 absolute -right-10">
+        <div className='w-10 h-40 top-0 -translate-y-1/2 absolute -right-10'>
           <Sparkles />
         </div>
       </div>
@@ -105,8 +71,9 @@ const Sparkles = () => {
   const randomMove = () => Math.random() * 2 - 1;
   const randomOpacity = () => Math.random();
   const random = () => Math.random();
+
   return (
-    <div className="absolute inset-0">
+    <div className='absolute inset-0'>
       {[...Array(12)].map((_, i) => (
         <motion.span
           key={`star-${i}`}
@@ -130,14 +97,26 @@ const Sparkles = () => {
             borderRadius: '50%',
             zIndex: 1,
           }}
-          className="inline-block bg-white"
+          className='inline-block bg-white'
         ></motion.span>
       ))}
     </div>
   );
 };
 
-// styling card
+export const Github = () => (
+  <FaGithub className='text-lg md:text-xl xl:text-2xl text-white' />
+);
+export const Linkedin = () => (
+  <FaLinkedin className='text-lg md:text-xl xl:text-2xl text-blue-500' />
+);
+export const Email = () => (
+  <BsEnvelopePaper className='text-base md:text-lg xl:text-xl text-amber-400' />
+);
+export const Resume = () => (
+  <FcDocument className='text-xl md:text-2xl xl:text-3xl text-white' />
+);
+
 export const Card = ({
   className,
   children,
@@ -146,15 +125,12 @@ export const Card = ({
   children: React.ReactNode;
 }) => {
   return (
-    <div
-      className={cn('w-10 lg:w-12  group fixed top-28 lg:top-24', className)}
-    >
+    <div className={`w-10 lg:w-12 group fixed top-28 lg:top-24 ${className}`}>
       {children}
     </div>
   );
 };
 
-// styleing card skeleton
 export const CardSkeletonContainer = ({
   className,
   children,
@@ -166,71 +142,11 @@ export const CardSkeletonContainer = ({
 }) => {
   return (
     <div
-      className={cn(
-        'h-[200px] lg:h-[220px] rounded-full z-50',
-        className,
+      className={`h-[200px] lg:h-[220px] rounded-full z-50  ${className} ${
         showGradient && 'bg-custom-gradient border border-indigo-800'
-      )}
+      }`}
     >
       {children}
     </div>
-  );
-};
-
-const Container = ({
-  className,
-  children,
-}: {
-  className?: string;
-  children: React.ReactNode;
-}) => {
-  return (
-    <div
-      className={cn(
-        `h-16 w-16 rounded-full flex items-center justify-center
-    `,
-        className
-      )}
-    >
-      {children}
-    </div>
-  );
-};
-
-// icons
-export const Resume = () => {
-  return (
-    <Link
-      href="https://drive.google.com/file/d/1IGL8bjSDCWHndTXuTmlA6mCoKOTl5guH/view?usp=sharing"
-      target="_blank"
-    >
-      <FcDocument className="text-xl md:text-2xl xl:text-3xl text-white cursor-pointer" />
-    </Link>
-  );
-};
-export const Linkedin = () => {
-  return (
-    <Link
-      href="https://www.linkedin.com/in/rashedin-islam-web-developer"
-      target="_blank"
-    >
-      <FaLinkedin className="text-lg md:text-xl xl:text-2xl text-blue-500 cursor-pointer" />
-    </Link>
-  );
-};
-export const Github = () => {
-  return (
-    <Link href="https://github.com/Rashedin-063" target="_blank">
-      <FaGithub
-        className={'text-lg md:text-xl xl:text-2xl text-white cursor-pointer'}
-      />
-    </Link>
-  );
-};
-export const Email = () => {
-  return (
-    <Link href="mailto:rashedinislam.06@gmail.com" target="_blank">
-      <BsEnvelopePaper className="text-base md:text-lg xl:text-xl text-amber-400 cursor-pointer" />
-    </Link>
   );
 };
