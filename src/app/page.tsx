@@ -35,7 +35,7 @@ const Home: NextPage = () => {
       <div>
         {/* Hero Component */}
         <Hero /> {/* This is where the Hero section is added */}
-        <div className='max-w-7xl mx-auto px-4 lg:px-8 space-y-16'>
+        <div className='container mx-auto px-4 lg:px-8 space-y-16'>
           <About />
           <Projects />
           <Blogs />
