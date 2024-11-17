@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { FlipWords } from './ui/FlipWords';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import ArrowButton from "./ui/Btn";
 
 
   const words = [
@@ -36,28 +37,16 @@ return (
     {/* Left Content */}
     <div className='space-y-4 font-chakraPetch text-white-pearl text-center lg:text-start'>
       <h2
-        className='text-3xl md:text-4xl font-semibold flex flex-col'
+        className='text-2xl md:text-3xl font-semibold flex flex-col gap-y-[2px]'
         data-aos='fade-down'
         data-aos-delay='100'
         data-aos-easing='ease-out-cubic'
       >
-        Hi, I&apos;m{' '}
+        Hi, I am{' '}
         <span className='font-bold text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-text'>
           Rashedin Islam
         </span>
       </h2>
-
-      {/* <h2
-        className='text-3xl md:text-4xl font-semibold'
-        data-aos='fade-right'
-        data-aos-delay='300'
-        data-aos-easing='ease-out-cubic'
-      >
-        I am{' '}
-        <span className='font-bold text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-text'>
-          Rashedin Islam
-        </span>
-      </h2> */}
 
       <div
         className='mt-4 text-xl font-semibold text-yellow-sunshine space-y-1'
@@ -66,34 +55,44 @@ return (
         data-aos-easing='ease-out-cubic'
       >
         <span className='text-lg text-white-pearl'>
-         A digital artisan passionate about crafting:
+          A digital artisan passionate about crafting:
         </span>
         <br />
         <FlipWords words={words} />
       </div>
 
       <p
-        className='text-sm lg:text-base text-[#FBFBFB] opacity-25 max-w-lg'
+        className='text-sm lg:text-base text-[#FBFBFB] max-w-lg pt-4'
         data-aos='zoom-in'
         data-aos-easing='ease-out-cubic'
         data-aos-delay='700'
       >
-        Frontend, MERN Stack, or Full Stack—Let&apos;s code the future together!
+        Frontend, MERN Stack, or Full Stack — Let&apos;s code the future together!
       </p>
 
       {/* Call-to-Actions */}
       <div
-        className='flex gap-4 justify-center lg:justify-start pt-4'
+        className='flex gap-4 justify-center lg:justify-start pt-2'
         data-aos='fade-up'
         data-aos-delay='900'
         data-aos-easing='ease-out-cubic'
       >
-        <button className='bg-yellow-sunshine text-black py-2 px-6 rounded-lg font-medium shadow-lg hover:scale-105 transition-transform'>
-          View My Portfolio
-        </button>
-        <button className='bg-gradient-text text-white py-2 px-6 rounded-lg font-medium shadow-lg hover:scale-105 transition-transform'>
-          Let&apos;s Connect
-        </button>
+        <ArrowButton
+          text='View My Portfolio'
+          textColor='#FBFBFB'
+          buttonOverlayColor='#FFD93D'
+          borderColor='#FFD93D'
+          iconColor='white'
+          stats='first'
+        />
+        <ArrowButton
+          text='Download My Resume'
+          textColor='#FBFBFB'
+          buttonOverlayColor='#5668DE'
+          borderColor='#5668DE'
+          iconColor='white'
+          stats='second'
+        />
       </div>
     </div>
 
@@ -108,7 +107,7 @@ return (
         alt="Rashedin Islam's Profile Photo"
         placeholder='blur'
         priority
-        className='h-48 w-48 md:w-60 md:h-60 lg:h-[330px] lg:w-[330px] rounded-full border-4 border-[#A19C8E] object-cover p-2 hover:p-0 transition-all duration-300 ease-in'
+        className='h-48 w-48 md:w-60 md:h-60 lg:h-[300px] lg:w-[300px] rounded-full border-4 border-[#A19C8E] object-cover p-2 hover:p-0 transition-all duration-300 ease-in'
       />
     </div>
   </div>
