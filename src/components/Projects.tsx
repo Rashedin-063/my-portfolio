@@ -121,7 +121,7 @@ export default function Projects() {
       </AnimatePresence>
 
       <div className='grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-16'>
-        {projects.map((card, index) => (
+        {projects.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={card.title}

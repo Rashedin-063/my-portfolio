@@ -39,11 +39,11 @@ const Home: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className='container mx-auto px-4 lg:px-8 relative'>
+      <div className='container mx-auto px-6 lg:px-12 relative'>
         <Hero />
         <div >
           <About />
-      
+          <Projects />
           <Blogs />
           <Contact />
         </div>
