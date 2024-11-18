@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.Toastify__toast-container {
+  max-height: 50px !important;
+  
+  width: 280px !important; 
+}
+
+.Toastify__toast {
+  max-height: 50px !important; 
+  min-height: 10px !important; 
+  font-size: 14px !important; 
+}
+
 @layer utilities {
   .border-gradient {
     border-image: linear-gradient(to right, #000118, #000220, #02082B, #040A2E, #060C34, #080E39) 1;

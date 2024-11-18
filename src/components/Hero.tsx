@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { FlipWords } from './ui/FlipWords';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
@@ -103,7 +103,7 @@ return (
         <a href='/resume.pdf' download='Resume_Rashedin_Islam.pdf'></a>
         <ArrowButton
           handleClick={handleClick}
-          text={downloaded ? 'Download Successful' : 'Download My Resume'}
+          text={downloaded ? 'Downloaded 😊' : 'Download My Resume'}
           textColor='#FBFBFB'
           buttonOverlayColor='#5668DE'
           borderColor='#5668DE'
@@ -126,7 +126,7 @@ return (
     >
       <GlowingCard fromColor='#4158D0' toColor='#FFCC70' viaColor='#C850C0' />
     </div>
-    <ToastContainer />
+    <ToastContainer/>
   </div>
 );
 }

@@ -1,11 +1,14 @@
 'use client';
 import Link from 'next/link';
 import { animate, motion } from 'framer-motion';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FcDocument } from 'react-icons/fc';
-import { BsEnvelopePaper } from 'react-icons/bs';
+import { MdAttachEmail, MdMarkEmailRead } from "react-icons/md";
+import { toast } from 'react-toastify';
+
+
 
 export function LeftSidebar() {
   return (
@@ -211,10 +214,33 @@ export const Github = () => {
   );
 };
 export const Email = () => {
+  const [isCopied, setIsCopied] = useState(false);
+  const email = 'rashedinislam.06@gmail.com';
+
+  const copyToClipboard = () => {
+    navigator.clipboard
+      .writeText(email)
+      .then(() => {
+        setIsCopied(true);
+         toast.success('Email Copied Successfully!');
+        setTimeout(() => setIsCopied(false), 3000);
+      })
+      .catch((err) => {
+        toast.error('Failed to Copy')
+        console.error('Failed to copy email:', err)});
+  };
+
   return (
-    <Link href='mailto:rashedinislam.06@gmail.com' target='_blank'>
-      <BsEnvelopePaper className='text-base md:text-lg xl:text-xl text-amber-400 cursor-pointer' />
-    </Link>
+    <div>
+      <button
+        onClick={copyToClipboard} className='flex items-center'>
+        {isCopied ? (
+          <MdMarkEmailRead className='text-[19px] md:text-xl xl:text-2xl text-green-600 cursor-pointer' />
+        ) : (
+          <MdAttachEmail className='text-lg md:text-xl xl:text-2xl text-orange-600 cursor-pointer' />
+        )}
+      </button>
+    </div>
   );
 };
 
@@ -224,7 +250,7 @@ export const Resume = () => {
       href='https://drive.google.com/file/d/1IGL8bjSDCWHndTXuTmlA6mCoKOTl5guH/view?usp=sharing'
       target='_blank'
     >
-      <FcDocument className='text-xl lg:text-2xl text-white cursor-pointer' />
+      <FcDocument className='text-xl lg:text-2xl text-white cursor-pointer -ml-[1px]' />
     </Link>
   );
 };
