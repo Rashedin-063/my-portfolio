@@ -8,6 +8,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import ArrowButton from "./ui/Btn";
 import { FaHandsClapping } from "react-icons/fa6";
+import GlowingCard from "./ui/GlowingCard";
 
 
   const words = [
@@ -33,7 +34,7 @@ const Hero = () => {
 return (
   <div
     id='hero'
-    className='h-screen flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 lg:gap-16 lg:px-24 rounded-xl -mt-12 lg:-mt-0 lg:ml-8 xl:ml-24'
+    className='h-screen flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 lg:gap-16 lg:px-24 rounded-xl -mt-10 lg:-mt-0 lg:ml-8 xl:ml-24'
   >
     {/* Left Content */}
     <div className='space-y-4 font-chakraPetch text-white-pearl text-center lg:text-start'>
@@ -109,13 +110,17 @@ return (
       data-aos-delay='1000'
       data-aos-easing='ease-out-cubic'
     >
-      <Image
+      <GlowingCard
+  fromColor="#4158D0"
+  toColor="#FFCC70"
+  viaColor="#C850C0"/>
+      {/* <Image
         src={ProfileImg2}
         alt="Rashedin Islam's Profile Photo"
         placeholder='blur'
         priority
         className='h-48 w-48 md:w-60 md:h-60 lg:h-[300px] lg:w-[300px] rounded-full border-4 border-[#A19C8E] object-cover p-2 hover:p-0 transition-all duration-300 ease-in'
-      />
+      /> */}
     </div>
   </div>
 );
