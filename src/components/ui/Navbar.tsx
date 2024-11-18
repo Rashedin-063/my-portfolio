@@ -6,7 +6,7 @@ import {navItems} from '@/data/index'
 const Navbar = () => {
 
   return (
-    <div className='text-yellow-sunshine py-4 font-chakraPetch'>
+    <div className='text-yellow-sunshine py-4'>
     
         <Fade delay={500} cascade damping={0.3} triggerOnce={true}>
           <ul className='flex justify-between items-center text-sm md:text-base p-3 mx-4 md:mx-32 lg:mx-auto lg:gap-8 xl:gap-10 rounded-xl border-opacity-75 drop-shadow-2xl '>
@@ -14,7 +14,7 @@ const Navbar = () => {
               <li key={to}>
                 <a
                   href={to}
-                  className=' border-b border-indigo-600 px-4 pb-1 rounded-lg hover:border-b-2 hover:border-white-pearl cursor-pointer'
+                  className=' border-b border-indigo-600 px-4 pb-1 rounded-lg hover:border-b-2 hover:border-white-pearl cursor-pointer tracking-wide'
                 >
                   {label}
                 </a>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import ProfileImg2 from '../../../public/sketch.png';
+import ProfileImg from '../../../public/sketch.png';
 
 interface GlowCardProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
@@ -36,7 +36,7 @@ export default function GlowingCard({
       />
       <div className=' absolute top-0'>
         <Image
-          src={ProfileImg2}
+          src={ProfileImg}
           alt="Rashedin Islam's Profile Photo"
           placeholder='blur'
           priority

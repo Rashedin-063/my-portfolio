@@ -1,8 +1,5 @@
 "use client";
 import React from "react";
-import { ArrowDownNarrowWide, FolderDown } from 'lucide-react';
-
-
 import { cn } from "@/lib/utils";
 
 interface ArrowButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -10,10 +7,9 @@ interface ArrowButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
   textColor?: string;
   buttonOverlayColor?: string;
   borderColor?: string;
-  iconColor?: string;
   className?: string;
-  stats?: string;
-  
+  icon?: React.ReactNode;
+  handleClick?: () => void;
 }
 
 export default function ArrowButton({
@@ -21,8 +17,8 @@ export default function ArrowButton({
   textColor = "#fff",
   buttonOverlayColor = "#bf49ff",
   borderColor = "#c284f9",
-  iconColor = "white",
-  stats = "first",
+  icon,
+  handleClick,
   ...props
 }: ArrowButtonProps) {
   return (
@@ -30,20 +26,19 @@ export default function ArrowButton({
       style={{ borderColor: borderColor, fontWeight: '300' }}
       {...props}
       className={cn(
-        'group relative inline-flex items-center justify-center overflow-hidden rounded-full border px-6 py-2 drop-shadow-2xl transition duration-300 ease-out w-48 font-bold text-sm'
+        'group relative inline-flex items-center justify-center overflow-hidden rounded-full border px-6 py-2 drop-shadow-2xl transition duration-300 ease-out w-48 text-sm'
       )}
+      onClick={handleClick}
     >
       <span
-        style={{ background: buttonOverlayColor }}
+        style={{ background: buttonOverlayColor, }}
         className={cn(
           'ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center bg-yellow-600 text-white duration-700 group-hover:translate-x-0'
         )}
       >
-        {stats === 'first' ? (
-          <ArrowDownNarrowWide style={{ color: iconColor }} />
-        ) : (
-          <FolderDown style={{ color: iconColor }} />
-        )}
+        {
+         icon
+        }
       </span>
       <span
         style={{ color: textColor }}
