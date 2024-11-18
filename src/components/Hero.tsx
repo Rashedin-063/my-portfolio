@@ -9,7 +9,7 @@ import { FaHandsClapping } from "react-icons/fa6";
 import GlowingCard from "./ui/GlowingCard";
 import { ArrowDownNarrowWide, FolderDown, ThumbsUp } from 'lucide-react';
 import Link from "next/link";
-import { useDownload } from '@/lib/useDownload';
+import { useDownload } from '@/hooks/useDownload';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

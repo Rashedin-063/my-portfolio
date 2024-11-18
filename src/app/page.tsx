@@ -10,7 +10,7 @@ import Projects from '@/components/Projects';
 import Blogs from '@/components/Blogs';
 import Contact from '@/components/Contact';
 import SplashScreen from '../components/ui/SplashScreen';
-// import Hero from '@/components/Hero'; 
+
 
 
 
@@ -21,7 +21,6 @@ const Hero = dynamic(() => import('@/components/Hero'), {
 const Home: NextPage = () => {
   return (
     <div className='relative'>
-      {/* SplashScreen placed at the top */}
       <SplashScreen />
 
       {/* Navbar */}
@@ -40,12 +39,11 @@ const Home: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div>
-        {/* Hero Component */}
-        <Hero /> {/* This is where the Hero section is added */}
-        <div className='container mx-auto px-4 lg:px-8 space-y-16'>
+      <div className='container mx-auto px-4 lg:px-8 relative'>
+        <Hero />
+        <div >
           <About />
-          <Projects />
+      
           <Blogs />
           <Contact />
         </div>

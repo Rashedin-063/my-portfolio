@@ -9,20 +9,25 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^9.117.2",
+    "@react-three/fiber": "^8.17.10",
+    "@tabler/icons-react": "^3.22.0",
     "aos": "^2.3.4",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.11.15",
+    "framer-motion": "^11.11.17",
     "lucide-react": "^0.460.0",
     "next": "14.2.17",
     "next-themes": "^0.4.3",
     "react": "^18",
     "react-awesome-reveal": "^4.2.14",
     "react-dom": "^18",
+    "react-element-to-jsx-string": "^15.0.0",
     "react-icons": "^5.3.0",
     "react-lottie": "^1.2.4",
     "react-toastify": "^10.0.6",
     "tailwind-merge": "^2.5.4",
-    "three": "^0.170.0"
+    "three": "^0.170.0",
+    "three-globe": "^2.35.2"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
