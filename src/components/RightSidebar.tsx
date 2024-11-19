@@ -25,17 +25,17 @@ const RightSidebar = () => {
   useEffect(() => {
     const sections = navItems.map(({ to }) => document.querySelector(to));
     const observerOptions = {
-      threshold: 1, // Trigger when 100% of the section is in view
+      threshold: 1,
     };
 
  const observer = new IntersectionObserver(
   debounce((entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        setActiveSection((entry.target as HTMLElement).id); // Ensure the target is cast to HTMLElement
+        setActiveSection((entry.target as HTMLElement).id); 
       }
     });
-  }, 200), // Delay state update by 200ms
+  }, 200),
   observerOptions
 );
 
@@ -45,6 +45,8 @@ const RightSidebar = () => {
 
     return () => observer.disconnect(); 
   }, []); 
+
+       console.log(activeSection)
 
   return (
     <div className={`fixed mt-36 ${activeSection}`}>
@@ -62,7 +64,8 @@ const RightSidebar = () => {
                   : 'text-indigo-600 hover:text-indigo-300'
               }
             `}
-          >
+           >
+       
             {activeSection === to.slice(1) ? <FaStar /> : <FaRegStar />}
           </a>
         ))}

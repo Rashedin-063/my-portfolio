@@ -37,7 +37,7 @@ useEffect(() => {
 return (
   <div
     id='hero'
-    className='h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 lg:gap-16 rounded-xl -mt-16 lg:mt-8 px-16 font-chakraPetch'
+    className='h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 xl:gap-16 rounded-xl mt-4 md:mt-0 lg:mt-8 lg:ml-16 xl:ml-0 font-chakraPetch'
   >
     {/* Left Content */}
     <div className='space-y-4 text-white-pearl text-center lg:text-start'>
@@ -76,17 +76,17 @@ return (
       </div>
 
       <p
-        className='text-sm lg:text-base text-[#FBFBFB] max-w-lg -ml-2 md:-ml-0 pt-2 lg:pt-4'
+        className=' text-sm lg:text-base text-[#FBFBFB] max-w-lg -ml-2 md:-ml-0 pt-2 lg:pt-4'
         data-aos='zoom-in'
         data-aos-easing='ease-out-cubic'
         data-aos-delay='700'
       >
-        Frontend, Backend, or Full Stack — Let&apos;s code the future together!
+        Frontend, Backend, or Full Stack — Let&apos;s create magic together!
       </p>
 
       {/* buttons */}
       <div
-        className='flex gap-4 justify-center lg:justify-start pt-2'
+        className='flex gap-2 md:gap-4 md:gap-4 justify-center lg:justify-start pt-2'
         data-aos='fade-up'
         data-aos-delay='900'
         data-aos-easing='ease-out-cubic'

@@ -21,7 +21,7 @@ const Home: NextPage = () => {
       <SplashScreen />
 
       {/* Navbar */}
-      <div className='absolute  lg:right-16 xl:right-24 z-10'>
+      <div className='absolute   z-10 top-0 w-full lg:w-fit lg:right-0'>
         <Navbar />
       </div>
 
@@ -31,7 +31,7 @@ const Home: NextPage = () => {
       </div>
 
       {/* Right Sidebar */}
-      <div className='absolute right-4 md:right-8 lg:right-10 xl:right-12 top-60 z-10'>
+      <div className='absolute right-4 md:right-8 lg:right-10 xl:right-12 top-60 z-20'>
         <RightSidebar />
       </div>
 
