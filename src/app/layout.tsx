@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
-// import { chakraPetch, indieFlower, josefinSans } from '@/styles/fontConfig';
-import AnimatedUniverse from '@/components/ui/AnimatedUniverse';
+import AnimatedUniverse from '@/components/AnimatedUniverse'
 import './globals.css';
+import '@/styles/fonts.css';
 import '../styles/universe.css';
 import { ThemeProvider } from './provider';
+import { chakraPetch } from '../styles/fontConfig';
+import { josefinSans } from '../styles/fontConfig';
 
 
 
@@ -23,7 +25,7 @@ export default function RootLayout({
         <link rel='icon' href='/logo.png' sizes='any' type='image/png' />
       </head>
       <body
-        className={` antialiased page bg-custom-radial max-w-[1600px] mx-auto `}
+        className={`antialiased page bg-custom-radial max-w-[1600px] mx-auto `}
       >
         <ThemeProvider
           attribute='class'
@@ -33,7 +35,9 @@ export default function RootLayout({
         >
           <AnimatedUniverse />
 
-          <div className='relative z-10 overflow-y-auto h-full w-full scroll-smooth'>
+          <div
+            className={`relative z-10 overflow-y-auto h-full w-full scroll-smooth ${chakraPetch.variable} ${josefinSans.variable}`}
+          >
             {children}
           </div>
         </ThemeProvider>

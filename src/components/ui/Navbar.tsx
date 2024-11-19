@@ -1,23 +1,24 @@
 'use client';
 import { Fade } from 'react-awesome-reveal';
 import {navItems} from '@/data/index'
+import Link from 'next/link';
 
 
 const Navbar = () => {
 
   return (
-    <div className='text-yellow-sunshine py-4'>
+    <div className=' text-yellow-sunshine py-4 border min-w-screen'>
     
         <Fade delay={500} cascade damping={0.3} triggerOnce={true}>
           <ul className='flex justify-between items-center text-sm md:text-base p-3 mx-4 md:mx-32 lg:mx-auto lg:gap-8 xl:gap-10 rounded-xl border-opacity-75 drop-shadow-2xl '>
             {navItems.slice(1, 5).map(({ to, label }) => (
               <li key={to}>
-                <a
+                <Link
                   href={to}
                   className=' border-b border-indigo-600 px-4 pb-1 rounded-lg hover:border-b-2 hover:border-white-pearl cursor-pointer tracking-wide'
                 >
                   {label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

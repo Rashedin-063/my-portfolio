@@ -3,13 +3,13 @@ import dynamic from 'next/dynamic';
 
 import Footer from '@/components/Footer';
 import Navbar from '@/components/ui/Navbar';
-import { LeftSidebar } from '@/components/ui/LeftSideBar';
-import RightSidebar from '../components/ui/RightSidebar';
+import { LeftSidebar } from '@/components/LeftSideBar';
+import RightSidebar from '../components/RightSidebar';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Blogs from '@/components/Blogs';
 import Contact from '@/components/Contact';
-import SplashScreen from '../components/ui/SplashScreen';
+import SplashScreen from '../components/SplashScreen'
 
 const Hero = dynamic(() => import('@/components/Hero'), {
   ssr: false,
@@ -17,11 +17,11 @@ const Hero = dynamic(() => import('@/components/Hero'), {
 
 const Home: NextPage = () => {
   return (
-    <div className='relative'>
+    <div className='relative font-josefinSans'>
       <SplashScreen />
 
       {/* Navbar */}
-      <div className='lg:absolute lg:right-16 xl:right-24 z-10'>
+      <div className='absolute  lg:right-16 xl:right-24 z-10'>
         <Navbar />
       </div>
 
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className='container mx-auto px-8 lg:px-16 xl:px-24 relative flex justify-center items-center flex-col overfolow-hidden'>
+      <div className='container mx-auto px-8 lg:px-16 xl:px-24 relative flex justify-center items-center flex-col'>
         <Hero />
         <div>
           <About />

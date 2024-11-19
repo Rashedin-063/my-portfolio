@@ -23,12 +23,12 @@ const config: Config = {
           'linear-gradient(to right, #000118,  #000220, #02082B, #040A2E,  #060C34, #080E39)',
         'gradient-text':
           'radial-gradient(circle at 12.3% 19.3%, rgb(85, 88, 218) 0%, rgb(95, 209, 249) 100.2%)',
-         'custom-gradient-2' : ' linear-gradient(112.6deg, rgb(56, 24, 40) -10.7%, rgb(23, 148, 185) 100.2%);'
+        'custom-gradient-2':
+          ' linear-gradient(112.6deg, rgb(56, 24, 40) -10.7%, rgb(23, 148, 185) 100.2%);',
       },
       fontFamily: {
-        indieFlower: ['var(--indie-flower)', 'cursive'],
-        josefinSans: ['var(--josefin-sans)', 'sans-serif'],
         chakraPetch: ['var(--chakra-petch)', 'sans-serif'],
+        josefinSans: ['var(--josefin-sans)', 'sans-serif'],
       },
 
       colors: {

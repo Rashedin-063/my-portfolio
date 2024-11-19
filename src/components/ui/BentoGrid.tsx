@@ -11,7 +11,7 @@ import {
 import { cn } from '@/lib/utils';
 // import { BackgroundGradientAnimation } from "./GradientBg";
 // import GridGlobe from "./GridGlobe";
-import MagicButton from '../MagicButton';
+import MagicButton from '../ui/MagicButton';
 export const BentoGrid = ({
   className,
   children,

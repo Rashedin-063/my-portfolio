@@ -37,7 +37,7 @@ useEffect(() => {
 return (
   <div
     id='hero'
-    className='h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 lg:gap-16 rounded-xl -mt-16 lg:mt-8 px-16'
+    className='h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 lg:gap-16 rounded-xl -mt-16 lg:mt-8 px-16 font-chakraPetch'
   >
     {/* Left Content */}
     <div className='space-y-4 text-white-pearl text-center lg:text-start'>
@@ -76,7 +76,7 @@ return (
       </div>
 
       <p
-        className='text-sm lg:text-base text-[#FBFBFB] max-w-lg pt-2 lg:pt-4'
+        className='text-sm lg:text-base text-[#FBFBFB] max-w-lg -ml-2 md:-ml-0 pt-2 lg:pt-4'
         data-aos='zoom-in'
         data-aos-easing='ease-out-cubic'
         data-aos-delay='700'
@@ -126,7 +126,7 @@ return (
     >
       <GlowingCard fromColor='#4158D0' toColor='#FFCC70' viaColor='#C850C0' />
     </div>
-    <ToastContainer/>
+    <ToastContainer />
   </div>
 );
 }
