@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* typescript-eslint-disable @typescript-eslint/no-implicit-any */
 'use client';
-
 import React, { useEffect, useState } from 'react';
 import { FaRegStar } from 'react-icons/fa6';
 import { FaStar } from 'react-icons/fa';
@@ -21,50 +20,58 @@ function debounce<T extends (...args: any[]) => void>(
 const RightSidebar = () => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
-  useEffect(() => {
-    const sections = navItems.map(({ to }) => document.querySelector(to));
+ useEffect(() => {
+   const sections = navItems.map(({ to }) => document.querySelector(to));
 
-    const observerOptions = {
-      threshold: 0.3, // Trigger when 10% of the section is visible
-    };
+   // Handle dynamically loaded sections
+   const ensureHeroExists = () => {
+     const heroSection = document.querySelector('#hero');
+     if (heroSection) {
+       sections[0] = heroSection;
+       setActiveSection('hero'); // Set the initial active section to 'hero'
+     } else {
+       // Retry until the hero section exists
+       setTimeout(ensureHeroExists, 100);
+     }
+   };
 
-    const observer = new IntersectionObserver(
-      debounce((entries: IntersectionObserverEntry[]) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection((entry.target as HTMLElement).id);
-          }
-        });
-      }, 100),
-      observerOptions
-    );
+   ensureHeroExists();
 
-    sections.forEach((section) => {
-      if (section) {
-        console.log(`Observing: ${section.id}`); // Log the observed section ID
-        observer.observe(section as Element);
-      } else {
-        console.warn('Section not found for: ', section);
-      }
-    });
+   const observerOptions = {
+     threshold: 0.3, // Adjust threshold to your liking (50% visibility triggers the effect)
+   };
 
-    return () => observer.disconnect();
-  }, []);
+   const observer = new IntersectionObserver(
+     debounce((entries) => {
+       entries.forEach((entry: { isIntersecting: any; target: HTMLElement; }) => {
+         if (entry.isIntersecting) {
+           setActiveSection((entry.target as HTMLElement).id);
+         }
+       });
+     }, 100),
+     observerOptions
+   );
 
-  // Function to handle click and manually set active section
+   sections.forEach((section) => {
+     if (section) observer.observe(section as Element);
+   });
+
+   return () => observer.disconnect();
+ }, []);
+
+  // Function to handle click events
   const handleClick = (sectionId: string) => {
-    setActiveSection(sectionId); // Manually set the active section
-    // Scroll to the section smoothly
+    setActiveSection(sectionId);
     const section = document.querySelector(`#${sectionId}`);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  console.log(activeSection);
+  // console.log('Active Section:', activeSection);
 
   return (
-    <div className={`fixed mt-36 ${activeSection}`}>
+    <div className={`fixed mt-36`}>
       <div className='flex flex-col justify-center items-center relative'>
         <Fade delay={500} cascade damping={0.3} triggerOnce={true}>
           {navItems.map(({ to }) => (
@@ -72,8 +79,8 @@ const RightSidebar = () => {
               key={to}
               href={to}
               onClick={(e) => {
-                e.preventDefault(); // Prevent default anchor link behavior
-                handleClick(to.replace('#', '')); // Handle the click event and set active section
+                e.preventDefault();
+                handleClick(to.replace('#', ''));
               }}
               className={`text-sm lg:text-base hover:scale-110 transition ease-in-out duration-300 cursor-pointer border-2 border-transparent p-1
                 ${

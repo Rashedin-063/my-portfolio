@@ -2,6 +2,7 @@
   "extends": ["next/core-web-vitals", "next/typescript"],
   "rules": {
     "@typescript-eslint/no-require-imports": "off",
-    "@typescript-eslint/no-var-requires": "warn"
+    "@typescript-eslint/no-var-requires": "warn",
+    "@typescript-eslint/no-implicit-any": "off"
   }
 }
