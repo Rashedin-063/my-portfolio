@@ -31,7 +31,7 @@ const Home: NextPage = () => {
       </div>
 
       {/* Right Sidebar */}
-      <div className='absolute right-4 md:right-8 lg:right-10 xl:right-12 top-60 z-20'>
+      <div className='absolute right-4 md:right-8 lg:right-10 xl:right-12 top-60 z-30'>
         <RightSidebar />
       </div>
 
