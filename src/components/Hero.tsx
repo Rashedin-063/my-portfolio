@@ -37,10 +37,10 @@ useEffect(() => {
 return (
   <div
     id='hero'
-    className='h-screen flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 lg:gap-16 lg:px-24 rounded-xl -mt-16 lg:-mt-0 lg:ml-8 xl:ml-24'
+    className='h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 lg:gap-16 rounded-xl -mt-16 lg:mt-8 px-16'
   >
     {/* Left Content */}
-    <div className='space-y-4 font-chakraPetch text-white-pearl text-center lg:text-start'>
+    <div className='space-y-4 text-white-pearl text-center lg:text-start'>
       <div>
         <h2
           className='text-2xl md:text-3xl font-semibold flex gap-2 items-center justify-center lg:justify-start'
@@ -81,7 +81,7 @@ return (
         data-aos-easing='ease-out-cubic'
         data-aos-delay='700'
       >
-        Frontend, MERN Stack, or Full Stack—Let&apos;s shape the web together!
+        Frontend, Backend, or Full Stack — Let&apos;s code the future together!
       </p>
 
       {/* buttons */}

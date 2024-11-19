@@ -33,7 +33,7 @@ export default function Projects() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <>
+    <div id="projects" className="my-16">
       <AnimatePresence>
         {active && typeof active === 'object' && (
           <motion.div
@@ -120,14 +120,19 @@ export default function Projects() {
         ) : null}
       </AnimatePresence>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-16'>
+<h1 className="text-3xl lg:text-4xl text-yellow-sunshine text-center">My Recent Projects</h1>
+
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 lg:gap-16'>
+
+
+
         {projects.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
             className=''
           >
-            <div className='flex flex-col items-center justify-center p-4 gap-16 mt-10 group border border-gray-600 rounded-lg'>
+            <div className='flex flex-col items-center justify-center p-4 gap-16 mt-10 group border border-gray-600 rounded-lg bg-custom-gradient'>
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <div className='relative'>
                   <div
@@ -186,7 +191,7 @@ export default function Projects() {
           </motion.div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

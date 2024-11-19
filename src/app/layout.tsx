@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
-import { chakraPetch, indieFlower, josefinSans } from '@/styles/fontConfig';
+// import { chakraPetch, indieFlower, josefinSans } from '@/styles/fontConfig';
 import AnimatedUniverse from '@/components/ui/AnimatedUniverse';
 import './globals.css';
 import '../styles/universe.css';
 import { ThemeProvider } from './provider';
+
 
 
 export const metadata: Metadata = {
@@ -17,12 +18,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <head>
         <link rel='icon' href='/logo.png' sizes='any' type='image/png' />
       </head>
       <body
-        className={`${indieFlower.variable} ${josefinSans.variable} ${chakraPetch.variable} antialiased page bg-custom-radial max-w-[1600px] mx-auto `}
+        className={` antialiased page bg-custom-radial max-w-[1600px] mx-auto `}
       >
         <ThemeProvider
           attribute='class'

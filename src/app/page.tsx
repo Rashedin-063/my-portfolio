@@ -11,9 +11,6 @@ import Blogs from '@/components/Blogs';
 import Contact from '@/components/Contact';
 import SplashScreen from '../components/ui/SplashScreen';
 
-
-
-
 const Hero = dynamic(() => import('@/components/Hero'), {
   ssr: false,
 });
@@ -39,9 +36,9 @@ const Home: NextPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className='container mx-auto px-6 lg:px-12 relative'>
+      <div className='container mx-auto px-8 lg:px-16 xl:px-24 relative flex justify-center items-center flex-col overfolow-hidden'>
         <Hero />
-        <div >
+        <div>
           <About />
           <Projects />
           <Blogs />

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 import Link from 'next/link';
 import { animate, motion } from 'framer-motion';
@@ -84,7 +85,7 @@ const Skeleton = () => {
         </Container>
       </div>
 
-      {/* displayin aniamtion */}
+      {/* displaying animation */}
       <div className='h-[160px] w-px absolute top-20 m-auto z-40 animate-move'>
         <div className='w-10 h-40  translate-y-1/8 absolute bottom-0 -left-10'>
           <Sparkles />

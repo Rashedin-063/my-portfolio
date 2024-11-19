@@ -1,17 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
-"use client"
-import { FaReact, FaNodeJs, FaDownload } from "react-icons/fa";
-import { SiExpress,  SiTypescript, SiNextdotjs, SiMongodb } from "react-icons/si";
-
+'use client';
+import { FaReact, FaNodeJs, FaDownload } from 'react-icons/fa';
+import {
+  SiExpress,
+  SiTypescript,
+  SiNextdotjs,
+  SiMongodb,
+} from 'react-icons/si';
 // Also install this npm i --save-dev @types/react-lottie
-
-import { cn } from "@/lib/utils";
-
-
+import { cn } from '@/lib/utils';
 // import { BackgroundGradientAnimation } from "./GradientBg";
 // import GridGlobe from "./GridGlobe";
-import MagicButton from "../MagicButton";
-
+import MagicButton from '../MagicButton';
 export const BentoGrid = ({
   className,
   children,
@@ -22,7 +22,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto text-white-pearl",
+        'grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-8 mx-auto text-white-pearl',
         className
       )}
     >
@@ -30,7 +30,6 @@ export const BentoGrid = ({
     </div>
   );
 };
-
 export const BentoGridItem = ({
   className,
   id,
@@ -52,21 +51,52 @@ export const BentoGridItem = ({
 }) => {
   // list items --> need to separate into data
   const leftLists = [
-    { text: 'ReactJS', icon: <FaReact className="text-blue-600 text-[17px] lg:text-[19px] font-semibold animate-spin " style={{ animationDuration: '3s' }}/> },
-    { text: 'Express', icon: <SiExpress className="text-[18px] lg:text-[20px] text-black font-semibold skew-x-2 -skew-y-6" /> },
-    { text: 'TypeScript', icon: <SiTypescript className="text-sky-700 text-[15px] lg:text-[18px]" /> },
-    { text: 'Next.js', icon: <SiNextdotjs className="text-black text-[18px] lg:text-[21px]" /> },
-    { text: 'Node.js', icon: <FaNodeJs className="text-green-800 text-[18px] lg:text-[24px]" /> },
-    { text: 'MongoDB', icon: <SiMongodb className="text-green-900 animate-bounce text-[18px] lg:text-[24px]" style={{ animationDuration: '2s' }} /> },
+    {
+      text: 'ReactJS',
+      icon: (
+        <FaReact
+          className='text-blue-600 text-[17px] lg:text-[19px] font-semibold animate-spin '
+          style={{ animationDuration: '3s' }}
+        />
+      ),
+    },
+    {
+      text: 'Express',
+      icon: (
+        <SiExpress className='text-[18px] lg:text-[20px] text-black font-semibold skew-x-2 -skew-y-6' />
+      ),
+    },
+    {
+      text: 'TypeScript',
+      icon: (
+        <SiTypescript className='text-sky-700 text-[15px] lg:text-[18px]' />
+      ),
+    },
+    {
+      text: 'Next.js',
+      icon: <SiNextdotjs className='text-black text-[18px] lg:text-[21px]' />,
+    },
+    {
+      text: 'Node.js',
+      icon: <FaNodeJs className='text-green-800 text-[18px] lg:text-[24px]' />,
+    },
+    {
+      text: 'MongoDB',
+      icon: (
+        <SiMongodb
+          className='text-green-900 animate-bounce text-[18px] lg:text-[24px]'
+          style={{ animationDuration: '2s' }}
+        />
+      ),
+    },
   ];
-
-
   return (
     <div
       className={cn(
-        'row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 bg-custom-gradient',
+        'row-span-1 relative overflow-hidden rounded-3xl border border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 bg-[#070D37]',
         className
       )}
+      
     >
       {/* add img divs */}
       <div className={`${id === 6 && 'flex justify-center'} h-full`}>
@@ -95,16 +125,18 @@ export const BentoGridItem = ({
         </div>
         {id === 6 && (
           // add background animation , remove the p tag
-        
-            <div className='absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl'></div>
-         
-        )}
 
+          <div className='absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl'></div>
+        )}
         <div
           className={cn(
             titleClassName,
             `${
-              id === 1 ? 'min-h-60' : id === 2 ? 'min-h-40 lg:min-h-60' : 'min-h-40'
+              id === 1
+                ? 'min-h-60'
+                : id === 2
+                ? 'min-h-40 lg:min-h-60'
+                : 'min-h-40'
             } group-hover/bento:scale-95 transition-all ease-out hover:duration-700 relative md:h-full hover:border-none flex flex-col px-5 p-5 lg:p-10 border-2 border-gray-800`
           )}
         >
@@ -123,16 +155,13 @@ export const BentoGridItem = ({
           >
             {title}
           </div>
-
           {/* for the github 3d globe */}
           {/* {id === 2 && <GridGlobe />} */}
-
           {/* Tech stack list div */}
-       
-          
-           {id === 1 && (
+
+          {id === 1 && (
             <div className='flex flex-col gap-1 lg:gap-5 w-fit absolute top-28 lg:top-40'>
-  {/* //  tech stack list */}
+              {/* //  tech stack list */}
               <div className='grid grid-cols-3 gap-x-3 gap-y-5 lg:gap-8'>
                 {leftLists.map((item, i) => (
                   <span
@@ -146,17 +175,13 @@ export const BentoGridItem = ({
               </div>
             </div>
           )}
-
           {id === 6 && (
             <div className='mt-5 relative'>
-              <div
-                className={`absolute -bottom-5 right-0 `}
-              >   
-              </div>
+              <div className={`absolute -bottom-5 right-0 `}></div>
               <a href='/resume.pdf' download='Resume_Rashedin_Islam.pdf'>
                 {' '}
                 <MagicButton
-                  title="Magic"
+                  title='Magic'
                   icon={<FaDownload />}
                   position='left'
                   otherClasses='!bg-[#161A31]'

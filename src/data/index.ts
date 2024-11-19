@@ -12,7 +12,7 @@ export const gridItems = [
     title: 'My tech stack',
     description: 'Always eager to stay updated',
 
-    className: 'lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]',
+    className: 'lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[50vh]',
     imgClassName: 'w-full h-full',
     titleClassName: 'items-center',
     img: '',
