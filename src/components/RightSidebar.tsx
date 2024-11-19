@@ -5,6 +5,7 @@ import { FaStar } from 'react-icons/fa';
 import { navItems } from '@/data/index';
 import { Fade } from 'react-awesome-reveal';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function debounce<T extends (...args: any[]) => void>(
   fn: T,
   delay: number
@@ -27,9 +28,8 @@ const RightSidebar = () => {
      const heroSection = document.querySelector('#hero');
      if (heroSection) {
        sections[0] = heroSection;
-       setActiveSection('hero'); // Set the initial active section to 'hero'
+       setActiveSection('hero'); 
      } else {
-       // Retry until the hero section exists
        setTimeout(ensureHeroExists, 100);
      }
    };
@@ -37,14 +37,15 @@ const RightSidebar = () => {
    ensureHeroExists();
 
    const observerOptions = {
-     threshold: 0.3, // Adjust threshold to your liking (50% visibility triggers the effect)
+     threshold: 0.3,
    };
 
    const observer = new IntersectionObserver(
-     debounce((entries) => {
-       entries.forEach((entry: { isIntersecting: any; target: HTMLElement; }) => {
+     debounce((entries: IntersectionObserverEntry[]) => {
+       entries.forEach((entry) => {
+         // Ensure the entry is typed correctly as IntersectionObserverEntry
          if (entry.isIntersecting) {
-           setActiveSection((entry.target as HTMLElement).id);
+           setActiveSection(entry.target.id);
          }
        });
      }, 100),
@@ -99,3 +100,4 @@ const RightSidebar = () => {
 };
 
 export default RightSidebar;
+
