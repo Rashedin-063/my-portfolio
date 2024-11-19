@@ -1,4 +1,3 @@
-/* typescript-eslint-disable @typescript-eslint/no-implicit-any */
 'use client';
 import React, { useEffect, useState } from 'react';
 import { FaRegStar } from 'react-icons/fa6';
