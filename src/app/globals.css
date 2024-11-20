@@ -4,11 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-:root {
-  font-family: var(--chadfdkra-petch2), sans-serif;
-}
-
 .Toastify__toast-container {
   max-height: 50px !important;
   

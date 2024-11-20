@@ -1,3 +1,4 @@
+
 export const navItems = [
   { to: '#hero', label: 'Home' },
   { to: '#about', label: 'About' },
@@ -12,7 +13,7 @@ export const gridItems = [
   {
     id: 1,
     title: 'My tech stack',
-    description: 'Always eager to stay updated',
+    description: '',
 
     className: 'lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[50vh]',
     imgClassName: 'w-full h-full',
@@ -24,7 +25,7 @@ export const gridItems = [
     id: 2,
     title: "I'm very flexible with time zone communications",
     description: '',
-    className: 'lg:col-span-2 md:col-span-3 md:row-span-2',
+    className: 'lg:col-span-2 md:col-span-3 md:row-span-2 min-h-48',
     imgClassName: '',
     titleClassName: 'justify-start',
     img: '',
@@ -33,17 +34,17 @@ export const gridItems = [
   {
     id: 3,
     title:
-      'I believe in clear communication and collaboration, and I approach challenges with a calm, problem-solving mindset ',
+      'I value clear communication and collaboration, I approach challenges with a calm and problem solving mindset ',
     description: '',
     className: 'lg:col-span-2 md:col-span-3 md:row-span-2',
-    imgClassName: '',
+    imgClassName: 'opacity-75',
     titleClassName: 'justify-start',
     img: '/b1.svg',
     spareImg: '',
   },
   {
     id: 4,
-    title: 'Tech enthusiast with a passion for development.',
+    title: 'I believe in building products that not only function well but also delight users, creating experiences that feel intuitive and seamless',
     description: '',
     className: 'lg:col-span-2 md:col-span-3 md:row-span-1',
     imgClassName: '',
@@ -51,28 +52,28 @@ export const gridItems = [
     img: '/grid.svg',
     spareImg: '/b4.svg',
   },
-
   {
     id: 5,
-    title:
-      'Currently, I’m diving deeper into TypeScript, exploring advanced React patterns, and learning about cloud deployment with AWS.',
-    description: 'The Inside Scoop',
-    className: 'md:col-span-3 md:row-span-2',
-    imgClassName: 'absolute right-0 bottom-0 md:w-96 w-60',
-    titleClassName: 'justify-center md:justify-start lg:justify-center',
-    img: '/b5.svg',
-    spareImg: '/grid.svg',
-  },
-  {
-    id: 6,
     title: '',
     description: '',
-    className: 'lg:col-span-2 md:col-span-3 md:row-span-1',
+    className: '',
     imgClassName: '',
     titleClassName: 'justify-center md:max-w-full text-center',
     img: '',
     spareImg: '',
   },
+  {
+    id: 6,
+    title:
+      'Always eager to learn - currently, I’m diving deeper into TypeScript and exploring advanced Next.js.',
+    description: 'The Inside Scoop',
+    className: '',
+    imgClassName: 'absolute right-0 bottom-0 md:w-96 w-60 opacity-75',
+    titleClassName: 'justify-center md:justify-start lg:justify-center',
+    img: '/b5.svg',
+    spareImg: '/grid.svg',
+  },
+
 ];
 
 export const projects = [
