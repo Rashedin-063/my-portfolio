@@ -1,18 +1,20 @@
 "use client"
 
-import React, { useEffect } from "react";
+import React from "react";
 import { FlipWords } from './ui/FlipWords';
-import AOS from 'aos';
+
 import 'aos/dist/aos.css'; 
-import ArrowButton from "./ui/Btn";
+
 import { FaHandsClapping } from "react-icons/fa6";
 import GlowingCard from "./ui/GlowingCard";
-import { ArrowDownNarrowWide, FolderDown, ThumbsUp } from 'lucide-react';
-import Link from "next/link";
-import { useDownload } from '@/hooks/useDownload';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import HeroBtn from "./ui/HeroBtn";
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS CSS
 
+ 
 
 
   const words = [
@@ -22,17 +24,18 @@ import 'react-toastify/dist/ReactToastify.css';
   ];
 
 const Hero = () => {
-useEffect(() => {
-    AOS.init({
-      duration: 1200,
-      easing: "ease-in-out",  
-      once: true,
-      
-    });
-  }, []);
 
-  const { handleClick, downloaded } = useDownload();
+   useEffect(() => {
+     // Initialize AOS only for the Hero section
+     AOS.init({
+       duration: 1000, // Animation duration
+       once: true, // Animation only happens once
+     });
 
+     return () => {
+       AOS.refresh(); // Refresh AOS when the component is unmounted or updated
+     };
+   }, []);
 
 return (
   <div
@@ -85,37 +88,7 @@ return (
       </p>
 
       {/* buttons */}
-      <div
-        className='flex gap-2 md:gap-4 md:gap-4 justify-center lg:justify-start pt-2'
-        data-aos='fade-up'
-        data-aos-delay='900'
-        data-aos-easing='ease-out-cubic'
-      >
-        <Link href='#projects'>
-          <ArrowButton
-            text='Explore My Work'
-            textColor='#FBFBFB'
-            buttonOverlayColor='#FFD93D'
-            borderColor='#FFD93D'
-            icon={<ArrowDownNarrowWide color='white' />}
-          />
-        </Link>
-        <a href='/resume.pdf' download='Resume_Rashedin_Islam.pdf'></a>
-        <ArrowButton
-          handleClick={handleClick}
-          text={downloaded ? 'Downloaded 😊' : 'Download My Resume'}
-          textColor='#FBFBFB'
-          buttonOverlayColor='#5668DE'
-          borderColor='#5668DE'
-          icon={
-            downloaded ? (
-              <ThumbsUp color='white' />
-            ) : (
-              <FolderDown color='white' />
-            )
-          }
-        />
-      </div>
+     <HeroBtn/>
     </div>
 
     {/* Right Content - Profile Image */}

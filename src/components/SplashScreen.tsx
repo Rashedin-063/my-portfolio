@@ -1,6 +1,8 @@
 'use client';
 import { useState, useEffect, ReactNode } from 'react';
 import { FaHandsClapping } from 'react-icons/fa6';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 interface SplashScreenProps {
   children: ReactNode;
@@ -11,7 +13,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ children }) => {
 
   useEffect(() => {
     const handleLoad = () => {
-      setHidden(true); // hide splash screen after load
+      setHidden(true);
     };
 
     if (document.readyState === 'complete') {
@@ -23,11 +25,18 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ children }) => {
     return () => window.removeEventListener('load', handleLoad);
   }, []);
 
+  // Initialize AOS after splash screen hides
+  useEffect(() => {
+    if (hidden) {
+      AOS.init({ duration: 1200, easing: 'ease-in-out', once: true });
+    }
+  }, [hidden]);
+
   return (
     <>
       {/* Splash Screen */}
       <div
-        className={`absolute top-0 left-0 w-full h-screen overflow-hidden z-50 ${
+        className={`absolute top-0 left-0 w-full h-screen overflow-hidden z-10 ${
           hidden ? 'opacity-0' : 'opacity-100'
         } transition-opacity duration-700 ease-in-out`}
       >
