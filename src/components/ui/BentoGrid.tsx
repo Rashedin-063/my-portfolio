@@ -13,9 +13,7 @@ import {
 } from 'react-icons/si';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { Button } from "./MovingBorder";
 
-// import GridGlobe from "./GridGlobe";
 const GridGlobe = dynamic(() => import('./GridGlobe'))
 
 export const BentoGrid = ({
