@@ -23,7 +23,7 @@ const SplashScreen: React.FC = () => {
 
   useEffect(() => {
     if (hidden) {
-      AOS.init({ duration: 1000, once: true });
+      AOS.init({ duration: 1200, once: true });
     }
   }, [hidden]);
 
