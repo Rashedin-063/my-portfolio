@@ -6,6 +6,7 @@ import '../styles/universe.css';
 import { ThemeProvider } from './provider';
 import { chakraPetch } from '../styles/fontConfig';
 import { josefinSans } from '../styles/fontConfig';
+import SplashScreen from '@/components/SplashScreen';
 
 
 
@@ -35,11 +36,16 @@ export default function RootLayout({
         >
           <AnimatedUniverse />
 
-          <div
+         <main>
+          <SplashScreen> 
+<div
             className={`relative z-10 overflow-y-auto h-full w-full scroll-smooth ${chakraPetch.variable} ${josefinSans.variable}`}
           >
             {children}
           </div>
+          </SplashScreen>
+           
+         </main>
         </ThemeProvider>
       </body>
     </html>

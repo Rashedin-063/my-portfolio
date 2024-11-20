@@ -9,7 +9,7 @@ import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Blogs from '@/components/Blogs';
 import Contact from '@/components/Contact';
-import SplashScreen from '../components/SplashScreen'
+
 
 const Hero = dynamic(() => import('@/components/Hero'), {
   ssr: false,
@@ -19,7 +19,7 @@ const LeftSidebar = dynamic(() => import('@/components/LeftSideBar'))
 const Home: NextPage = () => {
   return (
     <div className='relative font-josefinSans'>
-      <SplashScreen />
+     
 
       {/* Navbar */}
       <div className='absolute   z-10 top-0 w-full lg:w-fit lg:right-0'>

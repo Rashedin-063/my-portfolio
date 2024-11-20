@@ -250,7 +250,7 @@ export const Email = () => {
 export const Resume = () => {
   return (
     <Link
-      href='https://drive.google.com/file/d/1IGL8bjSDCWHndTXuTmlA6mCoKOTl5guH/view?usp=sharing'
+      href='https://drive.google.com/file/d/1n932luVlgZ7jGhKcJCYA0GIiF-9aubmZ/view?usp=sharing'
       target='_blank'
     >
       <FcDocument className='text-xl lg:text-2xl text-white cursor-pointer -ml-[1px]' />
