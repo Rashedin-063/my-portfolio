@@ -1,20 +1,14 @@
-"use client"
-
 import React from "react";
 import { FlipWords } from './ui/FlipWords';
 
-import 'aos/dist/aos.css'; 
 
 import { FaHandsClapping } from "react-icons/fa6";
 import GlowingCard from "./ui/GlowingCard";
+
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import HeroBtn from "./ui/HeroBtn";
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS CSS
 
- 
 
 
   const words = [
@@ -25,22 +19,10 @@ import 'aos/dist/aos.css'; // Import AOS CSS
 
 const Hero = () => {
 
-   useEffect(() => {
-     // Initialize AOS only for the Hero section
-     AOS.init({
-       duration: 1000, // Animation duration
-       once: true, // Animation only happens once
-     });
-
-     return () => {
-       AOS.refresh(); // Refresh AOS when the component is unmounted or updated
-     };
-   }, []);
-
 return (
   <div
     id='hero'
-    className='h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 xl:gap-16 rounded-xl -mt-4 lg:mt-8 lg:ml-16 xl:ml-36 font-chakraPetch'
+    className='h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 xl:gap-16 rounded-xl -mt-4 lg:mt-8 lg:ml-16 xl:ml-36 font-chakraPetch '
   >
     {/* Left Content */}
     <div className='space-y-4 text-white-pearl text-center lg:text-start'>
