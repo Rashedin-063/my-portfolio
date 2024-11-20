@@ -51,17 +51,17 @@ const RightSidebar = () => {
   }, []);
 
   return (
-    <div className={`fixed mt-40 z-10 ${activeSection}`}>
-      <div className='flex flex-col justify-center items-center gap-y-8 relative'>
+    <div className={`fixed mt-24 z-10 ${activeSection}`}>
+      <div className='flex flex-col justify-center items-center relative'>
         <Fade delay={500} cascade damping={0.3} triggerOnce={true}>
           {navItems.map(({ to }) => (
             <a
               key={to}
               href={to}
-              className={`hover:scale-110 transition ease-in-out duration-300 cursor-pointer border-2 border-transparent p-1 ${
+              className={`hover:scale-110 transition ease-in-out duration-300 cursor-pointer border-2 border-transparent p-1 text-lg ${
                 activeSection === to.replace('#', '')
-                  ? 'text-xl text-yellow-sunshine animate-pulse'
-                  : 'text-base text-green-lantern hover:text-[#73EC8B]'
+                  ? ' text-yellow-sunshine animate-pulse'
+                  : 'text-indigo-600'
               }`}
             >
               {activeSection === to.slice(1) ? <FaStar /> : <FaRegStar />}
