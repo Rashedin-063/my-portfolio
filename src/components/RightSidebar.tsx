@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { FaRegStar } from 'react-icons/fa6';
 import { FaStar } from 'react-icons/fa';
 import { navItems } from '@/data/index';
+import { Fade } from 'react-awesome-reveal';
 
 const RightSidebar = () => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -52,19 +53,21 @@ const RightSidebar = () => {
   return (
     <div className={`fixed mt-40 z-10 ${activeSection}`}>
       <div className='flex flex-col justify-center items-center gap-y-8 relative'>
-        {navItems.map(({ to }) => (
-          <a
-            key={to}
-            href={to}
-            className={`hover:scale-110 transition ease-in-out duration-300 cursor-pointer border-2 border-transparent p-1 ${
-              activeSection === to.replace('#', '')
-                ? 'text-xl text-yellow-sunshine animate-pulse'
-                : 'text-base text-green-lantern hover:text-[#73EC8B]'
-            }`}
-          >
-            {activeSection === to.slice(1) ? <FaStar /> : <FaRegStar />}
-          </a>
-        ))}
+        <Fade delay={500} cascade damping={0.3} triggerOnce={true}>
+          {navItems.map(({ to }) => (
+            <a
+              key={to}
+              href={to}
+              className={`hover:scale-110 transition ease-in-out duration-300 cursor-pointer border-2 border-transparent p-1 ${
+                activeSection === to.replace('#', '')
+                  ? 'text-xl text-yellow-sunshine animate-pulse'
+                  : 'text-base text-green-lantern hover:text-[#73EC8B]'
+              }`}
+            >
+              {activeSection === to.slice(1) ? <FaStar /> : <FaRegStar />}
+            </a>
+          ))}
+        </Fade>
       </div>
     </div>
   );

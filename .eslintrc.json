@@ -3,6 +3,7 @@
   "rules": {
     "@typescript-eslint/no-require-imports": "off",
     "@typescript-eslint/no-var-requires": "warn",
-    "@typescript-eslint/no-implicit-any": "off"
+    "@typescript-eslint/no-implicit-any": "off",
+    "typescript-eslint/no-explicit-any" : "off"
   }
 }
