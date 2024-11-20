@@ -33,7 +33,7 @@ export default function Projects() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <div id="projects" className="my-16">
+    <div id="projects">
       <AnimatePresence>
         {active && typeof active === 'object' && (
           <motion.div

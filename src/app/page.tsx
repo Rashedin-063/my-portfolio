@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 
 import Footer from '@/components/Footer';
 import Navbar from '@/components/ui/Navbar';
-import { LeftSidebar } from '@/components/LeftSideBar';
+// import { LeftSidebar } from '@/components/LeftSideBar';
 import RightSidebar from '../components/RightSidebar';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
@@ -14,6 +14,7 @@ import SplashScreen from '../components/SplashScreen'
 const Hero = dynamic(() => import('@/components/Hero'), {
   ssr: false,
 });
+const LeftSidebar = dynamic(() => import('@/components/LeftSideBar'))
 
 const Home: NextPage = () => {
   return (

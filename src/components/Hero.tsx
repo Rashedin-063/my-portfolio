@@ -37,7 +37,7 @@ useEffect(() => {
 return (
   <div
     id='hero'
-    className='h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 xl:gap-16 rounded-xl mt-4 md:mt-0 lg:mt-8 lg:ml-16 xl:ml-36 font-chakraPetch'
+    className='h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 xl:gap-16 rounded-xl -mt-4 lg:mt-8 lg:ml-16 xl:ml-36 font-chakraPetch'
   >
     {/* Left Content */}
     <div className='space-y-4 text-white-pearl text-center lg:text-start'>

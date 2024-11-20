@@ -34,7 +34,7 @@ const config: Config = {
       colors: {
         'yellow-sunshine': '#FFD93D',
         'yellow-dusk': '	#fff487',
-        'deep-ocean': '#004080',
+        'deep-ocean': '#1E2348',
         'green-lantern': '#16A240',
         'white-pearl': '#FEFAE0',
       },

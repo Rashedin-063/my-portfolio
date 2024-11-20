@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 
 
 
-export function LeftSidebar() {
+export default function LeftSidebar() {
   return (
     <Card>
       <CardSkeletonContainer>
@@ -60,12 +60,14 @@ const Skeleton = () => {
     ],
   ];
 
+
   useEffect(() => {
     animate(sequence, {
       repeat: Infinity,
       repeatDelay: 1,
     });
   }, []);
+
   return (
     // displaying icons
     <div className=' overflow-hidden h-full relative flex items-center justify-center'>
