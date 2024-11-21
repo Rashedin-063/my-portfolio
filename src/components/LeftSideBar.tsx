@@ -166,7 +166,7 @@ export const CardSkeletonContainer = ({
   showGradient?: boolean;
 }) => {
   return (
-      <Fade direction="down" duration={1500} trigerOnce={true}>
+      <Fade delay={500} direction="down" duration={1500} trigerOnce={true}>
     <div
       className={cn(
         'h-[200px] lg:h-[220px] rounded-full z-50',
