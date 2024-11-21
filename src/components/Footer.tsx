@@ -27,7 +27,7 @@ const Footer = () => {
       <div>
         <Image
           src='https://i.ibb.co.com/bbLxQwq/footer.png'
-          alt='Cute little boy'
+          alt='Footer Image'
           width='1800'
           height='400'
         />

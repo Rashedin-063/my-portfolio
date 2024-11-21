@@ -1,8 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FaHandsClapping } from "react-icons/fa6";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 
 const SplashScreen: React.FC = () => {
   const [hidden, setHidden] = useState<boolean>(false);
@@ -20,12 +19,6 @@ const SplashScreen: React.FC = () => {
 
     return () => window.removeEventListener("load", handleLoad);
   }, []);
-
-  useEffect(() => {
-    if (hidden) {
-      AOS.init({ duration: 1200, once: true });
-    }
-  }, [hidden]);
 
   return (
     <div
