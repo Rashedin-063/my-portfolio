@@ -8,12 +8,14 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FcDocument } from 'react-icons/fc';
 import { MdAttachEmail, MdMarkEmailRead } from "react-icons/md";
 import { toast } from 'react-toastify';
+import { Fade } from 'react-awesome-reveal';
 
 
 
 export default function LeftSidebar() {
   return (
-    <Card>
+   
+      <Card>
       <CardSkeletonContainer>
         <Skeleton />
       </CardSkeletonContainer>
@@ -70,6 +72,7 @@ const Skeleton = () => {
 
   return (
     // displaying icons
+   
     <div className=' overflow-hidden h-full relative flex items-center justify-center'>
       <div className='flex flex-col flex-shrink-0 justify-center items-center gap-2 lg:gap-4 z-50'>
         <Container className='h-8 w-8 circle-5'>
@@ -143,7 +146,7 @@ export const Card = ({
   className?: string;
   children: React.ReactNode;
 }) => {
-  return (
+  return(
     <div
       className={cn('w-10 lg:w-12  group fixed top-28 lg:top-24', className)}
     >
@@ -163,6 +166,7 @@ export const CardSkeletonContainer = ({
   showGradient?: boolean;
 }) => {
   return (
+      <Fade direction="down" duration={1500} trigerOnce={true}>
     <div
       className={cn(
         'h-[200px] lg:h-[220px] rounded-full z-50',
@@ -172,6 +176,7 @@ export const CardSkeletonContainer = ({
     >
       {children}
     </div>
+    </Fade>
   );
 };
 

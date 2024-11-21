@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/universe.css'
 import Image from 'next/image';
+import footerImg from '../../public/footer.png';
 
 const Footer = () => {
 
@@ -26,7 +27,7 @@ const Footer = () => {
       </h4>
       <div>
         <Image
-          src='https://i.ibb.co.com/bbLxQwq/footer.png'
+          src={footerImg}
           alt='Footer Image'
           width='1800'
           height='400'

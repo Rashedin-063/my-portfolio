@@ -47,7 +47,7 @@ const RightSidebar = () => {
     // Start observer initialization
     retryObserverInitialization();
 
-    return () => observer?.disconnect(); // Cleanup observer on unmount
+    return () => observer?.disconnect();
   }, []);
 
   return (

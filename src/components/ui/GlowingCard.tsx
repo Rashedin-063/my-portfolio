@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import img from '../../../public/profile-sketch.png';
 
 interface GlowCardProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
@@ -38,11 +39,10 @@ export default function GlowingCard({
 
       <div className=' absolute top-0 hover:shadow-glow hover:brightness-150 rounded-full' >
         <Image
-          src='https://i.ibb.co.com/xh5d1T4/profile-sketch.png'
-          width='300'
-          height='300'
+          src={img}
           alt="Rashedin Islam's Profile Photo"
           priority
+          
           className='h-48 w-48 md:w-60 md:h-60 lg:h-[300px] lg:w-[300px] rounded-full object-cover p-2 hover:p-0 transition-all ease-in'
         />
       </div>

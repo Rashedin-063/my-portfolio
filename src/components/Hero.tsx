@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const words = [
   'Crafting Seamless User Experiences',
   'Designing Sleek Frontend Interfaces',
-  'Building Innovative Web Applications',
+  'Building Scalable Web Applications',
 ];
 
 const Hero = () => {
@@ -24,8 +24,8 @@ const Hero = () => {
       <div className='space-y-4 text-white-pearl text-center lg:text-start'>
         
           <div>
-            <h2 className='text-2xl md:text-3xl font-semibold flex gap-2 items-center justify-center lg:justify-start'>
-              <FaHandsClapping /> Hello, I am{' '}
+            <h2 className='text-xl md:text-2xl font-semibold flex gap-2 items-center justify-center lg:justify-start'>
+              <FaHandsClapping /> Hello there, I am{' '}
             </h2>
             <h1 className='font-bold text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-text mt-1'>
               {' '}
