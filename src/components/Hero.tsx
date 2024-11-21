@@ -1,15 +1,12 @@
-'use client';
+"use client"
 import React from 'react';
 import { FlipWords } from './ui/FlipWords';
 import { FaHandsClapping } from 'react-icons/fa6';
 import GlowingCard from './ui/GlowingCard';
-import { useDownload } from '@/hooks/useDownload';
-import ArrowButton from './ui/Btn';
-import { ArrowDownNarrowWide, FolderDown, ThumbsUp } from 'lucide-react';
-import Link from 'next/link';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Fade, Zoom } from 'react-awesome-reveal';
+import HeroBtn from './ui/HeroBtn'
 
 const words = [
   'Crafting Seamless User Experiences',
@@ -18,12 +15,11 @@ const words = [
 ];
 
 const Hero = () => {
-  const { handleClick, downloaded } = useDownload();
 
   return (
     <div
       id='hero'
-      className='h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 xl:gap-16 rounded-xl -mt-4 lg:mt-8 lg:ml-16 xl:ml-36'
+      className='h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 xl:gap-16 rounded-xl  lg:mt-8 lg:ml-16 xl:ml-36'
     >
       {/* Left Content */}
       <div className='space-y-4 text-white-pearl text-center lg:text-start'>
@@ -59,34 +55,7 @@ const Hero = () => {
         </Zoom>
 
         {/* Buttons */}
-        <Fade direction='up' delay={900} triggerOnce>
-          <div className='flex gap-2 md:gap-4 justify-center lg:justify-start pt-2'>
-            <Link href='#projects'>
-              <ArrowButton
-                text='Explore My Work'
-                textColor='#FBFBFB'
-                buttonOverlayColor='#FFD93D'
-                borderColor='#FFD93D'
-                icon={<ArrowDownNarrowWide color='white' />}
-              />
-            </Link>
-            <a href='/resume.pdf' download='Resume_Rashedin_Islam.pdf'></a>
-            <ArrowButton
-              handleClick={handleClick}
-              text={downloaded ? 'Downloaded 😊' : 'Download My Resume'}
-              textColor='#FBFBFB'
-              buttonOverlayColor='#5668DE'
-              borderColor='#5668DE'
-              icon={
-                downloaded ? (
-                  <ThumbsUp color='white' />
-                ) : (
-                  <FolderDown color='white' />
-                )
-              }
-            />
-          </div>
-        </Fade>
+    <HeroBtn/>
       </div>
 
       {/* Right Content - Profile Image */}
