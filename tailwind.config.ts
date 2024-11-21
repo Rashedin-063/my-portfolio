@@ -69,9 +69,9 @@ const config: Config = {
         spin: 'spin 3s linear infinite',
       },
     },
-  },
-  plugins: [addVariablesForColors],
-};
+    plugins: [addVariablesForColors],
+  }
+}
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 function addVariablesForColors({ addBase, theme }: any) {

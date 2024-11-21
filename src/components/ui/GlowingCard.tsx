@@ -36,7 +36,7 @@ export default function GlowingCard({
         />
       </div>
 
-      <div className=' absolute top-0 hover:shadow-glow hover:brightness-150 rounded-full'>
+      <div className=' absolute top-0 hover:shadow-glow hover:brightness-150 rounded-full' >
         <Image
           src='https://i.ibb.co.com/xh5d1T4/profile-sketch.png'
           width='300'
