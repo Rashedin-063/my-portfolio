@@ -9,12 +9,12 @@ import {
   SiMongodb,
   SiJavascript,
   SiTailwindcss,
-  SiRedux
+  SiRedux,
 } from 'react-icons/si';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
-const GridGlobe = dynamic(() => import('./GridGlobe'))
+const GridGlobe = dynamic(() => import('./GridGlobe'));
 
 export const BentoGrid = ({
   className,
@@ -73,8 +73,9 @@ export const BentoGridItem = ({
     },
     {
       text: 'Tailwind CSS',
-      icon: <SiTailwindcss className='text-blue-500 text-[19px] lg:text-[22px]'
-       />,
+      icon: (
+        <SiTailwindcss className='text-blue-500 text-[19px] lg:text-[22px]' />
+      ),
     },
     {
       text: 'Redux Toolkit',
@@ -108,7 +109,6 @@ export const BentoGridItem = ({
       ),
     },
   ];
-
 
   return (
     <div
@@ -159,7 +159,9 @@ export const BentoGridItem = ({
         <div
           className={cn(
             titleClassName,
-            `relative md:h-full hover: flex flex-col ${id === 5 ? '' : 'px-5 py-3 lg:px-10 lg:py-6'}`
+            `relative md:h-full hover: flex flex-col ${
+              id === 5 ? '' : 'px-5 py-3 lg:px-10 lg:py-6'
+            }`
           )}
         >
           {/* title */}
@@ -175,13 +177,12 @@ export const BentoGridItem = ({
 
           {/* second grid */}
 
-          {id === 2 && <GridGlobe />} 
-
+          {id === 2 && <GridGlobe />}
 
           {/* Tech stack list div */}
 
           {/* first grid  */}
-       {id === 1 && (
+          {id === 1 && (
             <div className='flex flex-col gap-1 lg:gap-5 w-fit mt-8'>
               {/* //  tech stack list */}
               <div className='grid grid-cols-3 gap-x-3 gap-y-5 lg:gap-8'>
@@ -202,10 +203,10 @@ export const BentoGridItem = ({
             <div>
               <iframe
                 src='https://drive.google.com/file/d/1g8dWYrawzY4NvAvzaOojSpkr6LPW6H0J/preview'
-              
                 allow='autoplay'
                 allowFullScreen
-                className="w-full h-[240px] lg:h-[340px]"
+                loading='lazy'
+                className='w-full h-[240px] lg:h-[340px]'
               ></iframe>
             </div>
           )}

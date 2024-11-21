@@ -18,7 +18,7 @@ const Hero = () => {
   return (
     <div
       id='hero'
-      className='h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 xl:gap-16 rounded-xl lg:mt-8 lg:ml-16 xl:ml-36'
+      className='h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 xl:gap-24 rounded-xl lg:pt-8 lg:pl-16 xl:pl-36'
     >
       {/* Left Content */}
       <div className='space-y-4 text-white-pearl text-center lg:text-start'>

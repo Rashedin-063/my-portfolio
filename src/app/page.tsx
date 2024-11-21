@@ -3,7 +3,6 @@ import dynamic from 'next/dynamic';
 
 import Footer from '@/components/Footer';
 import Navbar from '@/components/ui/Navbar';
-// import { LeftSidebar } from '@/components/LeftSideBar';
 import RightSidebar from '../components/RightSidebar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -17,10 +16,12 @@ const LeftSidebar = dynamic(() => import('@/components/LeftSideBar'))
 const Home: NextPage = () => {
   return (
     <div className='relative font-chakraPetch'>
+  
    <SplashScreen/>
+    
 
       {/* Navbar */}
-      <div className='absolute   z-10 top-0 w-full lg:w-fit lg:right-0'>
+      <div className='absolute   z-10 top-4 w-full lg:w-fit lg:right-0'>
         <Navbar />
       </div>
 

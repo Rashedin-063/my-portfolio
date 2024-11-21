@@ -7,10 +7,10 @@ import Link from 'next/link';
 const Navbar = () => {
 
   return (
-    <div className=' text-yellow-sunshine py-4 font-josefinSans'>
+    <div className=' text-yellow-sunshine font-josefinSans'>
     
         <Fade delay={500} cascade damping={0.3} triggerOnce={true}>
-          <ul className='flex justify-between lg:justify-end items-center text-sm md:text-base py-3 px-6  md:mx-32 lg:mx-8 xl:mx-16 lg:gap-8 xl:gap-10 rounded-xl  drop-shadow-2xl '>
+          <ul className='flex justify-between lg:justify-end items-center text-sm md:text-base py-3 px-6  md:mx-36 lg:mx-8 xl:mx-16 lg:gap-8 xl:gap-10 rounded-xl  drop-shadow-2xl '>
             {navItems.slice(1, 5).map(({ to, label }) => (
               <li key={to}>
                 <Link
