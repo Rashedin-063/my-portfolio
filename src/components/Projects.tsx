@@ -58,7 +58,7 @@ export default  function Projects() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { duration: 1 } }}
               exit={{ opacity: 0, transition: { duration: 0.05 } }}
-              className='flex absolute top-4 right-0 md:right-16 lg:right-[23%] xl:right-[32%] xxl:hidden items-center justify-center bg-white-pearl rounded-full h-8 w-8 hover:scale-110 transition-transform duration-100 hover:bg-yellow-dusk'
+              className='flex absolute top-4 lg:top-0 right-0 md:right-16 lg:right-[10%] xl:right-[14%] xxl:hidden items-center justify-center bg-white-pearl rounded-full h-8 w-8 lg:h-10 lg:w-10 hover:scale-110 transition-transform duration-100 hover:bg-yellow-dusk'
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -66,7 +66,7 @@ export default  function Projects() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className='w-full max-w-[550px] lg:max-w-[800px] h-full max-h-[92%] flex flex-col  sm:rounded-3xl overflow-hidden text-white-pearl p-4 mx-8 lg:mx-0 rounded-3xl bg-sky-900 border-indigo-600'
+              className='w-full max-w-[550px] lg:max-w-[800px] xl:max-w-[1080px] h-full max-h-[92%] lg:max-h-full flex flex-col  sm:rounded-3xl overflow-hidden text-white-pearl p-4 mx-8 lg:mx-0 rounded-3xl bg-sky-900 border-indigo-600'
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -113,7 +113,7 @@ export default  function Projects() {
                           exit={{ opacity: 0 }}
                           href={active.github}
                           target='_blank'
-                          className='  font-josefinSans italic text-sm text-yellow-dusk'
+                          className='  font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine'
                         >
                           {'Github ink'}
                         </motion.a>
@@ -127,7 +127,7 @@ export default  function Projects() {
                             exit={{ opacity: 0 }}
                             href={active.clientSide}
                             target='_blank'
-                            className='  font-josefinSans italic  text-sm text-yellow-dusk hover:border-b transition-transform duration-300'
+                            className='  font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine'
                           >
                             {'Client Side'}
                           </motion.a>
@@ -138,7 +138,7 @@ export default  function Projects() {
                             exit={{ opacity: 0 }}
                             href={active.serverSide}
                             target='_blank'
-                            className='text-white  font-josefinSans italic text-sm'
+                            className='font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine'
                           >
                             {'Server Side'}
                           </motion.a>
@@ -153,7 +153,7 @@ export default  function Projects() {
                         exit={{ opacity: 0 }}
                         href={active.link}
                         target='_blank'
-                        className=' text-white font-josefinSans italic text-sm'
+                        className=' font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine'
                       >
                         {'Live Link'}
                       </motion.a>
@@ -167,7 +167,7 @@ export default  function Projects() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className='text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] -mt-4'
+                    className='text-neutral-600 text-xs md:text-sm lg:text-base h-48 lg:h-72 pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] -mt-4'
                   >
                     {typeof active.content === 'function'
                       ? active.content()

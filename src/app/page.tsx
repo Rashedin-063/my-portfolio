@@ -6,17 +6,18 @@ import Navbar from '@/components/ui/Navbar';
 import RightSidebar from '../components/RightSidebar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Projects from '@/components/Projects';
+// import Projects from '@/components/Projects';
 import Blogs from '@/components/Blogs';
 import Contact from '@/components/Contact';
-import SplashScreen from '@/components/SplashScreen'
+// import SplashScreen from '@/components/SplashScreen'
 
 const LeftSidebar = dynamic(() => import('@/components/LeftSideBar'))
+const Projects = dynamic(() => import('@/components/Projects'))
 
 const Home: NextPage = () => {
   return (
     <div className='relative font-chakraPetch'>
-      <SplashScreen />
+      {/* <SplashScreen /> */}
 
       {/* Navbar */}
       <div className='absolute   z-10 top-4 w-full lg:w-fit lg:right-0'>
