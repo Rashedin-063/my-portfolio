@@ -16,9 +16,7 @@ const LeftSidebar = dynamic(() => import('@/components/LeftSideBar'))
 const Home: NextPage = () => {
   return (
     <div className='relative font-chakraPetch'>
-  
-   <SplashScreen/>
-    
+      <SplashScreen />
 
       {/* Navbar */}
       <div className='absolute   z-10 top-4 w-full lg:w-fit lg:right-0'>
@@ -40,7 +38,7 @@ const Home: NextPage = () => {
         <Hero />
         <div>
           <About />
-          <Projects />
+          <Projects/>
           <Blogs />
           <Contact />
         </div>

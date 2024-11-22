@@ -202,9 +202,9 @@ export const BentoGridItem = ({
           {id === 5 && (
             <div>
               <iframe
-                src='https://drive.google.com/file/d/1g8dWYrawzY4NvAvzaOojSpkr6LPW6H0J/preview'
+                src='https://www.youtube.com/embed/3NB7zLx4OzI'
                 allow='autoplay'
-                allowFullScreen
+                allowfullScreen="true"
                 loading='lazy'
                 className='w-full h-[240px] lg:h-[340px]'
               ></iframe>

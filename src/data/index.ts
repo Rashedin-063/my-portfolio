@@ -80,6 +80,14 @@ export const projects = [
     gihub: '',
     clientSide: 'https://github.com/Rashedin-063/techInsights-Project-Client',
     serverSide: 'https://github.com/Rashedin-063/techInsights-Project-Server',
+     keyFeatures: [
+    'Engineered a dynamic news website where users can browse tech articles and purchase premium memberships via the Stripe Payment Gateway.',
+    'Implemented user authentication with JWT for secure access.',
+    'Integrated MongoDB aggregate pipelines for efficient data fetching, pagination, search, and sorting functionalities.',
+    'Incorporated TanStack Query for optimized data handling.',
+    'Designed an admin dashboard for streamlined content management.',
+    'Created an engaging UI using Chakra-UI and Daisy UI.'
+  ],
   },
   {
     id: 2,
@@ -91,6 +99,7 @@ export const projects = [
     gihub: '',
     clientSide: 'https://github.com/Rashedin-063/ByteBlog-Client-Side',
     serverSide: 'https://github.com/Rashedin-063/ByteBlog-Server-Side',
+    keFeatures: []
   },
   {
     id: 3,

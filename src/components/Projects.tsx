@@ -5,17 +5,18 @@ import Link from 'next/link';
 import React, { useEffect, useId, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useOutsideClick } from '@/hooks/use-outside-click';
-import { projects } from '@/data';
+// import { projects } from '@/data';
+import { projects } from '@/data/projectData';
 import { FaLaptopCode } from 'react-icons/fa6';
 
-export default function Projects() {
+export default  function Projects() {
   const [active, setActive] = useState<
     (typeof projects)[number] | boolean | null
   >(null);
   const id = useId();
   const ref = useRef<HTMLDivElement>(null);
 
-   useEffect(() => {
+  useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === 'Escape') {
         setActive(false);
@@ -35,7 +36,7 @@ export default function Projects() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <div id="projects" className="my-16 lg:my-24">
+    <div id='projects' className='my-16 lg:my-24'>
       <AnimatePresence>
         {active && typeof active === 'object' && (
           <motion.div
@@ -55,9 +56,9 @@ export default function Projects() {
               key={`button-${active.title}-${id}`}
               layout
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              animate={{ opacity: 1, transition: { duration: 1 } }}
               exit={{ opacity: 0, transition: { duration: 0.05 } }}
-              className='flex absolute top-6 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6'
+              className='flex absolute top-4 right-0 md:right-16 lg:right-[23%] xl:right-[32%] xxl:hidden items-center justify-center bg-white-pearl rounded-full h-8 w-8 hover:scale-110 transition-transform duration-100 hover:bg-yellow-dusk'
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -65,120 +66,112 @@ export default function Projects() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className='w-full max-w-[550px] h-fit max-h-[90%] flex flex-col  sm:rounded-3xl overflow-hidden text-white-pearl p-4 mx-8 lg:mx-0 rounded-3xl bg-sky-900 border-indigo-600'
+              className='w-full max-w-[550px] lg:max-w-[800px] h-full max-h-[92%] flex flex-col  sm:rounded-3xl overflow-hidden text-white-pearl p-4 mx-8 lg:mx-0 rounded-3xl bg-sky-900 border-indigo-600'
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
                   priority
-                  width={200}
-                  height={200}
+                  width={800}
+                  height={400}
+                  quality={90}
                   src={active.img}
                   alt={active.title}
-                  className='w-[90%] mx-auto h-72 rounded-3xl object-cover object-top p-4'
+                  className='w-full lg:w-3/4 mx-auto h-72 rounded-[5%] object-cover object-top py-4 px-8 hover:scale-105 transition-transform ease-in duration-300'
                 />
               </motion.div>
-               <div className='flex items-center'>
-                <span className="text-xl font-semobold text-white-pearl">  Technologies:</span>
+              <div className='flex items-center px-[15px] gap-2 mt-4'>
+                <span className='text-xl text-white-pearl mr-4'>
+                  {' '}
+                  Technologies:
+                </span>
                 {active.iconLists.map((icon, index) => (
-                    <div
-                      key={index}
-                      className='border border-indigo-600 rounded-full lg:w-9 lg:h-9 w-8 h-8 flex justify-center items-center bg-deep-ocean'
-                      style={{ transform: `translateX(-${5 * index + 2}px)` }}
-                    >
-                      <img src={icon} alt='icon' className='p-2' />
-                    </div>
-                  ))}
-                </div>
+                  <div
+                    key={index}
+                    className='border border-indigo-600 rounded-full lg:w-9 lg:h-9 w-8 h-8 flex justify-center items-center bg-deep-ocean'
+                    style={{ transform: `translateX(-${5 * index + 2}px)` }}
+                  >
+                    <img src={icon} alt='icon' className='p-2' />
+                  </div>
+                ))}
+              </div>
               <div>
                 <div className='flex flex-col justify-start items-between p-4 '>
-                  <div className="flex justify-between items-center mb-4">
+                  <div className='flex justify-between items-center'>
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className='font-medium text-yellow-sunshine text-xl'
+                      className='text-yellow-sunshine text-3xl font-semibold'
                     >
                       {active.title}
                     </motion.h3>
                     {/* showing github and live link */}
-              <div className="flex items-center justify-end gap-1">
-                  {active.github ?  // if github link exists
-                 (<motion.a
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    href={active.github}
-                    target='_blank'
-                    className='px-3 py-1 text-xs rounded-3xl border-b hover:border-yellow-sunshine text-white-pearl hover:text-white  font-josefinSans italic font-bold'
-                  >
-                    {'Github ink'}
-                        </motion.a>)
-                        :  // otherwise 
-                  (<div className="flex gap-1 items-center"> 
-                  <motion.a
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    href={active.clientSide}
-                    target='_blank'
-                    className='px-3 py-1 text-xs rounded-3xl border-b hover:border-yellow-sunshine text-white-pearl hover:text-white  font-josefinSans italic font-bold'
-                  >
-                    {'Client Side'}
-                  </motion.a>
-                  <motion.a
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    href={active.serverSide}
-                    target='_blank'
-                    className='px-3 py-1 text-xs rounded-3xl border-b hover:border-yellow-sunshine text-white-pearl hover:text-white  font-josefinSans italic font-bold'
-                  >
-                    {'Server Side'}
-                  </motion.a>
-                  </div>)
-                  }
+                    <div className='flex items-center justify-end gap-4'>
+                      {active.github ? ( // if github link exists
+                        <motion.a
+                          layout
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          href={active.github}
+                          target='_blank'
+                          className='  font-josefinSans italic text-sm text-yellow-dusk'
+                        >
+                          {'Github ink'}
+                        </motion.a>
+                      ) : (
+                        // otherwise
+                        <div className='flex gap-4 items-center'>
+                          <motion.a
+                            layout
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            href={active.clientSide}
+                            target='_blank'
+                            className='  font-josefinSans italic  text-sm text-yellow-dusk hover:border-b transition-transform duration-300'
+                          >
+                            {'Client Side'}
+                          </motion.a>
+                          <motion.a
+                            layout
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            href={active.serverSide}
+                            target='_blank'
+                            className='text-white  font-josefinSans italic text-sm'
+                          >
+                            {'Server Side'}
+                          </motion.a>
+                        </div>
+                      )}
 
-                  
-                 {/* live link */}
-                   <motion.a
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    href={active.link}
-                    target='_blank'
-                    className='px-3 py-1 text-xs rounded-3xl border-b hover:border-yellow-sunshine text-white-pearl hover:text-white  font-josefinSans italic font-bold'
-                  >
-                    {'Live Link'}
-                  </motion.a>
-              </div>
-
+                      {/* live link */}
+                      <motion.a
+                        layout
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        href={active.link}
+                        target='_blank'
+                        className=' text-white font-josefinSans italic text-sm'
+                      >
+                        {'Live Link'}
+                      </motion.a>
+                    </div>
                   </div>
-                 <div>
-                    <motion.p
-                      layoutId={`description-${active.des}-${id}`}
-                      className='ttext-white text-base'
-                    >
-                      {active.des}
-                    </motion.p>
-                 </div>
                 </div>
-                <div>
-
-                  
-                </div>
+                <div></div>
                 <div className='pt-4 relative px-4'>
                   <motion.div
                     layout
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className='text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]'
+                    className='text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] -mt-4'
                   >
-                    {/* {typeof active.content === 'function'
+                    {typeof active.content === 'function'
                       ? active.content()
-                      : active.content} */}
+                      : active.content}
                   </motion.div>
                 </div>
               </div>
@@ -188,22 +181,24 @@ export default function Projects() {
       </AnimatePresence>
 
       {/* title */}
-<h1 className="text-4xl lg:text-5xl font-bold text-yellow-sunshine text-center flex justify-center items-center gap-4 my-4">
-   <FaLaptopCode/>Glimpse of My Coding Lab <FaLaptopCode/>
+      <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold text-yellow-sunshine text-center flex justify-center items-center gap-4 my-4'>
+        <FaLaptopCode />
+        Glimpse of My Coding Lab <FaLaptopCode />
       </h1>
 
       {/* project cards */}
-      
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 mx-8 md:mx-0'>
 
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 mx-8 md:mx-0'>
         {projects.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
             className=''
           >
-            <div className='flex flex-col items-center justify-center p-4 gap-12 mt-10 group border border-indigo-800 rounded-3xl bg-custom-gradient hover:border-indigo-600  hover:border-dotted
-             group '>
+            <div
+              className='flex flex-col items-center justify-center p-4 gap-12 mt-10 group border border-indigo-800 rounded-3xl bg-custom-gradient hover:border-indigo-600  hover:border-dotted
+             group '
+            >
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <div className='relative '>
                   <img
@@ -233,27 +228,23 @@ export default function Projects() {
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.des}-${id}`}
-                  className='text-[#fff] font-regular text-sm font-sans'
+                  className='text-[#fff] font-regular font-josefinSans -tracking-wider'
                 >
                   {card.des}
                 </motion.p>
               </div>
-             <div className="flex justify-between -mt-4 mb-4 w-full ">
-               <button
-                onClick={() => setActive(card)}
-                className=' px-4 py-[6px] text-xs rounded-full bg-blue-500 text-white hover:bg-blue-600 text-left'
-              >
-               View Details
-              </button>
-            <Link href={card.link}
-            target="_blank"> 
-               <button
-            
-                className=' px-4 py-[6px] text-xs rounded-full bg-blue-500 text-white hover:bg-blue-600 text-left'
-              >
-               Live Link
-              </button>
-            </Link>
+              <div className='flex justify-between -mt-4 mb-4 w-full '>
+                <button
+                  onClick={() => setActive(card)}
+                  className=' px-4 py-[6px] text-xs rounded-full bg-blue-500 text-white hover:bg-blue-600 text-left'
+                >
+                  View Details
+                </button>
+                <Link href={card.link} target='_blank'>
+                  <button className=' px-4 py-[6px] text-xs rounded-full bg-blue-500 text-white hover:bg-blue-600 text-left'>
+                    Live Link
+                  </button>
+                </Link>
               </div>
             </div>
           </motion.div>
