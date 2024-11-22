@@ -57,7 +57,7 @@ export default function Projects() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.05 } }}
-              className='flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6'
+              className='flex absolute top-6 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6'
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -77,6 +77,18 @@ export default function Projects() {
                   className='w-[90%] mx-auto h-72 rounded-3xl object-cover object-top p-4'
                 />
               </motion.div>
+               <div className='flex items-center'>
+                <span className="text-xl font-semobold text-white-pearl">  Technologies:</span>
+                {active.iconLists.map((icon, index) => (
+                    <div
+                      key={index}
+                      className='border border-indigo-600 rounded-full lg:w-9 lg:h-9 w-8 h-8 flex justify-center items-center bg-deep-ocean'
+                      style={{ transform: `translateX(-${5 * index + 2}px)` }}
+                    >
+                      <img src={icon} alt='icon' className='p-2' />
+                    </div>
+                  ))}
+                </div>
               <div>
                 <div className='flex flex-col justify-start items-between p-4 '>
                   <div className="flex justify-between items-center mb-4">
@@ -87,8 +99,8 @@ export default function Projects() {
                       {active.title}
                     </motion.h3>
                     {/* showing github and live link */}
-              <div>
-                  {active.github ?
+              <div className="flex items-center justify-end gap-1">
+                  {active.github ?  // if github link exists
                  (<motion.a
                     layout
                     initial={{ opacity: 0 }}
@@ -99,8 +111,9 @@ export default function Projects() {
                     className='px-3 py-1 text-xs rounded-3xl border-b hover:border-yellow-sunshine text-white-pearl hover:text-white  font-josefinSans italic font-bold'
                   >
                     {'Github ink'}
-                  </motion.a>) :
-                  (<div> 
+                        </motion.a>)
+                        :  // otherwise 
+                  (<div className="flex gap-1 items-center"> 
                   <motion.a
                     layout
                     initial={{ opacity: 0 }}
@@ -174,10 +187,13 @@ export default function Projects() {
         ) : null}
       </AnimatePresence>
 
-<h1 className="text-3xl lg:text-4xl text-yellow-sunshine text-center flex justify-center items-center gap-4 font-semibold">
-   <FaLaptopCode/>     Glimpse of My Coding Lab <FaLaptopCode/>
+      {/* title */}
+<h1 className="text-4xl lg:text-5xl font-bold text-yellow-sunshine text-center flex justify-center items-center gap-4 my-4">
+   <FaLaptopCode/>Glimpse of My Coding Lab <FaLaptopCode/>
       </h1>
 
+      {/* project cards */}
+      
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 mx-8 md:mx-0'>
 
         {projects.map((card) => (
@@ -186,21 +202,21 @@ export default function Projects() {
             key={card.title}
             className=''
           >
-            <div className='flex flex-col items-center justify-center p-4 gap-12 mt-10 group border border-indigo-800 rounded-3xl bg-custom-gradient hover:border-indigo-600 hover:border-2 hover:border-dotted
-            hover:scale-[0.99] transition-transform duration-300 '>
+            <div className='flex flex-col items-center justify-center p-4 gap-12 mt-10 group border border-indigo-800 rounded-3xl bg-custom-gradient hover:border-indigo-600  hover:border-dotted
+             group '>
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <div className='relative '>
                   <img
                     src={card.img}
                     alt='cover'
-                    className='z-10h-40 p-4 rounded-3xl'
+                    className='z-10h-40 p-4 rounded-3xl group-hover:scale-105 transform-transition duration-300'
                   />
                 </div>
                 <div className='flex items-center'>
                   {card.iconLists.map((icon, index) => (
                     <div
                       key={index}
-                      className='border border-indigo-600 rounded-full lg:w-9 lg:h-9 w-8 h-8 flex justify-center items-center bg-deep-ocean'
+                      className='border border-indigo-600 rounded-full lg:w-9 lg:h-9 w-8 h-8 flex justify-center items-center bg-deep-ocean mt-2'
                       style={{ transform: `translateX(-${5 * index + 2}px)` }}
                     >
                       <img src={icon} alt='icon' className='p-2' />
@@ -211,7 +227,7 @@ export default function Projects() {
               <div className='flex justify-center items-start flex-col -mt-8 space-y-2'>
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className='font-semibold text-lg text-white-pearl'
+                  className='font-semibold text-lg text-yellow-sunshine'
                 >
                   {card.title}
                 </motion.h3>
@@ -222,7 +238,7 @@ export default function Projects() {
                   {card.des}
                 </motion.p>
               </div>
-             <div className="flex justify-between -mt-8 mb-4 w-full ">
+             <div className="flex justify-between -mt-4 mb-4 w-full ">
                <button
                 onClick={() => setActive(card)}
                 className=' px-4 py-[6px] text-xs rounded-full bg-blue-500 text-white hover:bg-blue-600 text-left'

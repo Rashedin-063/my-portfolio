@@ -21,7 +21,7 @@ const SplashScreen: React.FC = () => {
         hidden ? 'translate-y-[-100%]' : 'translate-y-0'
       }`}
     >
-      <div className='flex flex-col items-center justify-center w-full h-full bg-custom-gradient text-white font-josefinSans tracking-wider -pt-8'>
+      <div className='flex flex-col items-center justify-center w-full h-full bg-custom-gradient text-white font-josefinSans tracking-wider -pt-16'>
         <div className='md:text-lg lg:text-xl mb-4 text-center'>
           <h3>&quot;Creativity is intelligence having fun.&quot;</h3>
         </div>

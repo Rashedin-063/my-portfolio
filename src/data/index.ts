@@ -99,7 +99,7 @@ export const projects = [
     img: 'https://i.ibb.co.com/61FJ0Xc/craft-Canvas.png',
     iconLists: ['/re.svg', '/tail.svg', '/ts.svg', '/three.svg', '/c.svg'],
     link: 'https://a10-assignment-project.web.app',
-    gihub: '',
+    github: '',
     clientSide: 'https://github.com/Rashedin-063/A10-Craft-Canvas-Client',
     serverSide: 'https://github.com/Rashedin-063/A10-Craft-Canvas-Server',
   },
