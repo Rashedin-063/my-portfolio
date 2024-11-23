@@ -9,7 +9,7 @@ import { useOutsideClick } from '@/hooks/use-outside-click';
 import { projects } from '@/data/projectData';
 import { FaLaptopCode } from 'react-icons/fa6';
 
-export default  function Projects() {
+export default function Projects() {
   const [active, setActive] = useState<
     (typeof projects)[number] | boolean | null
   >(null);
@@ -17,34 +17,32 @@ export default  function Projects() {
   const ref = useRef<HTMLDivElement>(null);
 
   // Handle active state changes
- useEffect(() => {
-   function onKeyDown(event: KeyboardEvent) {
-     if (event.key === 'Escape') {
-       setActive(false);
-     }
-   }
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setActive(false);
+      }
+    }
 
-   // Disable or enable scrolling based on the 'active' state
-   if (active) {
-     document.body.style.overflow = 'hidden'; // Disable scrolling when active
-   } else {
-     document.body.style.overflow = 'auto'; // Enable scrolling when inactive
-   }
+    // Disable or enable scrolling based on the 'active' state
+    if (active) {
+      document.body.style.overflow = 'hidden'; // Disable scrolling when active
+    } else {
+      document.body.style.overflow = 'auto'; // Enable scrolling when inactive
+    }
 
-   window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('keydown', onKeyDown);
 
-   // Clean up event listeners
-   return () => {
-     window.removeEventListener('keydown', onKeyDown);
-   };
- }, [active]);
-
+    // Clean up event listeners
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [active]);
 
   // Handle clicks outside the ref
   useOutsideClick(ref, () => {
     if (active) setActive(null);
   });
-
 
   return (
     <div id='projects' className='my-16 lg:my-24'>
@@ -93,76 +91,76 @@ export default  function Projects() {
               </motion.div>
               <div className='flex justify-between items-center px-[15px] gap-2 mt-4'>
                 {/* technologies */}
-               <div className="flex gap-2">
-                 <span className='text-xl text-yellow-sunshine mr-4'>
-                  {' '}
-                  Technologies:
-                </span>
-                {active.iconLists.map((icon, index) => (
-                  <div
-                    key={index}
-                    className='border border-indigo-600 rounded-full lg:w-9 lg:h-9 w-8 h-8 flex justify-center items-center bg-deep-ocean'
-                    style={{ transform: `translateX(-${5 * index + 2}px)` }}
-                  >
-                    <img src={icon} alt='icon' className='p-2' />
-                  </div>
-                ))}
-               </div>
+                <div className='flex gap-2'>
+                  <span className='text-xl text-yellow-sunshine mr-4'>
+                    {' '}
+                    Technologies:
+                  </span>
+                  {active.iconLists.map((icon, index) => (
+                    <div
+                      key={index}
+                      className='border border-indigo-600 rounded-full lg:w-9 lg:h-9 w-8 h-8 flex justify-center items-center bg-deep-ocean'
+                      style={{ transform: `translateX(-${5 * index + 2}px)` }}
+                    >
+                      <img src={icon} alt='icon' className='p-2' />
+                    </div>
+                  ))}
+                </div>
                 {/* showing github and live link */}
-                    <div className='flex items-center justify-end gap-6 mr-6 mt-2'>
-                      {active.github ? ( // if github link exists
-                        <motion.a
-                          layout
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          href={active.github}
-                          target='_blank'
-                          className='  font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine'
-                        >
-                          {'Github ink'}
-                        </motion.a>
-                      ) : (
-                        // otherwise
-                        <div className='flex gap-4 items-center'>
-                          <motion.a
-                            layout
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            href={active.clientSide}
-                            target='_blank'
-                            className='  font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine'
-                          >
-                            {'Client Side'}
-                          </motion.a>
-                          <motion.a
-                            layout
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            href={active.serverSide}
-                            target='_blank'
-                            className='font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine'
-                          >
-                            {'Server Side'}
-                          </motion.a>
-                        </div>
-                      )}
-
-                      {/* live link */}
+                <div className='flex items-center justify-end gap-8 mr-6 mt-2'>
+                  {active.github ? ( // if github link exists
+                    <motion.a
+                      layout
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      href={active.github}
+                      target='_blank'
+                      className='  font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine'
+                    >
+                      {'Github ink'}
+                    </motion.a>
+                  ) : (
+                    // otherwise
+                    <div className='flex gap-4 items-center'>
                       <motion.a
                         layout
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        href={active.link}
+                        href={active.clientSide}
                         target='_blank'
-                        className=' font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine'
+                        className='  font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine'
                       >
-                        {'Live Link'}
+                        {'Client Side'}
+                      </motion.a>
+                      <motion.a
+                        layout
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        href={active.serverSide}
+                        target='_blank'
+                        className='font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine'
+                      >
+                        {'Server Side'}
                       </motion.a>
                     </div>
+                  )}
+
+                  {/* live link */}
+                  <motion.a
+                    layout
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    href={active.link}
+                    target='_blank'
+                    className=' font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine'
+                  >
+                    {'Live Link'}
+                  </motion.a>
+                </div>
               </div>
               <div>
                 <div className='flex flex-col justify-start items-between p-4 text-base'>
@@ -173,10 +171,16 @@ export default  function Projects() {
                     >
                       {active.title}
                     </motion.h3>
-          <div className="flex items-center gap-8 mr-6"> 
-            <p><span className="font-semibold">Role:</span> {active.role}</p> 
-            <p><span className="font-semibold"> Duration:</span> {active.duration}</p>      
-         </div>       
+                    <div className='flex items-center gap-8 mr-6'>
+                      <p>
+                        <span className='font-semibold'>Role:</span>{' '}
+                       <span className="font-josefinSans"> {active.role}</span>
+                      </p>
+                      <p>
+                        <span className='font-semibold'> Duration:</span>{' '}
+                        <span className="font-josefinSans"> {active.duration}</span>    
+                      </p>
+                    </div>
                   </div>
                 </div>
                 <div></div>
@@ -186,13 +190,11 @@ export default  function Projects() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className='text-neutral-600 text-xs md:text-sm lg:text-base h-48 lg:h-72 pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400  -mt-4 font-josefinSans'
+                    className=' h-48 lg:h-72 pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400  -mt-4 font-josefinSans'
                   >
                     {typeof active.content === 'function'
                       ? active.content()
                       : active.content}
-
-                       
                   </motion.div>
                 </div>
               </div>
@@ -256,16 +258,13 @@ export default  function Projects() {
               </div>
               <div className='flex justify-between -mt-4 mb-4 w-full '>
                 <button
-                  onClick={() => 
-                    setActive(card)
-                  
-                  }
-                  className=' px-4 py-[6px] text-xs rounded-full bg-blue-500 text-white hover:bg-blue-600 text-left'
+                  onClick={() => setActive(card)}
+                  className=' px-4 py-[6px] text-sm rounded-full bg-blue-500 text-white hover:bg-blue-600 text-left'
                 >
                   View Details
                 </button>
                 <Link href={card.link} target='_blank'>
-                  <button className=' px-4 py-[6px] text-xs rounded-full bg-blue-500 text-white hover:bg-blue-600 text-left'>
+                  <button className=' px-4 py-[6px] text-sm rounded-full bg-blue-500 text-white hover:bg-blue-600 text-left'>
                     Live Link
                   </button>
                 </Link>
