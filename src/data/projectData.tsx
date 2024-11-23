@@ -17,12 +17,12 @@ export const projects = [
     // content
     content: () => {
       return (
-        <div className='text-white text-base font-josefinSans'>
+        <div className='text-white text-base '>
           <div>
             <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
               Key Features:{' '}
             </p>
-            <ul className='mt-2 space-y-2 list-disc font-josefinSans'>
+            <ul className='mt-2 space-y-2 '>
               <li>
                 ⇒ Engineered a dynamic news website where users can browse tech
                 articles and purchase premium memberships via the Stripe Payment
@@ -55,44 +55,46 @@ export const projects = [
             <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
               Challenge Faced:{' '}
               <span className='text-white font-regular text-base'>
-                Efficiently implementing complex queries for search and
-                pagination.
+                While implementing advanced data queries for using MongoDB, I
+                encountered difficulties with the aggregate pipeline.
+                Configuring the stages to filter, group, and transform data as
+                required proved complex, especially when managing multiple
+                nested fields.
               </span>
             </p>
             <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
-              Steps to Solve :{' '}
+              Solution Applied :{' '}
               <span className='text-white font-regular text-base'>
-                Utilized MongoDB’s aggregate pipeline to optimize these
-                processes with the help of MongoDB&apos;s official documents and
-                chatgpt
+                To overcome this challenge, I referred to the official MongoDB
+                documentation, which provided detailed examples and explanations
+                of the aggregate pipeline stages. Additionally, I used ChatGPT
+                to clarify specific use cases and understand how to chain stages
+                effectively. Combining these resources helped me design a robust
+                pipeline that met the project requirements and optimized query
+                performance.
               </span>
             </p>
             <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
               Challenge Faced:{' '}
               <span className='text-white font-regular text-base'>
-                Ensuring secure and seamless payment integration.
+                Integrating Stripe payment functionality into the website was
+                challenging due to the complexity of securely handling
+                transactions and ensuring a seamless user experience.
+                Configuring the API keys, setting up payment intents, and
+                managing error handling required careful attention to detail.
               </span>
             </p>
             <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
               Steps to Solve :{' '}
               <span className='text-white font-regular text-base'>
-                Integrated Stripe Payment Gateway with error-handling mechanisms
-                with the help of youtube tutorial
+                I tackled this issue by thoroughly studying Stripe&apos;s official
+                documentation, which provided step-by-step guidance on
+                integration. I also utilized couple of youtube tutorials to address specific
+                implementation queries and debug errors during testing. This
+                approach enabled me to successfully integrate a secure and
+                efficient payment system into the website.
               </span>
             </p>
-          </div>
-          {/* next steps */}
-          <div className='mt-4'>
-            <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
-              Next Steps:{' '}
-            </p>
-            <ul className='mt-2 space-y-2 list-disc font-josefinSans'>
-              <li>Adding user analytics to track popular articles.</li>
-              <li>
-                Incorporating multilingual support for a broader audience.
-              </li>
-              <li>Refactoring the backend code for scalability.</li>
-            </ul>
           </div>
         </div>
       );
@@ -111,44 +113,66 @@ export const projects = [
     gihub: '',
     clientSide: 'https://github.com/Rashedin-063/ByteBlog-Client-Side',
     serverSide: 'https://github.com/Rashedin-063/ByteBlog-Server-Side',
-    duration: '2 months',
+    duration: '1.5 months',
     role: 'Full-Stack Developer',
-    nextSteps: [
-      'Adding user analytics to track popular articles.',
-      'Incorporating multilingual support for a broader audience.',
-      'Refactoring the backend code for scalability.',
-    ],
     content: () => {
       return (
         <div className='text-white text-base'>
-          <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
-            Key Features:{' '}
-          </p>
-          <ul className='mt-2 space-y-2 list-disc font-josefinSans'>
-            <li>
-              ⇒ The blogging platform was engineered to allow users to register
-              and create, edit, and delete their own blogs, ensuring a complete
-              CRUD functionality.integrity.
-            </li>
-            <li>
-              ⇒ Sign-up and login are authenticated with Firebase, establishing
-              secure user access and data
-            </li>
-            <li>
-              ⇒ Architected with JWT for user authentication, the platform
-              supports seamless content management.
-            </li>
+          {/* key features */}
+          <div>
+            <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
+              Key Features:{' '}
+            </p>
+            <ul className='mt-2 space-y-2 list-disc font-josefinSans'>
+              <li>
+                ⇒ The blogging platform was engineered to allow users to
+                register and create, edit, and delete their own blogs, ensuring
+                a complete CRUD functionality.integrity.
+              </li>
+              <li>
+                ⇒ Sign-up and login are authenticated with Firebase,
+                establishing secure user access and data
+              </li>
+              <li>
+                ⇒ Architected with JWT for user authentication, the platform
+                supports seamless content management.
+              </li>
 
-            <li>
-              ⇒ Designed and tested for optimal performance, featuring React
-              Query for efficient data fetching.
-            </li>
-            <li>
-              ⇒ Created a visually appealing UX/UI with animations powered by
-              Swiper Slider, AOS, and React Awesome Reveal for an engaging user
-              experience.
-            </li>
-          </ul>
+              <li>
+                ⇒ Designed and tested for optimal performance, featuring React
+                Query for efficient data fetching.
+              </li>
+              <li>
+                ⇒ Created a visually appealing UX/UI with animations powered by
+                Swiper Slider, AOS, and React Awesome Reveal for an engaging
+                user experience.
+              </li>
+            </ul>
+          </div>
+          {/* challenges */}
+          <div className='my-4 space-y-2'>
+            <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
+              Challenge Faced:{' '}
+              <span className='text-white font-regular text-base'>
+                While implementing JWT authentication, I encountered an issue
+                caused by API race conditions. This resulted in inconsistent
+                behavior during token generation and validation, disrupting the
+                authentication process and user experience.
+              </span>
+            </p>
+            <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
+              Solution Applied :{' '}
+              <span className='text-white font-regular text-base'>
+                After trying various approaches without success, I revisited a
+                video tutorial from my complete web development course that specifically addressed
+                handling race conditions in JWT authentication. The tutorial
+                provided clear, actionable steps to resolve the issue by
+                introducing better request handling and token refresh
+                mechanisms. This ultimately ensured secure and reliable
+                authentication for the application.
+              </span>
+            </p>
+          </div>
         </div>
       );
     },
@@ -176,7 +200,9 @@ export const projects = [
     content: () => {
       return (
         <div className='text-white text-base'>
-          <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
+          {/* key features */}
+        <div>
+            <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
             Key Features:{' '}
           </p>
           <ul className='mt-2 space-y-2 font-josefinSans'>
@@ -205,6 +231,32 @@ export const projects = [
             </li>
           </ul>
         </div>
+{/* challenges */}
+             <div className='my-4 space-y-2'>
+            <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
+              Challenge Faced:{' '}
+              <span className='text-white font-regular text-base'>
+                Implementing local storage functionality to save user
+                preferences and retrieving them efficiently was a significant
+                challenge. Initially, there were issues with data persistence
+                and ensuring the retrieved data matched the expected structure
+                for smooth user experience.
+              </span>
+            </p>
+            <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
+              Solution Applied :{' '}
+              <span className='text-white font-regular text-base'>
+                After researching and troubleshooting, I referred to solutions
+                on Stack Overflow, which provided clear guidance on correctly
+                using localStorage APIs. I learned how to properly store data in
+                a structured format (e.g., JSON), retrieve it, and handle edge
+                cases like empty or invalid data. This solution streamlined the
+                process and ensured reliable data storage and retrieval for user
+                preferences.
+              </span>
+            </p>
+          </div>
+        </div>
       );
     },
   },
@@ -213,7 +265,7 @@ export const projects = [
   {
     id: 4,
     title: 'Relux.com',
-    des: 'Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..',
+    des: 'Relux.com is a beautifully designed real estate platform dedicated to luxury properties. Whether you are looking for a penthouse, a beachfront villa, a private island, or a mansion, this website offers a seamless way to explore and find your dream property. Users can browse a wide range of listings, see their preferred type of luxury homes, and even get access to special offers.',
     img: 'https://i.ibb.co.com/2jB6SYv/reluxCom.png',
     iconLists: ['/re.svg', '/tail.svg', '/js.png', '/swiper.svg', '/firebase.png'],
     link: 'https://a9-real-estate-9f975.web.app',
@@ -223,34 +275,56 @@ export const projects = [
     content: () => {
       return (
         <div className='text-white text-base'>
-          <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
-            Key Features:{' '}
-          </p>
-          <ul className='mt-2 space-y-2 list-disc font-josefinSans'>
-            <li>
-              ⇒ The blogging platform was engineered to allow users to register
-              and create, edit, and delete their own blogs, ensuring a complete
-              CRUD functionality.integrity.
-            </li>
-            <li>
-              ⇒ Sign-up and login are authenticated with Firebase, establishing
-              secure user access and data
-            </li>
-            <li>
-              ⇒ Architected with JWT for user authentication, the platform
-              supports seamless content management.
-            </li>
-
-            <li>
-              ⇒ Designed and tested for optimal performance, featuring React
-              Query for efficient data fetching.
-            </li>
-            <li>
-              ⇒ Created a visually appealing UX/UI with animations powered by
-              Swiper Slider, AOS, and React Awesome Reveal for an engaging user
-              experience.
-            </li>
-          </ul>
+          {/* key feature */}
+          <div>
+            <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
+              Key Features:{' '}
+            </p>
+            <ul className='mt-2 space-y-2 list-disc font-josefinSans'>
+              <li>
+                ⇒ Designed a visually engaging real estate website with
+                animations and a sleek interface to deliver a premium browsing
+                experience.
+              </li>
+              <li>
+                ⇒ Enhanced performance and responsiveness, making property
+                searches seamless and enjoyable.
+              </li>
+              <li>
+                ⇒ Implemented secure user authentication using Firebase,
+                ensuring reliable sign-up and login functionality.
+              </li>
+              <li>
+                ⇒ Deployed the website on Surge for fast load times, with images
+                efficiently hosted on ImageBB.
+              </li>
+            </ul>
+          </div>
+          {/* challenge and solution */}
+          <div className='my-4 space-y-2'>
+            <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
+              Challenge Faced:{' '}
+              <span className='text-white font-regular text-base'>
+                Implementing local storage functionality to save user
+                preferences and retrieving them efficiently was a significant
+                challenge. Initially, there were issues with data persistence
+                and ensuring the retrieved data matched the expected structure
+                for smooth user experience.
+              </span>
+            </p>
+            <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
+              Solution Applied :{' '}
+              <span className='text-white font-regular text-base'>
+                After researching and troubleshooting, I referred to solutions
+                on Stack Overflow, which provided clear guidance on correctly
+                using localStorage APIs. I learned how to properly store data in
+                a structured format (e.g., JSON), retrieve it, and handle edge
+                cases like empty or invalid data. This solution streamlined the
+                process and ensured reliable data storage and retrieval for user
+                preferences.
+              </span>
+            </p>
+          </div>
         </div>
       );
     },

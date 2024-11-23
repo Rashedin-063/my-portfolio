@@ -77,8 +77,9 @@ export default  function Projects() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className='w-full max-w-[550px] lg:max-w-[800px] xl:max-w-[1080px] h-full max-h-[92%] lg:max-h-full flex flex-col  sm:rounded-3xl overflow-hidden text-white-pearl p-4 mx-8 lg:mx-0 rounded-3xl bg-sky-900 border-indigo-600'
+              className='w-full max-w-[550px] lg:max-w-[800px] xl:max-w-[1080px] h-full max-h-[92%] lg:max-h-full flex flex-col  sm:rounded-3xl overflow-hidden text-white p-4 mx-8 lg:mx-0 rounded-3xl bg-sky-900 border-indigo-600'
             >
+              {/* image or video */}
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
                   priority
@@ -90,9 +91,10 @@ export default  function Projects() {
                   className='w-full lg:w-3/4 mx-auto h-72 rounded-[5%] object-cover object-top py-4 px-8 hover:scale-105 transition-transform ease-in duration-300'
                 />
               </motion.div>
-              <div className='flex items-center px-[15px] gap-2 mt-4'>
+              <div className='flex justify-between items-center px-[15px] gap-2 mt-4'>
                 {/* technologies */}
-                <span className='text-xl text-white-pearl mr-4'>
+               <div className="flex gap-2">
+                 <span className='text-xl text-yellow-sunshine mr-4'>
                   {' '}
                   Technologies:
                 </span>
@@ -105,18 +107,9 @@ export default  function Projects() {
                     <img src={icon} alt='icon' className='p-2' />
                   </div>
                 ))}
-              </div>
-              <div>
-                <div className='flex flex-col justify-start items-between p-4 '>
-                  <div className='flex justify-between items-center'>
-                    <motion.h3
-                      layoutId={`title-${active.title}-${id}`}
-                      className='text-yellow-sunshine text-3xl font-semibold'
-                    >
-                      {active.title}
-                    </motion.h3>
-                    {/* showing github and live link */}
-                    <div className='flex items-center justify-end gap-4'>
+               </div>
+                {/* showing github and live link */}
+                    <div className='flex items-center justify-end gap-6 mr-6 mt-2'>
                       {active.github ? ( // if github link exists
                         <motion.a
                           layout
@@ -170,6 +163,20 @@ export default  function Projects() {
                         {'Live Link'}
                       </motion.a>
                     </div>
+              </div>
+              <div>
+                <div className='flex flex-col justify-start items-between p-4 text-base'>
+                  <div className='flex justify-between items-center'>
+                    <motion.h3
+                      layoutId={`title-${active.title}-${id}`}
+                      className='text-yellow-sunshine text-3xl font-semibold'
+                    >
+                      {active.title}
+                    </motion.h3>
+          <div className="flex items-center gap-8 mr-6"> 
+            <p><span className="font-semibold">Role:</span> {active.role}</p> 
+            <p><span className="font-semibold"> Duration:</span> {active.duration}</p>      
+         </div>       
                   </div>
                 </div>
                 <div></div>
@@ -179,7 +186,7 @@ export default  function Projects() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className='text-neutral-600 text-xs md:text-sm lg:text-base h-48 lg:h-72 pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400  -mt-4'
+                    className='text-neutral-600 text-xs md:text-sm lg:text-base h-48 lg:h-72 pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400  -mt-4 font-josefinSans'
                   >
                     {typeof active.content === 'function'
                       ? active.content()
