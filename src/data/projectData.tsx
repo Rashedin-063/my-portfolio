@@ -14,62 +14,86 @@ export const projects = [
     serverSide: 'https://github.com/Rashedin-063/techInsights-Project-Server',
     duration: '2 months',
     role: 'Full-Stack Developer',
-    nextSteps: [
-      'Adding user analytics to track popular articles.',
-      'Incorporating multilingual support for a broader audience.',
-      'Refactoring the backend code for scalability.',
-    ],
     // content
     content: () => {
       return (
         <div className='text-white text-base font-josefinSans'>
-         <div>
-           <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
-            Key Features:{' '}
-          </p>
-          <ul className='mt-2 space-y-2 list-disc font-josefinSans'>
-            <li>
-              ⇒ Engineered a dynamic news website where users can browse tech
-              articles and purchase premium memberships via the Stripe Payment
-              Gateway.
-            </li>
-            <li>
-              ⇒ Implemented user authentication with JWT to secure access and
-              integrated features for updating, deleting, and adding new
-              content.
-            </li>
-            <li>
-              ⇒ Utilized MongoDB&apos;s aggregate pipeline for efficient data
-              fetching, pagination, search, and sorting functionalities,
-              ensuring a smooth user experience.
-            </li>
+          <div>
+            <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
+              Key Features:{' '}
+            </p>
+            <ul className='mt-2 space-y-2 list-disc font-josefinSans'>
+              <li>
+                ⇒ Engineered a dynamic news website where users can browse tech
+                articles and purchase premium memberships via the Stripe Payment
+                Gateway.
+              </li>
+              <li>
+                ⇒ Implemented user authentication with JWT to secure access and
+                integrated features for updating, deleting, and adding new
+                content.
+              </li>
+              <li>
+                ⇒ Utilized MongoDB&apos;s aggregate pipeline for efficient data
+                fetching, pagination, search, and sorting functionalities,
+                ensuring a smooth user experience.
+              </li>
 
-            <li>
-              ⇒ Incorporated TanStack Query for optimized data handling and
-              architected a dedicated admin dashboard for streamlined content
-              management.
-            </li>
-            <li>
-              ⇒ Designed a visually appealing UI with Chakra-UI and Daisy UI to
-              enhance user engagement and interaction.
-            </li>
-          </ul>
+              <li>
+                ⇒ Incorporated TanStack Query for optimized data handling and
+                architected a dedicated admin dashboard for streamlined content
+                management.
+              </li>
+              <li>
+                ⇒ Designed a visually appealing UI with Chakra-UI and Daisy UI
+                to enhance user engagement and interaction.
+              </li>
+            </ul>
           </div>
           {/* challenge and solutions */}
-         <div className="my-4 space-y-2">
-           <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
-            Challenge Faced: <span className="text-white font-regular text-base">Efficiently implementing complex queries for search and pagination.</span>
-          </p> 
-           <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
-           Steps to Solve : <span className="text-white font-regular text-base">Utilized MongoDB’s aggregate pipeline to optimize these processes with the help of MongoDB&apos;s official documents and chatgpt</span>
-          </p> 
-           <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
-            Challenge Faced: <span className="text-white font-regular text-base">Ensuring secure and seamless payment integration.</span>
-          </p> 
-           <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
-           Steps to Solve : <span className="text-white font-regular text-base">Integrated Stripe Payment Gateway with error-handling mechanisms with the help of youtube tutorial</span>
-          </p> 
-         </div>
+          <div className='my-4 space-y-2'>
+            <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
+              Challenge Faced:{' '}
+              <span className='text-white font-regular text-base'>
+                Efficiently implementing complex queries for search and
+                pagination.
+              </span>
+            </p>
+            <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
+              Steps to Solve :{' '}
+              <span className='text-white font-regular text-base'>
+                Utilized MongoDB’s aggregate pipeline to optimize these
+                processes with the help of MongoDB&apos;s official documents and
+                chatgpt
+              </span>
+            </p>
+            <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
+              Challenge Faced:{' '}
+              <span className='text-white font-regular text-base'>
+                Ensuring secure and seamless payment integration.
+              </span>
+            </p>
+            <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
+              Steps to Solve :{' '}
+              <span className='text-white font-regular text-base'>
+                Integrated Stripe Payment Gateway with error-handling mechanisms
+                with the help of youtube tutorial
+              </span>
+            </p>
+          </div>
+          {/* next steps */}
+          <div className='mt-4'>
+            <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
+              Next Steps:{' '}
+            </p>
+            <ul className='mt-2 space-y-2 list-disc font-josefinSans'>
+              <li>Adding user analytics to track popular articles.</li>
+              <li>
+                Incorporating multilingual support for a broader audience.
+              </li>
+              <li>Refactoring the backend code for scalability.</li>
+            </ul>
+          </div>
         </div>
       );
     },
