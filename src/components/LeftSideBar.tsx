@@ -8,7 +8,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FcDocument } from 'react-icons/fc';
 import { MdAttachEmail, MdMarkEmailRead } from "react-icons/md";
 import { toast } from 'react-toastify';
-import { Fade } from 'react-awesome-reveal';
+// import { Fade } from 'react-awesome-reveal';
 
 
 
@@ -166,7 +166,8 @@ export const CardSkeletonContainer = ({
   showGradient?: boolean;
 }) => {
   return (
-      <Fade direction="down" duration={1500} trigerOnce={true}>
+    // <Fade direction="down" duration={1500} trigerOnce={true}> </Fade>
+    
     <div
       className={cn(
         'h-[200px] lg:h-[220px] rounded-full z-50',
@@ -176,7 +177,7 @@ export const CardSkeletonContainer = ({
     >
       {children}
     </div>
-    </Fade>
+   
   );
 };
 

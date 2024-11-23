@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { FaRegStar } from 'react-icons/fa6';
 import { FaStar } from 'react-icons/fa';
 import { navItems } from '@/data/index';
-import { Fade } from 'react-awesome-reveal';
+// import { Fade } from 'react-awesome-reveal';
 
 const RightSidebar = () => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -53,7 +53,8 @@ const RightSidebar = () => {
   return (
     <div className={`fixed mt-24 z-10 ${activeSection}`}>
       <div className='flex flex-col justify-center items-center relative'>
-        <Fade cascade damping={0.3} triggerOnce={true}>
+        {/* <Fade cascade damping={0.3} triggerOnce={true}> </Fade> */}
+        
           {navItems.map(({ to }) => (
             <a
               key={to}
@@ -67,7 +68,7 @@ const RightSidebar = () => {
               {activeSection === to.slice(1) ? <FaStar /> : <FaRegStar />}
             </a>
           ))}
-        </Fade>
+       
       </div>
     </div>
   );
