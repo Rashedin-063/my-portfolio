@@ -53,7 +53,7 @@ const RightSidebar = () => {
   return (
     <div className={`fixed mt-24 z-10 ${activeSection}`}>
       <div className='flex flex-col justify-center items-center relative'>
-        <Fade delay={500} cascade damping={0.3} triggerOnce={true}>
+        <Fade cascade damping={0.3} triggerOnce={true}>
           {navItems.map(({ to }) => (
             <a
               key={to}

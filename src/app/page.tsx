@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 
 import Footer from '@/components/Footer';
-import Navbar from '@/components/ui/Navbar';
+import Navbar from '@/components/Navbar';
 import RightSidebar from '../components/RightSidebar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
