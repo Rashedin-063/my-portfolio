@@ -91,6 +91,7 @@ export default  function Projects() {
                 />
               </motion.div>
               <div className='flex items-center px-[15px] gap-2 mt-4'>
+                {/* technologies */}
                 <span className='text-xl text-white-pearl mr-4'>
                   {' '}
                   Technologies:
@@ -217,7 +218,7 @@ export default  function Projects() {
                   <img
                     src={card.img}
                     alt='cover'
-                    className='z-10h-40 p-4 rounded-3xl group-hover:scale-105 transform-transition duration-300'
+                    className='z-10 h-60 p-4 rounded-3xl group-hover:scale-105 transform-transition duration-300'
                   />
                 </div>
                 <div className='flex items-center'>
@@ -235,7 +236,7 @@ export default  function Projects() {
               <div className='flex justify-center items-start flex-col -mt-8 space-y-2'>
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className='font-semibold text-lg text-yellow-sunshine'
+                  className='font-semibold text-xl text-yellow-sunshine'
                 >
                   {card.title}
                 </motion.h3>
