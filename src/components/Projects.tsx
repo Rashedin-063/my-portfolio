@@ -7,13 +7,12 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useOutsideClick } from '@/hooks/use-outside-click';
 // import { projects } from '@/data';
 import { projects } from '@/data/projectData';
-import { FaLaptopCode, FaCircleArrowDown } from 'react-icons/fa6';
+import { FaLaptopCode } from 'react-icons/fa6';
 
 export default  function Projects() {
   const [active, setActive] = useState<
     (typeof projects)[number] | boolean | null
   >(null);
-  const [showArrow, setShowArrow] = useState<boolean>(true);
   const id = useId();
   const ref = useRef<HTMLDivElement>(null);
 
