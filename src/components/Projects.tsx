@@ -7,33 +7,45 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useOutsideClick } from '@/hooks/use-outside-click';
 // import { projects } from '@/data';
 import { projects } from '@/data/projectData';
-import { FaLaptopCode } from 'react-icons/fa6';
+import { FaLaptopCode, FaCircleArrowDown } from 'react-icons/fa6';
 
 export default  function Projects() {
   const [active, setActive] = useState<
     (typeof projects)[number] | boolean | null
   >(null);
+  const [showArrow, setShowArrow] = useState<boolean>(true);
   const id = useId();
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        setActive(false);
-      }
-    }
+  // Handle active state changes
+ useEffect(() => {
+   function onKeyDown(event: KeyboardEvent) {
+     if (event.key === 'Escape') {
+       setActive(false);
+     }
+   }
 
-    if (active && typeof active === 'object') {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+   // Disable or enable scrolling based on the 'active' state
+   if (active) {
+     document.body.style.overflow = 'hidden'; // Disable scrolling when active
+   } else {
+     document.body.style.overflow = 'auto'; // Enable scrolling when inactive
+   }
 
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [active]);
+   window.addEventListener('keydown', onKeyDown);
 
-  useOutsideClick(ref, () => setActive(null));
+   // Clean up event listeners
+   return () => {
+     window.removeEventListener('keydown', onKeyDown);
+   };
+ }, [active]);
+
+
+  // Handle clicks outside the ref
+  useOutsideClick(ref, () => {
+    if (active) setActive(null);
+  });
+
 
   return (
     <div id='projects' className='my-16 lg:my-24'>
@@ -167,11 +179,13 @@ export default  function Projects() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className='text-neutral-600 text-xs md:text-sm lg:text-base h-48 lg:h-72 pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] -mt-4'
+                    className='text-neutral-600 text-xs md:text-sm lg:text-base h-48 lg:h-72 pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400  -mt-4'
                   >
                     {typeof active.content === 'function'
                       ? active.content()
                       : active.content}
+
+                       
                   </motion.div>
                 </div>
               </div>
@@ -235,7 +249,10 @@ export default  function Projects() {
               </div>
               <div className='flex justify-between -mt-4 mb-4 w-full '>
                 <button
-                  onClick={() => setActive(card)}
+                  onClick={() => 
+                    setActive(card)
+                  
+                  }
                   className=' px-4 py-[6px] text-xs rounded-full bg-blue-500 text-white hover:bg-blue-600 text-left'
                 >
                   View Details
