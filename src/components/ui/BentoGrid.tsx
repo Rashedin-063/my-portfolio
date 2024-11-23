@@ -204,7 +204,7 @@ export const BentoGridItem = ({
               <iframe
                 src='https://www.youtube.com/embed/3NB7zLx4OzI'
                 allow='autoplay'
-                allowfullScreen="true"
+              allowFullScreen
                 loading='lazy'
                 className='w-full h-[240px] lg:h-[340px]'
               ></iframe>

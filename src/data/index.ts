@@ -8,7 +8,6 @@ export const navItems = [
 ];
 
 
-
 export const gridItems = [
   {
     id: 1,
@@ -69,80 +68,3 @@ export const gridItems = [
 
 ];
 
-export const projects = [
-  {
-    id: 1,
-    title: 'Tech Insights',
-    des: 'A dynamic news website where users can browse latest tech related articles and purchase premium memberships via the Stripe Payment Gateway as well as create, read , update and delete their own post',
-    img: 'https://i.ibb.co.com/1L6nz0X/tech-Insights.png',
-    iconLists: ['/re.svg', '/tail.svg', '/ts.svg', '/three.svg', '/fm.svg'],
-    link: 'https://tech-insights-d2159.web.app',
-    gihub: '',
-    clientSide: 'https://github.com/Rashedin-063/techInsights-Project-Client',
-    serverSide: 'https://github.com/Rashedin-063/techInsights-Project-Server',
-     keyFeatures: [
-    'Engineered a dynamic news website where users can browse tech articles and purchase premium memberships via the Stripe Payment Gateway.',
-    'Implemented user authentication with JWT for secure access.',
-    'Integrated MongoDB aggregate pipelines for efficient data fetching, pagination, search, and sorting functionalities.',
-    'Incorporated TanStack Query for optimized data handling.',
-    'Designed an admin dashboard for streamlined content management.',
-    'Created an engaging UI using Chakra-UI and Daisy UI.'
-  ],
-  },
-  {
-    id: 2,
-    title: 'ByteBlog',
-    des: 'A blogging platform that allows users to register and create, edit, and delete their own blogs. Sign-up and login are authenticated with Firebase, establishing secure user access and data integrity.',
-    img: 'https://i.ibb.co.com/jyrqxWY/byteBLog.png',
-    iconLists: ['/next.svg', '/tail.svg', '/ts.svg', '/stream.svg', '/c.svg'],
-    link: 'https://byteblog-da679.web.app',
-    gihub: '',
-    clientSide: 'https://github.com/Rashedin-063/ByteBlog-Client-Side',
-    serverSide: 'https://github.com/Rashedin-063/ByteBlog-Server-Side',
-    keFeatures: []
-  },
-  {
-    id: 3,
-    title: 'Craft Canvas',
-    des: 'A art and craft website equipped with CRUD functionality, supported by a RESTful API and MongoDB for data management. It features Firebase authentication ensuring smooth navigation and secure access.',
-    img: 'https://i.ibb.co.com/61FJ0Xc/craft-Canvas.png',
-    iconLists: ['/re.svg', '/tail.svg', '/ts.svg', '/three.svg', '/c.svg'],
-    link: 'https://a10-assignment-project.web.app',
-    github: '',
-    clientSide: 'https://github.com/Rashedin-063/A10-Craft-Canvas-Client',
-    serverSide: 'https://github.com/Rashedin-063/A10-Craft-Canvas-Server',
-  },
-  {
-    id: 4,
-    title: 'Relux.com',
-    des: 'Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..',
-    img: 'https://i.ibb.co.com/2jB6SYv/reluxCom.png',
-    iconLists: ['/next.svg', '/tail.svg', '/ts.svg', '/three.svg', '/gsap.svg'],
-    link: 'https://a9-real-estate-9f975.web.app',
-    gihub: 'https://github.com/Rashedin-063/RealState-Assignment-A9',
-    clientSide: '',
-    serverSide: '',
-  },
-  {
-    id: 5,
-    title: 'Bookworm',
-    des: 'Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..',
-    img: 'https://i.ibb.co.com/vv4nQpN/bookWorm.png',
-    iconLists: ['/next.svg', '/tail.svg', '/ts.svg', '/three.svg', '/gsap.svg'],
-    link: 'https://waggish-judge.surge.sh',
-    gihub: 'https://github.com/Rashedin-063/React-Bookworm-Project',
-    clientSide: '',
-    serverSide: '',
-  },
-  {
-    id: 6,
-    title: 'Animated Apple Iphone 3D Website',
-    des: 'Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..',
-    img: '/p4.svg',
-    iconLists: ['/next.svg', '/tail.svg', '/ts.svg', '/three.svg', '/gsap.svg'],
-    link: '/ui.apple.com',
-    gihub: '',
-    clientSide: '',
-    serverSide: '',
-  },
-];

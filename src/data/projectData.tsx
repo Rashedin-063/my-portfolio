@@ -381,18 +381,5 @@ export const projects = [
       );
     },
   },
-
-  // data 6
-  // {
-  //   id: 6,
-  //   title: 'Animated Apple Iphone 3D Website',
-  //   des: 'Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..',
-  //   img: '/p4.svg',
-  //   iconLists: ['/next.svg', '/tail.svg', '/ts.svg', '/three.svg', '/gsap.svg'],
-  //   link: '/ui.apple.com',
-  //   github: '',
-  //   clientSide: '',
-  //   serverSide: '',
-  // },
 ];
 export default projects;

@@ -30,14 +30,14 @@ const Home: NextPage = () => {
       </div>
 
       {/* Right Sidebar */}
-      <div className='absolute right-4 md:right-8 lg:right-10 xl:right-12 top-60 z-30'>
+      <div className='absolute top-96 right-4 md:right-8 lg:right-10 xl:right-12  z-30'>
         <RightSidebar />
       </div>
 
       {/* Main Content */}
       <div className='container mx-auto px-8 lg:px-16 xl:px-24 relative flex justify-center items-center flex-col'>
         <Hero />
-        <div>
+        <div className="space-y-16 lg:space-y-28">
           <About />
           <Projects/>
           <Blogs />

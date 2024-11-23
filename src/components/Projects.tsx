@@ -5,7 +5,6 @@ import Link from 'next/link';
 import React, { useEffect, useId, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useOutsideClick } from '@/hooks/use-outside-click';
-// import { projects } from '@/data';
 import { projects } from '@/data/projectData';
 import { FaLaptopCode } from 'react-icons/fa6';
 
@@ -174,11 +173,14 @@ export default function Projects() {
                     <div className='flex items-center gap-8 mr-6'>
                       <p>
                         <span className='font-semibold'>Role:</span>{' '}
-                       <span className="font-josefinSans"> {active.role}</span>
+                        <span className='font-josefinSans'> {active.role}</span>
                       </p>
                       <p>
                         <span className='font-semibold'> Duration:</span>{' '}
-                        <span className="font-josefinSans"> {active.duration}</span>    
+                        <span className='font-josefinSans'>
+                          {' '}
+                          {active.duration}
+                        </span>
                       </p>
                     </div>
                   </div>
@@ -204,13 +206,15 @@ export default function Projects() {
       </AnimatePresence>
 
       {/* title */}
-      <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold text-yellow-sunshine text-center flex justify-center items-center gap-4 my-4'>
+      <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold text-yellow-sunshine text-center flex justify-center items-center gap-4 mb-12'>
         <FaLaptopCode />
-        Glimpse of My Coding Lab <FaLaptopCode />
+        Glimpse of My Coding Lab
+        <FaLaptopCode />
       </h1>
 
-      {/* project cards */}
 
+      {/* project cards */}
+{console.log(projects)}
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 mx-8 md:mx-0'>
         {projects.map((card) => (
           <motion.div
@@ -219,7 +223,7 @@ export default function Projects() {
             className=''
           >
             <div
-              className='flex flex-col items-center justify-center p-4 gap-12 mt-10 group border border-indigo-800 rounded-3xl bg-custom-gradient hover:border-indigo-600  hover:border-dotted
+              className='flex flex-col items-center justify-center p-4 gap-12  group border border-indigo-800 rounded-3xl bg-custom-gradient hover:border-indigo-600  hover:border-dotted
              group '
             >
               <motion.div layoutId={`image-${card.title}-${id}`}>
