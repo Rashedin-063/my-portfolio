@@ -24,12 +24,13 @@ export const projects = [
     // content
     content: () => {
       return (
-        <div className='text-white text-base font-normal'>
-          <div>
-            <p className='text-yellow-sunshine pb-4 font-lg font-semibold'>
+        <div className='text-white text-base font-normal space-y-4'>
+          {/* key features */}
+          <div className='space-y-2'>
+            <p className='text-yellow-sunshine pb-4 text-lg font-semibold'>
               Key Features:{' '}
             </p>
-            <div className='space-y-2 mt-2'>
+            <div  >
               <p>
                 ⇒ Engineered a dynamic news website where users can browse tech
                 articles and purchase premium memberships via the Stripe Payment
@@ -59,7 +60,8 @@ export const projects = [
 
           {/* Challenge and solutions */}
           <div className='my-4 space-y-4'>
-            <p className='text-yellow-sunshine pb-4 font-lg font-semibold'>
+           <div className='space-y-2'>
+             <p className='text-yellow-sunshine pb-4 text-lg font-semibold'>
               Challenge Faced:{' '}
             </p>
             <p className='text-white text-base font-normal'>
@@ -68,7 +70,7 @@ export const projects = [
               the stages to filter, group, and transform data as required proved
               complex, especially when managing multiple nested fields.
             </p>
-            <p className='text-yellow-sunshine pb-4 font-lg font-semibold'>
+            <p className='text-yellow-sunshine pb-4 text-lg font-semibold'>
               Solution Applied:{' '}
             </p>
             <p className='text-white text-base font-normal'>
@@ -80,7 +82,10 @@ export const projects = [
               pipeline that met the project requirements and optimized query
               performance.
             </p>
-            <p className='text-yellow-sunshine pb-4 font-lg font-semibold'>
+           </div>
+            
+           <div className="space-y-2">
+            <p className='text-yellow-sunshine pb-4  text-lg font-semibold'>
               Challenge Faced:{' '}
             </p>
             <p className='text-white text-base font-normal'>
@@ -90,7 +95,7 @@ export const projects = [
               the API keys, setting up payment intents, and managing error
               handling required careful attention to detail.
             </p>
-            <p className='text-yellow-sunshine pb-4 font-lg font-semibold'>
+             <p className='text-yellow-sunshine pb-4  text-lg font-semibold'>
               Solution Applied:{' '}
             </p>
             <p className='text-white text-base font-normal'>
@@ -101,6 +106,7 @@ export const projects = [
               testing. This approach enabled me to successfully integrate a
               secure and efficient payment system into the website.
             </p>
+           </div>
           </div>
         </div>
       );
@@ -131,13 +137,13 @@ export const projects = [
     role: 'Full-Stack Developer',
     content: () => {
       return (
-        <div className='text-white text-base font-normal'>
+        <div className='text-white text-base font-normal space-y-4'>
           {/* key features */}
-          <div>
-            <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
+          <div className='space-y-2'>
+            <p className='text-yellow-sunshine pb-4 text-lg font-semibold'>
               Key Features:{' '}
             </p>
-            <div className='mt-2 space-y-2'>
+            <div>
               <p>
                 ⇒ The blogging platform was engineered to allow users to
                 register and create, edit, and delete their own blogs, ensuring
@@ -166,17 +172,24 @@ export const projects = [
           <div className='my-4 space-y-2'>
             <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
               Challenge Faced:{' '}
-              <span className='text-white font-normal text-base'>
-                While implementing JWT authentication, I encountered an issue
-                caused by API race conditions. This resulted in inconsistent
-                behavior during token generation and validation, disrupting the authentication process and user experience.
-              </span>
             </p>
+            <p className='text-white font-normal text-base'>
+              While implementing JWT authentication, I encountered an issue
+              caused by API race conditions. This resulted in inconsistent
+              behavior during token generation and validation, disrupting the
+              authentication process and user experience.
+            </p>
+
             <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
               Solution Applied:{' '}
-              <span className='text-white font-normal text-base'>
-                After trying various approaches without success, I revisited a video tutorial from my course that specifically addressed handling race conditions in JWT authentication. The tutorial provided clear, actionable steps to resolve the issue by introducing better request handling and token refresh mechanisms. This ultimately ensured secure and reliable authentication for the application.
-              </span>
+            </p>
+            <p className='text-white font-normal text-base'>
+              After trying various approaches without success, I revisited a
+              video tutorial from my course that specifically addressed handling
+              race conditions in JWT authentication. The tutorial provided
+              clear, actionable steps to resolve the issue by introducing better
+              request handling and token refresh mechanisms. This ultimately
+              ensured secure and reliable authentication for the application.
             </p>
           </div>
         </div>
@@ -207,7 +220,7 @@ export const projects = [
     role: 'Full-Stack Developer',
     content: () => {
       return (
-        <div className='text-white text-base font-normal'>
+        <div className='text-white text-base font-normal space-y-4'>
           {/* key features */}
           <div>
             <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
@@ -241,20 +254,21 @@ export const projects = [
           <div className='my-4 space-y-2'>
             <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
               Challenge Faced:{' '}
-              <span className='text-white font-regular text-base'>
+              </p>
+              <p className='text-white font-regular text-base'>
                 Deleting a user from Firebase when the user deletes their
                 account from the database was a challenging task. I initially
                 tried to get help from ChatGPT, which suggested using Firebase SDK, storage, and some more advanced concepts that made the
                 solution unnecessarily complex. This approach added confusion
                 and complexity to the process.
-              </span>
-            </p>
+              </p>
+            
             <p className='text-yellow-sunshine pb-4 font-semibold text-lg mr-4'>
               Solution Applied:{' '}
-              <span className='text-white font-regular text-base'>
+                </p>
+              <p className='text-white font-regular text-base'>
                    After struggling with the complex suggestions, I revisited the official Firebase documentation and performed a deeper search. I found that Firebase provides a straightforward method for deleting users via the Firebase Admin SDK. By using the `admin.auth().deleteUser()` method, I was able to delete the user from both the authentication system and the database effortlessly, resolving the issue quickly and efficiently.
-              </span>
-            </p>
+              </p>         
           </div>
         </div>
       );
@@ -282,7 +296,7 @@ export const projects = [
     role: 'Frontend Developer',
     content: () => {
       return (
-        <div className='text-white text-base font-regular'>
+        <div className='text-white text-base font-regular space-y-4'>
           {/* key features */}
           <div>
             <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
@@ -312,17 +326,18 @@ export const projects = [
           <div className='my-4 space-y-2'>
             <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
               Challenge Faced:{' '}
-              <span className='text-white font-regular text-base'>
+               </p>
+              <p className='text-white font-regular text-base'>
                 Implementing local storage functionality to save user
                 preferences and retrieving them efficiently was a significant
                 challenge. Initially, there were issues with data persistence
                 and ensuring the retrieved data matched the expected structure
                 for a smooth user experience.
-              </span>
-            </p>
+              </p>
             <p className='text-yellow-sunshine pb-4 font-semibold text-lg'>
               Solution Applied:{' '}
-              <span className='text-white font-regular text-base'>
+                </p>
+              <p className='text-white font-regular text-base'>
                 After researching and troubleshooting, I referred to solutions
                 on Stack Overflow, which provided clear guidance on correctly
                 using localStorage APIs. I learned how to properly store data in
@@ -330,8 +345,7 @@ export const projects = [
                 cases like empty or invalid data. This solution streamlined the
                 process and ensured reliable data storage and retrieval for user
                 preferences.
-              </span>
-            </p>
+              </p>
           </div>
         </div>
       );
@@ -354,7 +368,7 @@ export const projects = [
     content: () => {
       return (
         <div className='text-white text-base font-normal'>
-          <p className='text-yellow-sunshine pb-4 font-lg font-semibold'>
+          <p className='text-yellow-sunshine pb-4 text-lg font-semibold'>
             Key Features:{' '}
           </p>
           <div className='mt-2 space-y-2'>

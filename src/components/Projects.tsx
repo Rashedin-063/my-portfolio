@@ -6,7 +6,9 @@ import React, { ReactNode, useEffect, useId, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useOutsideClick } from '@/hooks/use-outside-click';
 import { projects } from '@/data/projectData';
-import { FaLaptopCode } from 'react-icons/fa6';
+import { FaLaptopCode, ExternalLink, ListCollapse } from '@/data/icons';
+import SectionTitle from './ui/SectionTitle'
+import ArrowButton from './ui/Btn';
 
 export default function Projects(): ReactNode {
   const [active, setActive] = useState<
@@ -121,7 +123,7 @@ export default function Projects(): ReactNode {
                     </motion.a>
                   ) : (
                     // otherwise
-                    <div className='flex gap-4 items-center'>
+                    <div className='flex gap-6 items-center'>
                       <motion.a
                         layout
                         initial={{ opacity: 0 }}
@@ -229,11 +231,11 @@ export default function Projects(): ReactNode {
                     {/* role and duration */}
                     <div className='hidden lg:flex items-center gap-8 mr-6'>
                       <p>
-                        <span className='font-semibold'>Role:</span>{' '}
+                        <span className='font-semibold text-yellow-sunshine mr-2'>Role:</span>{' '}
                         <span className='font-josefinSans'> {active.role}</span>
                       </p>
                       <p>
-                        <span className='font-semibold'> Duration:</span>{' '}
+                        <span className='font-semibold text-yellow-sunshine mr-2'> Duration:</span>{' '}
                         <span className='font-josefinSans'>
                           {' '}
                           {active.duration}
@@ -263,11 +265,7 @@ export default function Projects(): ReactNode {
       </AnimatePresence>
 
       {/* title */}
-      <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold text-yellow-sunshine text-center flex justify-center items-center gap-4 mb-12'>
-        <FaLaptopCode />
-        Glimpse of My Coding Lab
-        <FaLaptopCode />
-      </h1>
+      <SectionTitle title=" Glimpse of My Coding Lab" icon={<FaLaptopCode/>}/>
 
       {/* project cards */}
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 md:mx-0'>
@@ -278,15 +276,15 @@ export default function Projects(): ReactNode {
             className=''
           >
             <div
-              className='flex flex-col items-center justify-center p-4 gap-12  group border border-indigo-800 rounded-3xl bg-custom-gradient hover:border-indigo-600  hover:border-dotted
-             group '
+              className='flex flex-col items-center justify-center p-4 gap-12  border border-indigo-800 rounded-3xl bg-custom-gradient hover:border-indigo-600  hover:border-dotted
+             '
             >
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <div className='relative '>
                   <img
                     src={card.img}
                     alt='cover'
-                    className='z-10 h-60 p-4 rounded-3xl group-hover:scale-105 transform-transition duration-300'
+                    className='z-10 h-60 p-4 rounded-3xl hover:scale-105 transform-transition duration-300'
                   />
                 </div>
                 <div className='flex items-center'>
@@ -316,7 +314,30 @@ export default function Projects(): ReactNode {
                 </motion.p>
               </div>
               <div className='flex justify-between -mt-4 mb-4 w-full '>
-                <button
+                  <span  onClick={() => setActive(card)}>
+                  <ArrowButton
+        text='View Details'
+        textColor='#FBFBFB'
+        buttonOverlayColor='#FFD93D'
+        borderColor='#FFD93D'
+        size='sm'
+        icon={
+         <ListCollapse color='white' />
+        }
+      />
+            </span>
+           <Link href={card.link} target='_blank'>
+                <ArrowButton
+          text='Live Link'
+          textColor='#FBFBFB'
+          buttonOverlayColor='#5668DE'
+          borderColor='#5668DE'
+          size="sm"
+          icon={<ExternalLink color='white' />}
+        />
+           </Link>
+          
+                {/* <button
                   onClick={() => setActive(card)}
                   className=' px-4 py-[6px] text-sm rounded-full bg-blue-500 text-white hover:bg-blue-600 text-left'
                 >
@@ -326,7 +347,7 @@ export default function Projects(): ReactNode {
                   <button className=' px-4 py-[6px] text-sm rounded-full bg-blue-500 text-white hover:bg-blue-600 text-left'>
                     Live Link
                   </button>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </motion.div>

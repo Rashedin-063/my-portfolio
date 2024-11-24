@@ -18,6 +18,7 @@ const HeroBtn = () => {
           textColor='#FBFBFB'
           buttonOverlayColor='#FFD93D'
           borderColor='#FFD93D'
+          size="lg"
           icon={<ArrowDownNarrowWide color='white' />}
         />
       </Link>
@@ -29,6 +30,7 @@ const HeroBtn = () => {
         textColor='#FBFBFB'
         buttonOverlayColor='#5668DE'
         borderColor='#5668DE'
+        size="lg"
         icon={
           downloaded ? <ThumbsUp color='white' /> : <FolderDown color='white' />
         }

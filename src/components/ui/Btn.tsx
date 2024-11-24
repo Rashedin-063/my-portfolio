@@ -8,6 +8,7 @@ interface ArrowButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
   buttonOverlayColor?: string;
   borderColor?: string;
   className?: string;
+  size?: string;
   icon?: React.ReactNode;
   handleClick?: () => void;
 }
@@ -17,6 +18,7 @@ export default function ArrowButton({
   textColor = "#fff",
   buttonOverlayColor = "#bf49ff",
   borderColor = "#c284f9",
+  size = 'lg',
   icon,
   handleClick,
   ...props
@@ -26,7 +28,7 @@ export default function ArrowButton({
       style={{ borderColor: borderColor, fontWeight: '300' }}
       {...props}
       className={cn(
-        'group relative inline-flex items-center justify-center overflow-hidden rounded-full border px-6 py-2 drop-shadow-2xl transition duration-300 ease-out w-48 text-sm'
+        `group relative inline-flex items-center justify-center overflow-hidden rounded-full border drop-shadow-2xl transition duration-300 ease-out text-sm ${size === 'lg' ? ' px-6 py-2 w-48' : 'px-4 py-1 w-32 font-josefinSans font-light'}`
       )}
       onClick={handleClick}
     >
