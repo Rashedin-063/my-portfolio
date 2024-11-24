@@ -30,7 +30,7 @@ const Home: NextPage = () => {
       </div>
 
       {/* Right Sidebar */}
-      <div className='absolute top-96 right-4 md:right-8 lg:right-10 xl:right-12  z-30'>
+      <div className='absolute top-96 right-4 md:right-8 lg:right-10 xl:right-12 z-30'>
         <RightSidebar />
       </div>
 

@@ -2,13 +2,13 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useId, useRef, useState } from 'react';
+import React, { ReactNode, useEffect, useId, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useOutsideClick } from '@/hooks/use-outside-click';
 import { projects } from '@/data/projectData';
 import { FaLaptopCode } from 'react-icons/fa6';
 
-export default function Projects() {
+export default function Projects(): ReactNode {
   const [active, setActive] = useState<
     (typeof projects)[number] | boolean | null
   >(null);
@@ -106,7 +106,7 @@ export default function Projects() {
                   ))}
                 </div>
                 {/* showing github and live link */}
-                <div className='flex items-center justify-end gap-8 mr-6 mt-2'>
+                <div className='hidden lg:flex items-center justify-end gap-8 mr-6 mt-2'>
                   {active.github ? ( // if github link exists
                     <motion.a
                       layout
@@ -170,7 +170,64 @@ export default function Projects() {
                     >
                       {active.title}
                     </motion.h3>
-                    <div className='flex items-center gap-8 mr-6'>
+
+                    {/* showing github and live link form small and medium screen */}
+                    <div className='flex lg:hidden items-center justify-end gap-8 mr-6 mt-2'>
+                      {active.github ? ( // if github link exists
+                        <motion.a
+                          layout
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          href={active.github}
+                          target='_blank'
+                          className='  font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine'
+                        >
+                          {'Github ink'}
+                        </motion.a>
+                      ) : (
+                        // otherwise
+                        <div className='flex gap-4 items-center'>
+                          <motion.a
+                            layout
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            href={active.clientSide}
+                            target='_blank'
+                            className='  font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine'
+                          >
+                            {'Client Side'}
+                          </motion.a>
+                          <motion.a
+                            layout
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            href={active.serverSide}
+                            target='_blank'
+                            className='font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine'
+                          >
+                            {'Server Side'}
+                          </motion.a>
+                        </div>
+                      )}
+
+                      {/* live link */}
+                      <motion.a
+                        layout
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        href={active.link}
+                        target='_blank'
+                        className=' font-josefinSans italic  text-sm text-yellow-sunshine hover:border-b border-yellow-sunshine hidden md:block'
+                      >
+                        {'Live Link'}
+                      </motion.a>
+                    </div>
+                    {/* role and duration */}
+                    <div className='hidden lg:flex items-center gap-8 mr-6'>
                       <p>
                         <span className='font-semibold'>Role:</span>{' '}
                         <span className='font-josefinSans'> {active.role}</span>
@@ -212,10 +269,8 @@ export default function Projects() {
         <FaLaptopCode />
       </h1>
 
-
       {/* project cards */}
-{console.log(projects)}
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 mx-8 md:mx-0'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 md:mx-0'>
         {projects.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
