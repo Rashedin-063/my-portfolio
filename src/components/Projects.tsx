@@ -281,8 +281,10 @@ export default function Projects(): ReactNode {
             >
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <div className='relative '>
-                  <img
+                  <Image 
                     src={card.img}
+                    width="500"
+                    height="200"
                     alt='cover'
                     className='z-10 h-60 p-4 rounded-3xl hover:scale-105 transform-transition duration-300'
                   />
@@ -337,17 +339,6 @@ export default function Projects(): ReactNode {
         />
            </Link>
           
-                {/* <button
-                  onClick={() => setActive(card)}
-                  className=' px-4 py-[6px] text-sm rounded-full bg-blue-500 text-white hover:bg-blue-600 text-left'
-                >
-                  View Details
-                </button>
-                <Link href={card.link} target='_blank'>
-                  <button className=' px-4 py-[6px] text-sm rounded-full bg-blue-500 text-white hover:bg-blue-600 text-left'>
-                    Live Link
-                  </button>
-                </Link> */}
               </div>
             </div>
           </motion.div>

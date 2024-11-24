@@ -68,3 +68,25 @@ export const gridItems = [
 
 ];
 
+
+export const hobbiesAndInterests = [
+  {
+    id: 1,
+    title: 'Bookworm',
+    desc: '“A mind needs books as a sword needs a whetstone if it is to keep its edge.”',
+    thumbnail: '/read.png',
+  },
+  {
+    id: 2,
+    title: 'Nature Enthusiast',
+    desc: '“Every morning is a cheerful invitation to live a life as simple and innocent as Nature herself.”',
+    thumbnail: '/nature.png',
+  },
+  {
+    id: 3,
+    title: 'Music Lover',
+    desc: '“Music gives soul to the universe, wings to the mind, flight to the imagination, and life to everything.”',
+    thumbnail: '/music.png',
+  },
+];
+
