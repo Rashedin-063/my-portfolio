@@ -79,7 +79,7 @@ export const hobbiesAndInterests = [
   {
     id: 2,
     title: 'Nature Enthusiast',
-    desc: '“Every morning is a cheerful invitation to live a life as simple and innocent as Nature herself.”',
+    desc: '“Every morning is a cheerful invitation to live a life as simple and innocent as mother nature herself.”',
     thumbnail: '/nature.png',
   },
   {

@@ -4,9 +4,14 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['i.ibb.co.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.ibb.co.com',
+        port: '',
+      },
+    ],
   },
-  
 };
 
 export default nextConfig;
