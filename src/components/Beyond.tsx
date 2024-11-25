@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { SiCodementor, FaReadme } from "@/data/icons";
 import SectionTitle from './ui/SectionTitle'
-import { Button } from "./ui/MovingBorders";
 import { hobbiesAndInterests } from '@/data';
 import ArrowButton from './ui/Btn';
 
@@ -13,60 +12,38 @@ const Beyond = () => {
       {/* title */}
       <SectionTitle title='Beyond the Code' icon={<SiCodementor />} />
 
-      <div className='flex flex-col lg:flex-row justify-between items-center gap-4'>
-        {/* hobbies and interest */}
-        <div className='w-full lg:w-[45%] flex flex-col justify-between h-[85vh]'>
-          {hobbiesAndInterests.map((card) => (
-            <div
-              key={card.id}
-              className={`flex flex-col p-3 py-6 h-[180px] rounded-[1.75rem] ${
-                card.id === 2
-                  ? 'items-end text-end pr-2'
-                  : 'items-start text-start'
-              } bg-custom-gradient shadow-xl hover:brightness-125 hover:shadow-3xl transition-all duration-300 ease-in border border-indigo-800 border-dotted`}
-            >
-              <Image
+      <div className='  justify-between items-center gap-4 h-[85vh] xl:relative'>
+
+        {hobbiesAndInterests.map(({ id, thumbnail, title, desc }) => (
+    
+            <div key={id} className={`w-full xl:w-96 flex flex-col p-3 py-6 h-[200px] rounded-[1.75rem] items-start text-start bg-custom-gradient shadow-glow2 hover:shadow-glow3 bg-blend-soft-light transition-all duration-300 ease-in border border-indigo-800 border-dotted xl:absolute mb-6 xl:mb-0 ${id === 1  ? 'top-2 left-0' : id === 2 ? 'top-24 right-0' : id === 3 ? 'top-[25%] left-[33%] xl:h-[280px] xl:w-[450px]' : id === 4 ? 'bottom-24 left-0' : id === 5 ? 'bottom-2 right-0' : ''}`}>
+             {id === 3 ? '' :  <Image
                 width='50'
                 height='50'
-                src={card.thumbnail}
-                alt={card.title}
-                className='pl-'
-              />
-              <div className='lg:ms-5'>
+                src={thumbnail}
+                alt={title}
+              />}
+              <div className='lg:ms-5 relative'>
                 <h1 className='text-xl md:text-2xl font-bold text-yellow-sunshine'>
-                  {card.title}
+                  {title}
                 </h1>
-                <p className='text-white-100 mt-3 font-semibold font-josefinSans text-white-pearl md:text-[17px]'>
-                  {card.desc}
+                <p className=' mt-3 text-[17px] font-josefinSans text-white'>
+                  {desc}
                 </p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* blog section */}
-        <div className='w-full lg:w-[55%] h-[85vh] rounded-[1.75rem] space-y-8 flex flex-col justify-center lg:px-8 bg-custom-gradient shadow-xl hover:brightness-125 hover:shadow-3xl transition-all duration-300 ease-in border border-indigo-800 border-dotted'>
-          <h1 className='text-2xl md:text-3xl lg:text-4xl text-yellow-sunshine font-semibold'>
-            I Write, Sometimes
-          </h1>
-          <p className='font-josefinSans text-lg text-white-pearl'>
-            When inspiration strikes, I pen down my thoughts on web development,
-            self-improvement, and spirituality. These writings are a reflection
-            of my journey—exploring ideas, sharing knowledge, and seeking
-            growth. Dive in and discover something meaningful!{' '}
-          </p>
-
-          <Link href='/blogs'>
+                 {id === 3 ?  (<Link href='/blogs' className="absolute right-4 mt-4">
             <ArrowButton
               text='Read My Blogs'
               textColor='#FBFBFB'
               buttonOverlayColor='#FFD93D'
               borderColor='#FFD93D'
-              size='lg'
+              size='sm'
               icon={<FaReadme color='white' size='20' />}
             />
-          </Link>
-        </div>
+          </Link> ): ''}
+            </div>
+           
+            </div>
+          ))}
       </div>
     </div>
   );

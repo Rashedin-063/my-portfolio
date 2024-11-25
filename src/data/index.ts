@@ -84,9 +84,22 @@ export const hobbiesAndInterests = [
   },
   {
     id: 3,
+    title: 'I write, sometime',
+    desc: 'When inspiration strikes, I pen down my thoughts on web development, self-improvement, and spirituality. These writings are a reflection of my journey—exploring ideas, sharing knowledge, and seeking growth. Dive in and discover something meaningful!',
+    thumbnail: '/music.png',
+  },
+  {
+    id: 4,
+    title: 'Music Lover',
+    desc: '“Music gives soul to the universe, wings to the mind, flight to the imagination, and life to everything.”',
+    thumbnail: '/music.png',
+  },
+  {
+    id: 5,
     title: 'Music Lover',
     desc: '“Music gives soul to the universe, wings to the mind, flight to the imagination, and life to everything.”',
     thumbnail: '/music.png',
   },
 ];
+
 

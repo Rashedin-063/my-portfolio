@@ -268,7 +268,7 @@ export default function Projects(): ReactNode {
       <SectionTitle title=" Glimpse of My Coding Lab" icon={<FaLaptopCode/>}/>
 
       {/* project cards */}
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 md:mx-0'>
+      <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8 md:mx-0'>
         {projects.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
@@ -276,7 +276,7 @@ export default function Projects(): ReactNode {
             className=''
           >
             <div
-              className='flex flex-col items-center justify-center p-4 gap-12  border border-indigo-800 rounded-3xl bg-custom-gradient hover:border-indigo-600  hover:border-dotted
+              className='flex flex-col items-center justify-center p-4 gap-12  border border-indigo-800 rounded-3xl bg-custom-gradient shadow-3xl hover:border-indigo-600 hover:shadow-glow hover:border-dotted transition duration-300 ease in
              '
             >
               <motion.div layoutId={`image-${card.title}-${id}`}>

@@ -28,7 +28,7 @@ export default function ArrowButton({
       style={{ borderColor: borderColor, fontWeight: '300' }}
       {...props}
       className={cn(
-        `group relative inline-flex items-center justify-center overflow-hidden rounded-full border drop-shadow-2xl transition duration-300 ease-out text-sm ${size === 'lg' ? ' px-6 py-2 w-48' : 'px-4 py-1 w-32 font-josefinSans font-light'}`
+        `group relative inline-flex items-center justify-center overflow-hidden rounded-full border drop-shadow-2xl transition duration-300 ease-out text-sm ${size === 'lg' ? ' px-8 py-2 w-[210px]' : 'px-4 py-1 w-32 font-josefinSans font-light'}`
       )}
       onClick={handleClick}
     >

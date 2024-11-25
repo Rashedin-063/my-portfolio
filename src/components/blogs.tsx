@@ -1,8 +1,23 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+      {/* blog section */}
+        <div className='w-full lg:w-[55%] h-[85vh] rounded-[1.75rem] space-y-8 flex flex-col justify-center lg:px-8 bg-custom-gradient shadow-xl hover:brightness-150 hover:shadow-3xl transition-all duration-300 ease-in border border-indigo-800 border-dotted'>
+          <h1 className='text-2xl md:text-3xl lg:text-4xl text-yellow-sunshine font-semibold'>
+            I Write, Sometimes
+          </h1>
+          <p className='font-josefinSans text-lg text-white-pearl '>
+            When inspiration strikes, I pen down my thoughts on web development,
+            self-improvement, and spirituality. These writings are a reflection
+            of my journey—exploring ideas, sharing knowledge, and seeking
+            growth. Dive in and discover something meaningful!{' '}
+          </p>
+
+         
+</div>
+        
+        /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Config } from 'tailwindcss';
 const {
   default: flattenColorPalette,
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 } = require('tailwindcss/lib/util/flattenColorPalette');
 
 // import flattenColorPalette from 'tailwindcss/lib/util/flattenColorPalette';
@@ -20,7 +35,7 @@ const config: Config = {
         'custom-radial':
           'radial-gradient(1600px at 70% 120%, rgba(33, 39, 80, 1) 10%, #020409 100%)',
         'custom-gradient':
-          'linear-gradient(to right,   #102C6D, #1e2b58, #080E39, #060C34)',
+          'linear-gradient(to right, #000118,  #000220, #02082B, #040A2E,  #060C34, #080E39)',
         'gradient-text':
           'radial-gradient(circle at 12.3% 19.3%, rgb(85, 88, 218) 0%, rgb(95, 209, 249) 100.2%)',
         'custom-gradient-2':
@@ -71,20 +86,21 @@ const config: Config = {
         spin: 'spin 3s linear infinite',
       },
     },
-    plugins: [addVariablesForColors],
+      plugins: [addVariablesForColors],
+    },
   },
-};
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 function addVariablesForColors({ addBase, theme }: any) {
-  const allColors = flattenColorPalette(theme('colors'));
+  const allColors = flattenColorPalette(theme("colors"));
   const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
-
+ 
   addBase({
-    ':root': newVars,
+    ":root": newVars,
   });
 }
 
 export default config;
+

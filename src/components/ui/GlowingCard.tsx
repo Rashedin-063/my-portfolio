@@ -25,7 +25,7 @@ export default function GlowingCard({
   return (
     <>
       <div
-        className='bg-gradient-to-r p-0.5 hover:shadow-glow hover:brightness-150 h-48 w-48 md:w-60 md:h-60 lg:h-[300px] lg:w-[300px] rounded-full relative animate-spin'
+        className='bg-gradient-to-r p-0.5 hover:shadow-glow hover:brightness-150 h-48 w-48 md:w-60 md:h-60 lg:h-[310px] lg:w-[310px] rounded-full relative animate-spin'
         style={{
           transition: ' box-shadow 0.5s ease',
           backgroundImage: `linear-gradient(to right, ${fromColor}, ${viaColor}, ${toColor})`,
@@ -43,7 +43,7 @@ export default function GlowingCard({
           alt="Rashedin Islam's Profile Photo"
           priority
           
-          className='h-48 w-48 md:w-60 md:h-60 lg:h-[300px] lg:w-[300px] rounded-full object-cover p-2 hover:p-0 transition-all ease-in'
+          className='h-48 w-48 md:w-60 md:h-60 lg:h-[310px] lg:w-[310px] rounded-full object-cover p-2 hover:p-0 transition-all ease-in'
         />
       </div>
     </>
