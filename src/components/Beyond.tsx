@@ -16,7 +16,7 @@ const Beyond = () => {
 
         {hobbiesAndInterests.map(({ id, thumbnail, title, desc }) => (
     
-            <div key={id} className={`w-full xl:w-96 flex flex-col p-3 py-6 h-[200px] rounded-[1.75rem] items-start text-start bg-custom-gradient shadow-glow2 hover:shadow-glow3 bg-blend-soft-light transition-all duration-300 ease-in border border-indigo-800 border-dotted xl:absolute mb-6 xl:mb-0 ${id === 1  ? 'top-2 left-0' : id === 2 ? 'top-24 right-0' : id === 3 ? 'top-[25%] left-[33%] xl:h-[280px] xl:w-[450px]' : id === 4 ? 'bottom-24 left-0' : id === 5 ? 'bottom-2 right-0' : ''}`}>
+            <div key={id} className={`w-full xl:w-96 flex flex-col p-3 py-6 h-[200px] rounded-[1.75rem] items-start text-start bg-custom-gradient shadow-glow2 hover:shadow-glow3 bg-blend-soft-light transition-all duration-300 ease-in border border-indigo-800 border-dotted xl:absolute mb-6 xl:mb-0 hover:scale-[1.02] ${id === 1  ? 'top-2 left-0' : id === 2 ? 'top-24 right-0' : id === 3 ? 'top-[25%] left-[33%] xl:h-[280px] xl:w-[450px]' : id === 4 ? 'bottom-24 left-0' : id === 5 ? 'bottom-2 right-0' : ''}`}>
              {id === 3 ? '' :  <Image
                 width='50'
                 height='50'
@@ -36,7 +36,7 @@ const Beyond = () => {
               textColor='#FBFBFB'
               buttonOverlayColor='#FFD93D'
               borderColor='#FFD93D'
-              size='sm'
+              size='lg'
               icon={<FaReadme color='white' size='20' />}
             />
           </Link> ): ''}

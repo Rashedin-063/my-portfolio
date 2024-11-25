@@ -43,7 +43,7 @@ const config: Config = {
         glow2:
           '0 0 5px rgba(0, 38, 77, 0.7), 0 0 10px rgba(0, 73, 141, 0.5), 0 0 15px rgba(0, 82, 162, 0.3)',
         glow3:
-          '0 0 20px rgba(0, 38, 77, 0.7), 0 0 40px rgba(0, 73, 141, 0.5), 0 0 60px rgba(0, 82, 162, 0.3)',
+          '0 0 30px rgba(0, 38, 77, 0.7), 0 0 60px rgba(0, 73, 141, 0.5), 0 0 90px rgba(0, 82, 162, 0.3)',
       },
       filter: {
         'blur-20': 'blur(20px)',
@@ -68,8 +68,9 @@ const config: Config = {
       },
       animation: {
         shimmer: 'shimmer 2s linear infinite',
-        spin: 'spin 3s linear infinite',
+        spin: 'spin 3s linear infinite', 
       },
+      
     },
     plugins: [addVariablesForColors],
   },

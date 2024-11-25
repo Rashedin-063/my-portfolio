@@ -16,27 +16,25 @@
   font-size: 14px !important; 
 }
 
-@layer utilities {
-  .border-gradient {
-    border-image: linear-gradient(to right, #000118, #000220, #02082B, #040A2E, #060C34, #080E39) 1;
-  }
-}
 
 html {
   scroll-behavior: smooth;
 }
 
-
-
-
-[data-aos] {
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
+@keyframes moveBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 400% 0;
+  }
 }
 
-[data-aos].aos-animate {
-  opacity: 1;
+.animated-text {
+  animation: moveBg 10s ease-in-out infinite;
 }
+
+
 
 
 

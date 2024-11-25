@@ -23,7 +23,7 @@ const Hero = () => {
       {/* Left Content */}
       <div className='space-y-4 text-white-pearl text-center lg:text-start'>
         <div>
-          <h2 className='text-xl md:text-2xl xl:text-3xl font-semibold flex gap-2 items-center justify-center lg:justify-start font-semibold'>
+          <h2 className='text-xl md:text-2xl xl:text-3xl font-semibold flex gap-2 items-center justify-center lg:justify-start'>
             <FaHandsClapping /> Hello there, I am{' '}
           </h2>
           <h1 className='font-bold text-4xl md:text-5xl xl:text-6xl text-transparent bg-clip-text bg-gradient-text mt-1'>
