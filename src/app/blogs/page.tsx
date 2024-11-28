@@ -1,6 +1,6 @@
 import { HoverEffect } from "@/components/ui/CardHoverEffect";
 import { Blogs } from "@/data";
-import {RiArticleFill} from "@/data/icons"
+// import {RiArticleFill} from "@/data/icons"
 const BlogsPage = () => {
 
   return (
