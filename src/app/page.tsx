@@ -7,12 +7,14 @@ import RightSidebar from '../components/RightSidebar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 // import Projects from '@/components/Projects';
-import Blogs from '@/components/Beyond';
+// import Blogs from '@/components/Beyond';
 import Contact from '@/components/Contact';
+// import Beyond from '@/components/Beyond';
 // import SplashScreen from '@/components/SplashScreen'
 
 const LeftSidebar = dynamic(() => import('@/components/LeftSideBar'))
 const Projects = dynamic(() => import('@/components/Projects'))
+const Beyond = dynamic(() => import('@/components/Beyond'));
 
 const Home: NextPage = () => {
   return (
@@ -40,7 +42,7 @@ const Home: NextPage = () => {
         <div className="space-y-16 lg:space-y-28">
           <About />
           <Projects/>
-          <Blogs />
+          <Beyond/>
           <Contact />
         </div>
       </div>
