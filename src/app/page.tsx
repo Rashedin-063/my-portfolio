@@ -20,7 +20,7 @@ const Home: NextPage = () => {
       {/* <SplashScreen /> */}
 
       {/* Navbar */}
-      <div className='absolute   z-10 top-4 w-full lg:w-fit lg:right-0'>
+      <div className='absolute z-10 top-4 w-full lg:w-fit lg:right-0'>
         <Navbar />
       </div>
 

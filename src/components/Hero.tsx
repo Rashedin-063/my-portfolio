@@ -1,11 +1,12 @@
-
+import dynamic from 'next/dynamic';
 import React from 'react';
 import { FlipWords } from './ui/FlipWords';
 import { FaHandsClapping } from 'react-icons/fa6';
-import GlowingCard from './ui/GlowingCard';
+// import GlowingCard from './ui/GlowingCard';
 import HeroBtn from './ui/HeroBtn'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+const GlowingCard = dynamic(() => import('./ui/GlowingCard'))
 
 
 const words = [
@@ -26,7 +27,16 @@ const Hero = () => {
           <h2 className='text-xl md:text-2xl xl:text-3xl font-semibold flex gap-2 items-center justify-center lg:justify-start'>
             <FaHandsClapping /> Hello there, I am{' '}
           </h2>
-          <h1 className='font-bold text-4xl md:text-5xl xl:text-6xl text-transparent bg-clip-text bg-gradient-text mt-1'>
+          <h1
+            className='font-bold text-4xl md:text-5xl xl:text-6xl text-transparent bg-clip-text mt-1'
+            style={{
+              backgroundImage:
+                'linear-gradient(90deg, hsl(221.6,55%,50%), hsl(210,90%,60%), hsl(221.6,55%,50%))',
+              backgroundSize: '400% 100%',
+              animation: 'moveBg 12s linear infinite',
+              WebkitBackgroundClip: 'text',
+            }}
+          >
             {' '}
             Rashedin Islam
           </h1>
