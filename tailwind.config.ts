@@ -24,7 +24,7 @@ const config: Config = {
         'gradient-text':
           'radial-gradient(circle at 12.3% 19.3%, rgb(85, 88, 218) 0%, rgb(95, 209, 249) 100.2%)',
         'custom-gradient-2':
-          ' linear-gradient(112.6deg, rgb(56, 24, 40) -10.7%, rgb(23, 148, 185) 100.2%);',
+          ' linear-gradient(to bottom, #030160, #080E39, #060C34, #040C34)',
       },
       fontFamily: {
         chakraPetch: ['var(--chakra-petch)', 'sans-serif'],
@@ -68,9 +68,8 @@ const config: Config = {
       },
       animation: {
         shimmer: 'shimmer 2s linear infinite',
-        spin: 'spin 3s linear infinite', 
+        spin: 'spin 3s linear infinite',
       },
-      
     },
     plugins: [addVariablesForColors],
   },

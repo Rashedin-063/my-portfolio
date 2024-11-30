@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
         <form
           ref={formRef}
           onSubmit={handleSubmit(onSubmit)}
-          className='space-y-6 bg-custom-gradient p-8 rounded-3xl shadow-glow3 mt-8'
+          className='space-y-6 bg-custom-gradient-2 p-8 rounded-3xl shadow-glow3 mt-16'
         >
           {/* Name Input */}
           <div className='flex flex-col'>
@@ -78,7 +78,7 @@ const Contact: React.FC = () => {
             <input
               id='name'
               type='text'
-              name='from_name'
+              
               {...register('from_name', { required: 'Name is required' })}
               className={`p-3 border ${
                 errors.from_name ? 'border-red-500' : 'border-indigo-600'
@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
             <input
               id='email'
               type='email'
-              name='reply_to'
+             
               {...register('reply_to', {
                 required: 'Email is required',
                 pattern: {
@@ -135,7 +135,7 @@ const Contact: React.FC = () => {
             )}
             <textarea
               id='message'
-              name='message'
+             
               {...register('message', { required: 'Message is required' })}
               rows={4}
               className={`p-3 border ${
@@ -148,7 +148,7 @@ const Contact: React.FC = () => {
           {/* Submit Button */}
           <button
             type='submit'
-            className='w-full py-3 px-6 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition duration-300 font-josefinSans'
+            className='w-full py-3 px-6 bg-blue-800 text-white-pearl font-semibold rounded-md hover:bg-blue-700 transition duration-300 font-josefinSans'
           >
             Let&apos;s Build Bridges
           </button>
