@@ -1,15 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 import { TbMessageHeart } from '@/data/icons';
-import SectionTitle from './ui/SectionTitle'
+import SectionTitle from './ui/SectionTitle';
 
 type FormInputs = {
-  name: string;
-  email: string;
+  from_name: string;
+  reply_to: string;
   message: string;
 };
 
@@ -21,23 +21,34 @@ const Contact: React.FC = () => {
     formState: { errors },
   } = useForm<FormInputs>();
 
-  const onSubmit: SubmitHandler<FormInputs> = async (data) => {
-    try {
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
-      const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID!;
+  const formRef = useRef<HTMLFormElement | null>(null);
 
-      const result = await emailjs.send(serviceId, templateId, data, userId);
+  const onSubmit: SubmitHandler<FormInputs> = async () => {
+    if (formRef.current) {
+      try {
+        const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 
-      if (result.status === 200) {
-        toast.success('Message sent successfully!');
-        reset();
-      } else {
-        toast.error('Failed to send message. Please try again later.');
+        const result = await emailjs.sendForm(
+          serviceId,
+          templateId,
+          formRef.current,
+          {
+            publicKey: publicKey,
+          }
+        );
+
+        if (result.status === 200) {
+          toast.success('Message sent successfully!');
+          reset();
+        } else {
+          toast.error('Failed to send message. Please try again later.');
+        }
+      } catch (error) {
+        console.error('EmailJS Error:', error);
+        toast.error('An error occurred. Please try again later.');
       }
-    } catch (error) {
-      console.error('EmailJS Error:', error);
-      toast.error('An error occurred. Please try again later.');
     }
   };
 
@@ -46,30 +57,31 @@ const Contact: React.FC = () => {
       <div className='max-w-3xl mx-auto text-center'>
         <SectionTitle title='Call of the Whisper' icon={<TbMessageHeart />} />
         <form
+          ref={formRef}
           onSubmit={handleSubmit(onSubmit)}
           className='space-y-6 bg-custom-gradient p-8 rounded-3xl shadow-glow3 mt-8'
         >
           {/* Name Input */}
           <div className='flex flex-col'>
-            {errors.name ? (
+            {errors.from_name ? (
               <span className='text-red-500 text-start font-semibold ml-1'>
-                {errors.name.message}
+                {errors.from_name.message}
               </span>
             ) : (
               <label
-                htmlFor='name'
+                htmlFor='from_name'
                 className='text-left font-medium text-white-pearl ml-1'
               >
                 Name
               </label>
             )}
-
             <input
               id='name'
               type='text'
-              {...register('name', { required: 'Name is required' })}
+              name='from_name'
+              {...register('from_name', { required: 'Name is required' })}
               className={`p-3 border ${
-                errors.name ? 'border-red-500' : 'border-indigo-600'
+                errors.from_name ? 'border-red-500' : 'border-indigo-600'
               } rounded-md focus:outline-none focus:bg-blue-800 focus:border-blue-600 bg-blue-900 border-indigo-600 mt-1 focus:shadow-glow2`}
               placeholder='Your Name'
             />
@@ -77,9 +89,9 @@ const Contact: React.FC = () => {
 
           {/* Email Input */}
           <div className='flex flex-col'>
-            {errors.email ? (
+            {errors.reply_to ? (
               <span className='text-red-500 text-start font-semibold ml-1'>
-                {errors.email.message}
+                {errors.reply_to.message}
               </span>
             ) : (
               <label
@@ -89,11 +101,11 @@ const Contact: React.FC = () => {
                 Email
               </label>
             )}
-
             <input
               id='email'
               type='email'
-              {...register('email', {
+              name='reply_to'
+              {...register('reply_to', {
                 required: 'Email is required',
                 pattern: {
                   value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
@@ -101,7 +113,7 @@ const Contact: React.FC = () => {
                 },
               })}
               className={`p-3 border ${
-                errors.name ? 'border-red-500' : 'border-indigo-600'
+                errors.reply_to ? 'border-red-500' : 'border-indigo-600'
               } rounded-md focus:outline-none focus:bg-blue-800 focus:border-blue-600 bg-blue-900 border-indigo-600 mt-1 focus:shadow-glow2`}
               placeholder='Your Email'
             />
@@ -121,13 +133,13 @@ const Contact: React.FC = () => {
                 Message
               </label>
             )}
-
             <textarea
               id='message'
+              name='message'
               {...register('message', { required: 'Message is required' })}
               rows={4}
               className={`p-3 border ${
-                errors.name ? 'border-red-500' : 'border-indigo-600'
+                errors.message ? 'border-red-500' : 'border-indigo-600'
               } rounded-md focus:outline-none focus:bg-blue-800 focus:border-blue-600 bg-blue-900 border-indigo-600 mt-1 focus:shadow-glow2`}
               placeholder='Write from the Heart'
             ></textarea>
