@@ -24,7 +24,7 @@ const Hero = () => {
       {/* Left Content */}
       <div className='space-y-4 text-white-pearl text-center lg:text-start'>
         <div>
-          <h2 className='text-xl md:text-2xl xl:text-3xl font-semibold flex gap-2 items-center justify-center lg:justify-start'>
+          <h2 className='text-lg md:text-xl xl:text-2xl font-semibold flex gap-2 items-center justify-center lg:justify-start'>
             <FaHandsClapping /> Hello there, I am{' '}
           </h2>
           <h1
@@ -42,15 +42,16 @@ const Hero = () => {
           </h1>
         </div>
 
-        <div className='mt-4 text-xl lg:text-2xl font-semibold text-yellow-sunshine space-y-1'>
-          <span className='text-lg xl:text-xl text-white-pearl'>
+        <div className='mt-4 text-lg lg:text-xl font-semibold text-yellow-sunshine space-y-1'>
+          <p className=' text-white-pearl'>
             An innovative web developer, passionate about
-          </span>
+          </p>
           <br />
-          <FlipWords words={words} />
+          <p>Crafting Seamless User Experiences</p>
+          {/* <FlipWords words={words} /> */}
         </div>
 
-        <p className='md:text-lg text-[#FBFBFB] max-w-xl -ml-2 md:-ml-0 pt-2 lg:pt-4'>
+        <p className='lg:text-lg text-[#FBFBFB] max-w-xl -ml-2 md:-ml-0 pt-2 lg:pt-4'>
           Frontend, Backend, or Full Stack — Let&apos;s create magic together!
         </p>
         {/* Buttons */}
