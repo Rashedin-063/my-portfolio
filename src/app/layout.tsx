@@ -6,7 +6,7 @@ import '../styles/universe.css';
 import { ThemeProvider } from './provider';
 import { chakraPetch } from '../styles/fontConfig';
 import { josefinSans } from '../styles/fontConfig';
-
+import { Analytics } from '@vercel/analytics/react';
 
 
 
@@ -36,14 +36,12 @@ export default function RootLayout({
         >
           <AnimatedUniverse />
 
-     
-         
-<div
+          <div
             className={`relative z-10 overflow-y-auto h-full w-full scroll-smooth ${chakraPetch.variable} ${josefinSans.variable}`}
           >
             {children}
           </div>
-           
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
