@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 import React from 'react';
-import { FlipWords } from './ui/FlipWords';
+// import { FlipWords } from './ui/FlipWords';
 import { FaHandsClapping } from 'react-icons/fa6';
 // import GlowingCard from './ui/GlowingCard';
 import HeroBtn from './ui/HeroBtn'
