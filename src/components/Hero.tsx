@@ -9,11 +9,11 @@ import 'react-toastify/dist/ReactToastify.css';
 const GlowingCard = dynamic(() => import('./ui/GlowingCard'))
 
 
-const words = [
-  'Crafting Seamless User Experiences',
-  'Designing Sleek Frontend Interfaces',
-  'Building Scalable Web Applications',
-];
+// const words = [
+//   'Crafting Seamless User Experiences',
+//   'Designing Sleek Frontend Interfaces',
+//   'Building Scalable Web Applications',
+// ];
 
 const Hero = () => {
   return (
