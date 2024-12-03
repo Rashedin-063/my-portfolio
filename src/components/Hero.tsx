@@ -26,16 +26,7 @@ const Hero = () => {
           <h2 className='text-lg md:text-xl xl:text-2xl font-semibold flex gap-2 items-center justify-center lg:justify-start'>
             <FaHandsClapping /> Hello there, I am{' '}
           </h2>
-          <h1
-            className='font-bold text-4xl md:text-5xl xl:text-6xl text-transparent bg-clip-text mt-1'
-            style={{
-              backgroundImage:
-                'linear-gradient(90deg, hsl(221.6,55%,50%), hsl(210,90%,60%), hsl(221.6,55%,50%))',
-              backgroundSize: '400% 100%',
-              animation: 'moveBg 12s linear infinite',
-              WebkitBackgroundClip: 'text',
-            }}
-          >
+          <h1 className='font-bold text-4xl md:text-5xl xl:text-6xl bg-gradient-text text-transparent bg-clip-text mt-1'>
             {' '}
             Rashedin Islam
           </h1>
@@ -46,7 +37,7 @@ const Hero = () => {
             An innovative web developer, passionate about
           </span>
           <br />
-        <FlipWords words={words} />
+          <FlipWords words={words} />
         </div>
 
         <p className='lg:text-lg text-[#FBFBFB] max-w-xl -ml-2 md:-ml-0 pt-2 lg:pt-4'>
