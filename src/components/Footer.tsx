@@ -21,7 +21,7 @@ const Footer = () => {
           </h2>
           <p className='text-sm max-w-lg text-gray-300 mb-6'>
             I offer professional web development services with a focus on
-            creating user-friendly, responsive, and beautiful websites. Let's
+            creating user-friendly, responsive, and beautiful websites. Let&apos;s
             work together to bring your ideas to life!
           </p>
 
