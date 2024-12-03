@@ -1,25 +1,25 @@
-import dynamic from 'next/dynamic';
-import React from 'react';
-// import { FlipWords } from './ui/FlipWords';
+import React, { Suspense, lazy } from "react";
+
 import { FaHandsClapping } from 'react-icons/fa6';
-// import GlowingCard from './ui/GlowingCard';
 import HeroBtn from './ui/HeroBtn'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-const GlowingCard = dynamic(() => import('./ui/GlowingCard'))
+import GlowingCard from './ui/GlowingCard';
+const FlipWords = lazy(() => import("./ui/FlipWords"));;
 
 
-// const words = [
-//   'Crafting Seamless User Experiences',
-//   'Designing Sleek Frontend Interfaces',
-//   'Building Scalable Web Applications',
-// ];
+
+const words = [
+  'Crafting Seamless User Experiences',
+  'Designing Sleek Frontend Interfaces',
+  'Building Scalable Web Applications',
+];
 
 const Hero = () => {
   return (
     <div
       id='hero'
-      className='h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 xl:gap-24 rounded-xl lg:pt-8 lg:pl-16 xl:pl-36'
+      className='h-screen w-full flex flex-col-reverse lg:flex-row items-center justify-center lg:justify-start gap-12 xl:gap-24 rounded-xl lg:pt-8 lg:pl-16 '
     >
       {/* Left Content */}
       <div className='space-y-4 text-white-pearl text-center lg:text-start'>
@@ -42,13 +42,14 @@ const Hero = () => {
           </h1>
         </div>
 
-        <div className='mt-4 text-lg lg:text-xl font-semibold text-yellow-sunshine space-y-1'>
-          <p className=' text-white-pearl'>
+        <div className='mt-4 text-lg lg:text-xl font-semibold text-yellow-sunshine space-y-2'>
+          <span className=' text-white-pearl'>
             An innovative web developer, passionate about
-          </p>
+          </span>
           <br />
-          <p>Crafting Seamless User Experiences</p>
-          {/* <FlipWords words={words} /> */}
+        <Suspense fallback={<p>Building Scalable Web Applications</p>}>
+        <FlipWords words={words} />
+      </Suspense>
         </div>
 
         <p className='lg:text-lg text-[#FBFBFB] max-w-xl -ml-2 md:-ml-0 pt-2 lg:pt-4'>

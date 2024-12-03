@@ -30,7 +30,7 @@ const Beyond = () => {
                 <p className=' mt-3 text-[17px] font-josefinSans text-white'>
                   {desc}
                 </p>
-                 {id === 3 ?  (<Link href='/blogs' className="absolute right-4 mt-4">
+              {id === 3 ? (<Link href='/blogs' prefetch={false} className="absolute right-4 mt-4">
             <ArrowButton
               text='Read My Blogs'
               textColor='#FBFBFB'

@@ -3,18 +3,22 @@ import dynamic from 'next/dynamic';
 
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-import RightSidebar from '../components/RightSidebar';
+
 import Hero from '@/components/Hero';
-import About from '@/components/About';
+// import RightSidebar from '../components/RightSidebar';
+// import About from '@/components/About';
 // import Projects from '@/components/Projects';
 // import Blogs from '@/components/Beyond';
-import Contact from '@/components/Contact';
+// import Contact from '@/components/Contact';
 // import Beyond from '@/components/Beyond';
 // import SplashScreen from '@/components/SplashScreen'
 
 const LeftSidebar = dynamic(() => import('@/components/LeftSideBar'))
+const RightSidebar = dynamic(() => import('@/components/RightSidebar'))
+const About = dynamic(() => import('@/components/About'))
 const Projects = dynamic(() => import('@/components/Projects'))
 const Beyond = dynamic(() => import('@/components/Beyond'));
+const Contact = dynamic(() => import('@/components/Contact'));
 
 const Home: NextPage = () => {
   return (
