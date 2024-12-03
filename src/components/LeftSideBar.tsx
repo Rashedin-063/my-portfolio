@@ -8,7 +8,6 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { FcDocument } from 'react-icons/fc';
 import { MdAttachEmail, MdMarkEmailRead } from "react-icons/md";
 import { toast } from 'react-toastify';
-// import { Fade } from 'react-awesome-reveal';
 
 
 

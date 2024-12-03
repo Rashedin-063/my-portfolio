@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-// import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic';
 
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
@@ -10,9 +10,9 @@ import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import Beyond from '@/components/Beyond';
-import LeftSidebar from '@/components/LeftSidebar'
+// import LeftSidebar from '@/components/LeftSidebar';
 
-// const LeftSidebar = dynamic(() => import('@/components/LeftSideBar'))
+const LeftSidebar = dynamic(() => import('@/components/LeftSideBar'))
 // const RightSidebar = dynamic(() => import('@/components/RightSidebar'))
 // const About = dynamic(() => import('@/components/About'))
 // const Projects = dynamic(() => import('@/components/Projects'))
