@@ -1,11 +1,10 @@
-import React, { Suspense, lazy } from "react";
-
+import React from "react";
 import { FaHandsClapping } from 'react-icons/fa6';
 import HeroBtn from './ui/HeroBtn'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import GlowingCard from './ui/GlowingCard';
-const FlipWords = lazy(() => import("./ui/FlipWords"));;
+import FlipWords from "./ui/FlipWords"
 
 
 
@@ -47,9 +46,7 @@ const Hero = () => {
             An innovative web developer, passionate about
           </span>
           <br />
-        <Suspense fallback={<p>Building Scalable Web Applications</p>}>
         <FlipWords words={words} />
-      </Suspense>
         </div>
 
         <p className='lg:text-lg text-[#FBFBFB] max-w-xl -ml-2 md:-ml-0 pt-2 lg:pt-4'>

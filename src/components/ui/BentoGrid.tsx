@@ -13,6 +13,7 @@ import {
 } from 'react-icons/si';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+// import MovingBorders from './MovingBorders';
 
 const GridGlobe = dynamic(() => import('./GridGlobe'));
 
@@ -187,9 +188,9 @@ export const BentoGridItem = ({
               {/* //  tech stack list */}
               <div className='grid grid-cols-3 gap-x-3 gap-y-5 lg:gap-8'>
                 {techStack.map((item, i) => (
-                  <span
+                   <span
                     key={i}
-                    className=' text-black font-semibold text-sm lg:text-base opacity-100 rounded-lg text-center bg-white-pearl flex px-4 lg:px-6 py-2 lg:py-3 justify-center items-center gap-2'
+                    className=' text-black font-semibold text-sm lg:text-base opacity-100 text-center flex  justify-center items-center gap-2'
                   >
                     {item.icon}
                     {item.text}
