@@ -19,7 +19,7 @@ const FlipWords = ({
     if (!hasRenderedStatic) {
       const timeout = setTimeout(() => {
         setHasRenderedStatic(true);
-      }, 100); // Small delay to allow LCP to prioritize static content
+      }, 100);
       return () => clearTimeout(timeout);
     }
 
