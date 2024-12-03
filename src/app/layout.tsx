@@ -6,7 +6,7 @@ import '../styles/universe.css';
 import { ThemeProvider } from './provider';
 import { chakraPetch } from '../styles/fontConfig';
 import { josefinSans } from '../styles/fontConfig';
-// import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/react';
 
 
 
@@ -41,7 +41,7 @@ export default function RootLayout({
           >
             {children}
           </div>
-          {/* <Analytics /> */}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

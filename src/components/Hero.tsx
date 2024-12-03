@@ -4,15 +4,15 @@ import HeroBtn from './ui/HeroBtn'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import GlowingCard from './ui/GlowingCard';
-// import FlipWords from "./ui/FlipWords"
+import FlipWords from "./ui/FlipWords"
 
 
 
-// const words = [
-//   'Crafting Seamless User Experiences',
-//   'Designing Sleek Frontend Interfaces',
-//   'Building Scalable Web Applications',
-// ];
+const words = [
+  'Crafting Seamless User Experiences',
+  'Designing Sleek Frontend Interfaces',
+  'Building Scalable Web Applications',
+];
 
 const Hero = () => {
   return (
@@ -37,8 +37,8 @@ const Hero = () => {
             An innovative web developer, passionate about
           </span>
           <br />
-          <span>Crafting Seamless User Experiences</span>
-          {/* <FlipWords words={words} /> */}
+         
+          <FlipWords words={words} />
         </div>
 
         <p className='lg:text-lg text-[#FBFBFB] max-w-xl -ml-2 md:-ml-0 pt-2 lg:pt-4'>

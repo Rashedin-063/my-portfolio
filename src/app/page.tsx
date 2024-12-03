@@ -1,23 +1,16 @@
 import { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 
-import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-
 import Hero from '@/components/Hero';
-import RightSidebar from '../components/RightSidebar';
-import About from '@/components/About';
-import Projects from '@/components/Projects';
-import Contact from '@/components/Contact';
-import Beyond from '@/components/Beyond';
-// import LeftSidebar from '@/components/LeftSidebar';
+import Footer from '@/components/Footer';
 
 const LeftSidebar = dynamic(() => import('@/components/LeftSideBar'))
-// const RightSidebar = dynamic(() => import('@/components/RightSidebar'))
-// const About = dynamic(() => import('@/components/About'))
-// const Projects = dynamic(() => import('@/components/Projects'))
-// const Beyond = dynamic(() => import('@/components/Beyond'));
-// const Contact = dynamic(() => import('@/components/Contact'));
+const RightSidebar = dynamic(() => import('@/components/RightSidebar'))
+const About = dynamic(() => import('@/components/About'))
+const Projects = dynamic(() => import('@/components/Projects'))
+const Beyond = dynamic(() => import('@/components/Beyond'));
+const Contact = dynamic(() => import('@/components/Contact'));
 
 const Home: NextPage = () => {
   return (
