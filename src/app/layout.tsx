@@ -26,7 +26,7 @@ export default function RootLayout({
         <link rel='icon' href='/logo.png' sizes='any' type='image/png' />
       </head>
       <body
-        className={`antialiased page bg-custom-radial max-w-[1600px] mx-auto `}
+        className={`antialiased page bg-custom-radial `}
       >
         <ThemeProvider
           attribute='class'
@@ -45,5 +45,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
