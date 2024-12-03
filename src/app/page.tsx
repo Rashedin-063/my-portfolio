@@ -53,7 +53,7 @@ const Home: NextPage = () => {
 
       {/* Footer */}
       <div className='container mx-auto'>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );
