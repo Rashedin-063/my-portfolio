@@ -9,7 +9,7 @@ const Footer = () => {
       {/* Quote Section */}
       <div className='text-center '>
         <h4 className='text-yellow-sunshine font-semibold tracking-wider italic mb-12 '>
-          "We are all in the gutter, but some of us are looking at the stars."
+          &quot;We are all in the gutter, but some of us are looking at the stars.&quot;
         </h4>
       </div>
 
