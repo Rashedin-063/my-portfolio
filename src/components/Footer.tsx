@@ -5,96 +5,53 @@ import footerImg from '../../public/footer.png';
 
 const Footer = () => {
   return (
-    <footer className='w-full text-white py-12 relative'>
+    <footer className='w-full pt-12 pb-8 relative text-white-pearl'>
       {/* Quote Section */}
       <div className='text-center '>
-        <h4 className='text-xs italic text-gray-400'>
-          We are all in the gutter, but some of us are looking at the stars.
+        <h4 className='text-yellow-sunshine font-semibold tracking-wider italic mb-12 '>
+          "We are all in the gutter, but some of us are looking at the stars."
         </h4>
       </div>
 
-      <div className='flex justify-between items-start px-6 lg:px-12 gap-12'>
+      <div className='lg:flex justify-between items-start px-6 lg:px-12 gap-12'>
         {/* Left Section: Service Text and Social Icons */}
-        <div className='w-2/3'>
-          <h2 className='text-2xl font-semibold mb-4 text-yellow-400'>
-            Looking for a passionate developer?
+        <div className='w-full lg:w-1/2 xl:w-2/3'>
+          <h2 className='text-xl font-semibold mb-4 text-yellow-400'>
+            Coding is my canvas, <br /> every project is a new masterpiece.
           </h2>
-          <p className='text-sm max-w-lg text-gray-300 mb-6'>
+          <p className='max-w-md text-faded-pearl mb-6 font-josefinSans'>
             I offer professional web development services with a focus on
-            creating user-friendly, responsive, and beautiful websites. Let&apos;s
-            work together to bring your ideas to life!
+            creating user-friendly, responsive, and beautiful websites.
+            Let&apos;s work together to bring your ideas to life!
           </p>
-
-          {/* Social Media Icons */}
-          <div className='flex space-x-6'>
-            <a
-              href='https://github.com/yourprofile'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-white hover:text-yellow-500'
-            >
-              <i className='fab fa-github'></i>
-            </a>
-            <a
-              href='https://www.linkedin.com/in/yourprofile/'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-white hover:text-yellow-500'
-            >
-              <i className='fab fa-linkedin'></i>
-            </a>
-            <a
-              href='https://twitter.com/yourprofile'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-white hover:text-yellow-500'
-            >
-              <i className='fab fa-twitter'></i>
-            </a>
-          </div>
         </div>
 
         {/* Right Section: Small Boxes */}
-        <div className='w-1/3 grid grid-cols-2 gap-6'>
-          <div className='bg-custom-gradient-2 p-4 rounded-lg text-center'>
-            <p className='text-xs text-gray-400'>Web development</p>
-          </div>
-          <div className='bg-custom-gradient-2 p-4 rounded-lg text-center'>
+
+        <div className='lg:w-1/2 xl:w-1/3 hidden lg:grid grid-cols-2 gap-4 text-faded-pearl text-center font-josefinSans'>
+          <p className='bg-custom-gradient-2 border-2 border-indigo-700  py-4 rounded-lg'>
+            Design & Development
+          </p>
+           <p className='bg-custom-gradient-2 border-2 border-indigo-700  py-4 rounded-lg'>
+            SEO Optimization
+          </p>
+          <p className='bg-custom-gradient-2 border-2 border-indigo-700  py-4 rounded-lg'>
+            Debugging & Bug Fixing
+          </p>
          
-            <p className='text-xs text-gray-400'>UI/UX Design</p>
-          </div>
-          <div className='bg-custom-gradient-2 p-4 rounded-lg text-center'>
-       
-            <p className='text-xs text-gray-400'>SEO Optimization</p>
-          </div>
-          <div className='bg-custom-gradient-2 p-4 rounded-lg text-center'>
-        
-            <p className='text-xs text-gray-400'>Consultation</p>
-          </div>
-          {/* Optional Boxes */}
-          <div className='bg-custom-gradient-2 p-4 rounded-lg text-center'>
-         
-            <p className='text-xs text-gray-400'>App Development</p>
-          </div>
-          <div className='bg-custom-gradient-2 p-4 rounded-lg text-center'>
-         
-            <p className='text-xs text-gray-400'>E-commerce Solutions</p>
-          </div>
+          <p className='bg-custom-gradient-2 border-2 border-indigo-700  py-4 rounded-lg'>
+            Performance Analyzing
+          </p>
         </div>
       </div>
 
-        <div className="absolute bottom-0 pt-4">
-           <h4 className='text-center absolute bottom-4 left-[42%] lg:left-[45%] text-[8px] tracking-wider md:text-[12px] font-extralight'>
-        @All Rights Reserved
-      </h4>
-      <div className="">
-        <Image
-          src={footerImg}
-          alt='Footer Image'
-          width='1800'
-          height='400'
-        />
-      </div>
+      <div className='absolute bottom-0 pt-4'>
+        <h4 className='text-center absolute bottom-0 lg:bottom-2 left-[42%] lg:left-[45%] text-[10px] tracking-wider md:text-[12px] font-extralight font-josefinSans'>
+          @All Rights Reserved
+        </h4>
+        <div className=''>
+          <Image src={footerImg} alt='Footer Image' width='1800' height='400' />
+        </div>
       </div>
     </footer>
   );

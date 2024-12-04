@@ -124,7 +124,7 @@ export const BentoGridItem = ({
             : id === 6
             ? 'lg:col-span-2 md:col-span-3 md:row-span-1'
             : 'lg:col-span-2 md:col-span-3 md:row-span-2'
-        } row-span-1 relative overflow-hidden rounded-3xl justify-between flex flex-col space-y-4 border-indigo-800 hover:border-indigo-600 hover:scale-[1.02] transition duration-300 ease-in-out min-h-36 shadow-glow2 hover:shadow-glow3 hover:bg-custom-gradient border  bg-custom-gradient-2 `,
+        } row-span-1 relative overflow-hidden rounded-3xl justify-between flex flex-col space-y-4 border-indigo-800 hover:border-indigo-600 hover:scale-[1.02] transition duration-300 ease-in-out min-h-36 shadow-glow2 hover:shadow-glow3 border bg-custom-gradient-2`,
         className
       )}
     >

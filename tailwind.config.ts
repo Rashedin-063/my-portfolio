@@ -24,7 +24,7 @@ const config: Config = {
         'gradient-text':
           'radial-gradient(circle at 12.3% 19.3%, rgb(85, 88, 218) 0%, rgb(95, 209, 249) 100.2%)',
         'custom-gradient-2':
-          ' linear-gradient(to bottom, #030160, #080E39, #060C34, #040C34)',
+          ' linear-gradient(to bottom, #020061, #080E39, #060C34, #040C34)',
       },
       fontFamily: {
         chakraPetch: ['var(--chakra-petch)', 'sans-serif'],
@@ -35,7 +35,7 @@ const config: Config = {
         'yellow-sunshine': '#FFD93D',
         'yellow-dusk': '	#fff487',
         'deep-ocean': '#1E2348',
-        'green-lantern': '#16A240',
+        'faded-pearl': '#fff8dc',
         'white-pearl': '#FEF9F2',
       },
       boxShadow: {

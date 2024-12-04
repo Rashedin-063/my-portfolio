@@ -276,7 +276,7 @@ export default function Projects(): ReactNode {
             className=''
           >
             <div
-              className='flex flex-col items-center justify-center p-4 gap-12  border border-indigo-800 rounded-3xl bg-custom-gradient shadow-3xl hover:border-indigo-600 hover:shadow-glow hover:border-dotted transition duration-300 ease in
+              className='flex flex-col items-center justify-center p-4 gap-12  border border-indigo-800 rounded-3xl bg-custom-gradient shadow-3xl hover:border-indigo-600 hover:shadow-glow transition duration-300 ease in
              '
             >
               <motion.div layoutId={`image-${card.title}-${id}`}>
