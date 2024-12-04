@@ -1,6 +1,6 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
-import { AnimatePresence, motion, } from "framer-motion";
+
+import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const FlipWords = ({
@@ -12,86 +12,52 @@ const FlipWords = ({
   duration?: number;
   className?: string;
 }) => {
-  const [currentWord, setCurrentWord] = useState(words[0]);
-  const [isAnimating, setIsAnimating] = useState<boolean>(false);
-
-  const startAnimation = useCallback(() => {
-    const word = words[words.indexOf(currentWord) + 1] || words[0];
-    setCurrentWord(word);
-    setIsAnimating(true);
-  }, [currentWord, words]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [hasRenderedStatic, setHasRenderedStatic] = useState(false);
 
   useEffect(() => {
-    if (!isAnimating)
-      setTimeout(() => {
-        startAnimation();
-      }, duration);
-  }, [isAnimating, duration, startAnimation]);
+    if (!hasRenderedStatic) {
+      const timeout = setTimeout(() => {
+        setHasRenderedStatic(true);
+      }, 100); // Small delay to allow LCP to prioritize static content
+      return () => clearTimeout(timeout);
+    }
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, duration);
+
+    return () => clearInterval(interval);
+  }, [words.length, duration, hasRenderedStatic]);
 
   return (
-    <AnimatePresence
-      onExitComplete={() => {
-        setIsAnimating(false);
-      }}
-    >
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 10,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 100,
-          damping: 10,
-        }}
-        exit={{
-          opacity: 0,
-          y: -40,
-          x: 40,
-          filter: "blur(8px)",
-          scale: 2,
-          position: "absolute",
-        }}
-        className={cn(
-          "z-10 inline-block relative text-left text-yellow-sunshine",
-          className
-        )}
-        key={currentWord}
-      >
-        {currentWord.split(" ").map((word, wordIndex) => (
-          <motion.span
-            key={word + wordIndex}
-            initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{
-              delay: wordIndex * 0.3,
-              duration: 0.6,
-            }}
-            className="inline-block whitespace-nowrap"
+    <div className="relative overflow-hidden h-[2rem]">
+      {!hasRenderedStatic ? (
+        <span
+          className={cn(
+            "absolute left-0 w-full opacity-100",
+            className
+          )}
+        >
+          {words[0]}
+        </span>
+      ) : (
+        words.map((word, index) => (
+          <span
+            key={index}
+            className={cn(
+              "absolute left-0 w-full transition-transform duration-500 ease-in-out",
+              currentIndex === index
+                ? "translate-y-0 opacity-100"
+                : "translate-y-full opacity-0",
+              className
+            )}
           >
-            {word.split("").map((letter, letterIndex) => (
-              <motion.span
-                key={word + letterIndex}
-                initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                transition={{
-                  delay: wordIndex * 0.3 + letterIndex * 0.06,
-                  duration: 0.3,
-                }}
-                className="inline-block"
-              >
-                {letter}
-              </motion.span>
-            ))}
-            <span className="inline-block">&nbsp;</span>
-          </motion.span>
-        ))}
-      </motion.div>
-    </AnimatePresence>
+            {word}
+          </span>
+        ))
+      )}
+    </div>
   );
 };
 
