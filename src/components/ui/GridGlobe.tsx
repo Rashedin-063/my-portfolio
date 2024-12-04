@@ -400,7 +400,7 @@ const GridGlobe = () => {
        
         <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent -z-10" />
         {/* remove -bottom-20 */}
-        <div className="absolute w-full h-72 md:h-[400px] z-40 brighntess-200 shadow-glow">
+        <div className="absolute w-full h-72 md:h-[400px] brightness-200 shadow-glow">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       </div>
