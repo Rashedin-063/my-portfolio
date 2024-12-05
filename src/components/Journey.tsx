@@ -15,11 +15,11 @@ const Journey = () => {
         imgLink='https://i.ibb.co.com/jh4R5dh/journey.gif'
       />
 
-      <div className='  justify-between items-center gap-4 min-h-[85vh] xl:relative'>
-        {hobbiesAndInterests.map(({ id, thumbnail, title, desc }) => (
+      <div className='  justify-between items-center gap-4 min-h-[90vh] xl:relative -mt-4'>
+        {hobbiesAndInterests.map(({ id, thumbnail, title, timeline, desc, credential }) => (
           <div
             key={id}
-            className={`w-full xl:w-96 flex flex-col p-3 py-2 h-[200px] rounded-[1.75rem] items-start text-start bg-custom-gradient shadow-glow2 hover:shadow-glow3 bg-blend-soft-light transition-all duration-300 ease-in  xl:absolute mb-6 xl:mb-0 hover:scale-[1.02] border-2 border-b-4 border-r-4 border-indigo-900 hover:border-indigo-600   ${
+            className={`w-full xl:w-96 flex flex-col py-3 px-4 h-[220px] rounded-[1.75rem] items-start text-start bg-custom-gradient-2 shadow-glow2 hover:shadow-glow3 bg-blend-soft-light transition-all duration-300 ease-in  xl:absolute mb-6 xl:mb-0 hover:scale-[1.02] border-2 border-b-4 border-r-4 border-indigo-900 hover:border-indigo-600 ${
               id === 1
                 ? 'top-2 left-0'
                 : id === 2
@@ -33,36 +33,34 @@ const Journey = () => {
                 : ''
             }`}
           >
-            {id === 3 ? (
-              ''
-            ) : (
-              <Image width='50' height='50' src={thumbnail} alt={title} />
-            )}
-            <div className='lg:ms-5 relative'>
-              <h1 className='text-lg md:text-xl font-bold text-yellow-sunshine'>
+           {/* thumbnail and timeline */}
+              <div className="flex justify-between gap-4 items-end font-josefinSans">
+                <Image width='30' height='30' src={thumbnail} alt={title} />
+                <p>{timeline}</p>
+                </div>
+           {/* title, des, and the btn */}
+            <div className='relative'>
+              <h1 className='text-lg md:text-xl font-bold text-yellow-sunshine mt-2'>
                 {title}
               </h1>
-              <p className=' mt-3 text-[17px] font-josefinSans text-white'>
+              <p className='text-white mt-2 font-josefinSans text-justify'>
                 {desc}
               </p>
-              {id === 3 ? (
                 <Link
-                  href='#'
+                  href={credential}
                   prefetch={false}
                   className='absolute right-4 mt-4'
                 >
                   <ArrowButton
-                    text='Read My Blogs'
+                    text='View Credentials'
                     textColor='#FBFBFB'
                     buttonOverlayColor='#FFD93D'
                     borderColor='#FFD93D'
-                    size='lg'
+                    size='sm'
                     icon={<FaReadme color='white' size='20' />}
                   />
                 </Link>
-              ) : (
-                ''
-              )}
+              
             </div>
           </div>
         ))}

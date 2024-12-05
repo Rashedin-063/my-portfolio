@@ -32,7 +32,7 @@ export const gridItems = [
     title:
       'I value clear communication and collaboration, I approach challenges with a calm and problem solving mindset ',
     className: 'lg:col-span-2 md:col-span-3 md:row-span-2',
-    imgClassName: 'opacity-75',
+    imgClassName: 'opacity-45',
     titleClassName: 'justify-start',
     img: '/b1.png',
     spareImg: '',
@@ -73,31 +73,41 @@ export const hobbiesAndInterests = [
   {
     id: 1,
     title: 'Intro to Frontend Development',
-    desc: '“Here I have learned the best practices to follow for frontend development from the best engineers of Meta”',
+     timeline: 'November, 2023',
+    desc: 'Here I have learned the common conventions and best practices to follow for frontend development from the best engineers of Meta.',
     thumbnail: '/read.png',
+    credential: ''
   },
   {
     id: 2,
     title: 'Modern JavaScript 2.0',
-    desc: '“I have learned advanced concepts of JavaScript from Brad Traversy as well as implementing them in practical projects”',
-    thumbnail: '/nature.png',
+    timeline: 'March, 2024',
+    desc: 'I have learned basic to advanced concepts of vanilla JavaScript from Brad Traversy as well as implementing them in practical projects.',
+    thumbnail: '/udemy.webp',
+     credential: '##'
   },
   {
     id: 3,
     title: 'Next Level Web Development',
-    desc: 'Currently I am exploring advanced react 19 concepts, next.js 15, Redux toolkit, Mongoose and the latest version of node.js. I also intennd to learning MySQL, PostgreSQL to become a highly skilled full stak developer.',
-    thumbnail: '/music.png',
+     timeline: 'October, 2024 - present',
+    desc: 'Currently I am exploring advanced react 19 concepts, next.js 15, Redux toolkit, Mongoose and the latest version of node.js. I also intend to learning MySQL, PostgreSQL and building innovative projects to become a highly skilled full stack developer.',
+    thumbnail: '/read.png',
+     credential: '##'
   },
   {
     id: 4,
     title: 'Complete Web Development',
-    desc: '“Music gives soul to the universe, wings to the mind, flight to the imagination, and life to everything.”',
+     timeline: 'February, 2024 - September, 2024',
+    desc: 'From Html5 to CSS3, from JavaScript to React, I have learned so much and built some amazing full stack website throughout the journey.',
     thumbnail: '/music.png',
+     credential: '##'
   },
   {
     id: 5,
-    title: 'Music Lover',
-    desc: '“Music gives soul to the universe, wings to the mind, flight to the imagination, and life to everything.”',
+    title: 'SuiteTrack - Team Project',
+     timeline: 'Nomveber, 2024',
+    desc: 'I have led an amazing group of 5 members, built a hotel management website, engineered with next.js 15 with mongoose and mongodb.',
     thumbnail: '/music.png',
+     credential: '##'
   },
 ];
