@@ -169,11 +169,18 @@ export const BentoGridItem = ({
           <div
             className={`${
               id === 1
-                ? 'text-3xl lg:text-5xl text-yellow-sunshine'
+                ? 'text-2xl md:text-2xl xl:text-3xl'
                 : 'text-lg lg:text-xl'
             } font-bold z-10`}
           >
-     {id === 1 ? (<SectionTitle title="My Tech Stack" imgLink="https://i.ibb.co.com/6n8dsB0/star.gif"/>) : `${title}`}
+            {id === 1 ? (
+              <SectionTitle
+                title='My Tech Stack'
+                imgLink='https://i.ibb.co.com/C713tRz/star.gif'
+              />
+            ) : (
+              `${title}`
+            )}
           </div>
 
           {/* second grid */}
@@ -188,7 +195,7 @@ export const BentoGridItem = ({
               {/* //  tech stack list */}
               <div className='grid grid-cols-3 gap-x-3 gap-y-5 lg:gap-8'>
                 {techStack.map((item, i) => (
-                   <span
+                  <span
                     key={i}
                     className='text-black font-semibold text-sm lg:text-base opacity-100 rounded-lg text-center bg-[#fff8dc] flex px-4 lg:px-6 py-2 lg:py-3 justify-center items-center gap-2'
                   >

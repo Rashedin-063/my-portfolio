@@ -9,7 +9,7 @@ interface SectionTitleProps {
 
 const SectionTitle: React.FC<SectionTitleProps> = ({ title, imgLink }) => {
   return (
-    <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-center flex justify-center items-center gap-6 mb-12 text-yellow-sunshine">
+    <div className="text-2xl md:text-4xl lg:text-5xl font-bold text-center flex justify-center items-center gap-6 mb-12 text-yellow-sunshine">
      <Image src={imgLink} alt="message" height={50} width={50}/>
     <h1
       className=' text-transparent bg-clip-text'

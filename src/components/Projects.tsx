@@ -272,7 +272,7 @@ export default function Projects(): ReactNode {
       {/* title */}
       <SectionTitle
         title=' Glimpse of My Coding Lab'
-        imgLink='https://i.ibb.co.com/883TRTZ/coding-lab.gif'
+        imgLink='https://i.ibb.co.com/X25fHgg/shooting-star.gif'
       />
 
       {/* project cards */}

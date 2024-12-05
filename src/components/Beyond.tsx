@@ -12,7 +12,7 @@ const Beyond = () => {
       {/* title */}
       <SectionTitle
         title='My Journey So Far'
-        imgLink='https://i.ibb.co.com/W5GmmGd/smiley.gif'
+        imgLink='https://i.ibb.co.com/jh4R5dh/journey.gif'
       />
 
       <div className='  justify-between items-center gap-4 min-h-[85vh] xl:relative'>

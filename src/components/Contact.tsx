@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
         <div className='max-w-3xl mx-auto text-center'>
           <SectionTitle
             title='Call of the Whisper'
-            imgLink='https://i.ibb.co.com/XS8x8GG/message.gif'
+            imgLink='https://i.ibb.co.com/bK9S4Fb/mail.gif'
           />
           <form
             ref={formRef}
@@ -161,9 +161,9 @@ const Contact: React.FC = () => {
               type='submit'
               className='w-full py-3 px-6 bg-indigo-800 text-white-pearl font-semibold rounded-md hover:bg-blue-800 transition duration-300 font-josefinSans flex items-center justify-center gap-8'
             >
-              <Image src={img} alt='message' height={25} width={25} />
+              <Image src={img} alt='message' height={30} width={30} />
               Let&apos;s Build Bridges
-              <Image src={img} alt='message' height={25} width={25} />
+              <Image src={img} alt='message' height={30} width={30} />
             </button>
           </form>
         </div>
