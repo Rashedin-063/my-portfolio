@@ -45,7 +45,7 @@ export default function ArrowButton({
       <span
         style={{ color: textColor }}
         className={cn(
-          'absolute flex h-full w-full transform items-center justify-center font-bold transition-all duration-300 ease-in-out group-hover:translate-x-full'
+          'absolute flex h-full w-full transform items-center justify-center font-bold transition-all duration-300 ease-in-out group-hover:translate-x-full text-xs lg:text-sm'
         )}
       >
         {text}

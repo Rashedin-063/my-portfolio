@@ -286,14 +286,14 @@ export default function Projects(): ReactNode {
                     width="500"
                     height="200"
                     alt='cover'
-                    className='z-10 h-60 p-4 rounded-3xl hover:scale-105 transform-transition duration-300'
+                    className='z-10 h-48 rounded-xl hover:scale-[1.02] transform-transition duration-300'
                   />
                 </div>
                 <div className='flex items-center'>
                   {card.iconLists.map((icon, index) => (
                     <div
                       key={index}
-                      className='border border-indigo-600 rounded-full lg:w-9 lg:h-9 w-8 h-8 flex justify-center items-center bg-deep-ocean mt-2'
+                      className='border border-indigo-600 rounded-full lg:w-9 lg:h-9 w-7 h-7 flex justify-center items-center bg-deep-ocean mt-3'
                       style={{ transform: `translateX(-${5 * index + 2}px)` }}
                     >
                       <img src={icon} alt='icon' className='p-2' />
@@ -310,12 +310,12 @@ export default function Projects(): ReactNode {
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.des}-${id}`}
-                  className='text-[#fff] font-regular font-josefinSans -tracking-wider'
+                  className='text-[#fff] text-sm lg:text-base font-regular font-josefinSans -tracking-wider'
                 >
                   {card.des}
                 </motion.p>
               </div>
-              <div className='flex justify-between -mt-4 mb-4 w-full '>
+              <div className='flex justify-between -mt-8 mb-2 w-full '>
                   <span  onClick={() => setActive(card)}>
                   <ArrowButton
         text='View Details'
