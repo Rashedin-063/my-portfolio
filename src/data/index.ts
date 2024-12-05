@@ -3,7 +3,7 @@ export const navItems = [
   { to: '#hero', label: 'Home' },
   { to: '#about', label: 'About' },
   { to: '#projects', label: 'Projects' },
-  { to: '#blogs', label: 'Blogs' },
+  { to: '#journey', label: 'Journey' },
   { to: '#contact', label: 'Contact' },
 ];
 
@@ -34,7 +34,7 @@ export const gridItems = [
     className: 'lg:col-span-2 md:col-span-3 md:row-span-2',
     imgClassName: 'opacity-75',
     titleClassName: 'justify-start',
-    img: '/b1.svg',
+    img: '/b1.png',
     spareImg: '',
   },
   {
@@ -72,25 +72,25 @@ export const gridItems = [
 export const hobbiesAndInterests = [
   {
     id: 1,
-    title: 'Bookworm',
-    desc: '“A mind needs books as a sword needs a whetstone if it is to keep its edge.”',
+    title: 'Intro to Frontend Development',
+    desc: '“Here I have learned the best practices to follow for frontend development from the best engineers of Meta”',
     thumbnail: '/read.png',
   },
   {
     id: 2,
-    title: 'Nature Enthusiast',
-    desc: '“Every morning is a cheerful invitation to live a life as simple and innocent as mother nature herself.”',
+    title: 'Modern JavaScript 2.0',
+    desc: '“I have learned advanced concepts of JavaScript from Brad Traversy as well as implementing them in practical projects”',
     thumbnail: '/nature.png',
   },
   {
     id: 3,
-    title: 'I write, sometime',
-    desc: 'When inspiration strikes, I pen down my thoughts on web development, self-improvement, and spirituality. These writings are a reflection of my journey—exploring ideas, sharing knowledge, and seeking growth. Dive in and discover something meaningful!',
+    title: 'Next Level Web Development',
+    desc: 'Currently I am exploring advanced react 19 concepts, next.js 15, Redux toolkit, Mongoose and the latest version of node.js. I also intennd to learning MySQL, PostgreSQL to become a highly skilled full stak developer.',
     thumbnail: '/music.png',
   },
   {
     id: 4,
-    title: 'Music Lover',
+    title: 'Complete Web Development',
     desc: '“Music gives soul to the universe, wings to the mind, flight to the imagination, and life to everything.”',
     thumbnail: '/music.png',
   },
@@ -101,44 +101,3 @@ export const hobbiesAndInterests = [
     thumbnail: '/music.png',
   },
 ];
-
-
-export const Blogs = [
-  {
-    title: "Stripe",
-    description:
-      "A technology company that builds economic infrastructure for the internet.",
-    link: "https://stripe.com",
-  },
-  {
-    title: "Netflix",
-    description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
-    link: "https://netflix.com",
-  },
-  {
-    title: "Google",
-    description:
-      "A multinational technology company that specializes in Internet-related services and products.",
-    link: "https://google.com",
-  },
-  {
-    title: "Meta",
-    description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
-  },
-  {
-    title: "Amazon",
-    description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
-  },
-  {
-    title: "Microsoft",
-    description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-    link: "https://microsoft.com",
-  },
-];
-

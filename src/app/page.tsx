@@ -9,7 +9,7 @@ const LeftSidebar = dynamic(() => import('@/components/LeftSideBar'))
 const RightSidebar = dynamic(() => import('@/components/RightSidebar'))
 const About = dynamic(() => import('@/components/About'))
 const Projects = dynamic(() => import('@/components/Projects'))
-const Beyond = dynamic(() => import('@/components/Beyond'));
+const Journey = dynamic(() => import('@/components/Journey'));
 const Contact = dynamic(() => import('@/components/Contact'));
 
 const Home: NextPage = () => {
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
         <div className="space-y-16 lg:space-y-28">
           <About />
           <Projects/>
-          <Beyond/>
+          <Journey/>
           <Contact />
         </div>
       </div>
