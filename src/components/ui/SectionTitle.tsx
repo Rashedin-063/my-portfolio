@@ -1,14 +1,16 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface SectionTitleProps {
   title: string;
-  icon: React.ReactNode;
+  imgLink: string
+  // icon: React.ReactNode;
 }
 
-const SectionTitle: React.FC<SectionTitleProps> = ({ title, icon }) => {
+const SectionTitle: React.FC<SectionTitleProps> = ({ title, imgLink }) => {
   return (
     <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-center flex justify-center items-center gap-6 mb-12 text-yellow-sunshine">
-       {icon}
+     <Image src={imgLink} alt="message" height={50} width={50}/>
     <h1
       className=' text-transparent bg-clip-text'
       style={{
@@ -20,9 +22,9 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ title, icon }) => {
     >
      
       {title}
-    
     </h1>
-      {icon}
+     <Image src={imgLink} alt="message" height={50} width={50} className="bg-transparent"/> 
+    
     </div>
   );
 };

@@ -13,7 +13,7 @@ import {
 } from 'react-icons/si';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-// import MovingBorders from './MovingBorders';
+import SectionTitle from './SectionTitle'
 
 const GridGlobe = dynamic(() => import('./GridGlobe'));
 
@@ -173,7 +173,7 @@ export const BentoGridItem = ({
                 : 'text-lg lg:text-xl'
             } font-bold z-10`}
           >
-            {title}
+     {id === 1 ? (<SectionTitle title="My Tech Stack" imgLink="https://i.ibb.co.com/6n8dsB0/star.gif"/>) : `${title}`}
           </div>
 
           {/* second grid */}
@@ -184,7 +184,7 @@ export const BentoGridItem = ({
 
           {/* first grid  */}
           {id === 1 && (
-            <div className='flex flex-col gap-1 lg:gap-5 w-fit mt-8'>
+            <div className='flex flex-col gap-1 lg:gap-5 w-fit mt-4'>
               {/* //  tech stack list */}
               <div className='grid grid-cols-3 gap-x-3 gap-y-5 lg:gap-8'>
                 {techStack.map((item, i) => (

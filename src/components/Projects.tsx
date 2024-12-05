@@ -6,7 +6,7 @@ import React, { ReactNode, useEffect, useId, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useOutsideClick } from '@/hooks/use-outside-click';
 import { projects } from '@/data/projectData';
-import { FaLaptopCode, ExternalLink, ListCollapse } from '@/data/icons';
+import {  ExternalLink, ListCollapse } from '@/data/icons';
 import SectionTitle from './ui/SectionTitle'
 import ArrowButton from './ui/Btn';
 
@@ -231,11 +231,16 @@ export default function Projects(): ReactNode {
                     {/* role and duration */}
                     <div className='hidden lg:flex items-center gap-8 mr-6'>
                       <p>
-                        <span className='font-semibold text-yellow-sunshine mr-2'>Role:</span>{' '}
+                        <span className='font-semibold text-yellow-sunshine mr-2'>
+                          Role:
+                        </span>{' '}
                         <span className='font-josefinSans'> {active.role}</span>
                       </p>
                       <p>
-                        <span className='font-semibold text-yellow-sunshine mr-2'> Duration:</span>{' '}
+                        <span className='font-semibold text-yellow-sunshine mr-2'>
+                          {' '}
+                          Duration:
+                        </span>{' '}
                         <span className='font-josefinSans'>
                           {' '}
                           {active.duration}
@@ -265,7 +270,10 @@ export default function Projects(): ReactNode {
       </AnimatePresence>
 
       {/* title */}
-      <SectionTitle title=" Glimpse of My Coding Lab" icon={<FaLaptopCode/>}/>
+      <SectionTitle
+        title=' Glimpse of My Coding Lab'
+        imgLink='https://i.ibb.co.com/883TRTZ/coding-lab.gif'
+      />
 
       {/* project cards */}
       <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8 md:mx-0'>
@@ -281,10 +289,10 @@ export default function Projects(): ReactNode {
             >
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <div className='relative '>
-                  <Image 
+                  <Image
                     src={card.img}
-                    width="500"
-                    height="200"
+                    width='500'
+                    height='200'
                     alt='cover'
                     className='z-10 h-48 rounded-xl hover:scale-[1.02] transform-transition duration-300'
                   />
@@ -316,29 +324,26 @@ export default function Projects(): ReactNode {
                 </motion.p>
               </div>
               <div className='flex justify-between -mt-8 mb-2 w-full '>
-                  <span  onClick={() => setActive(card)}>
+                <span onClick={() => setActive(card)}>
                   <ArrowButton
-        text='View Details'
-        textColor='#FBFBFB'
-        buttonOverlayColor='#FFD93D'
-        borderColor='#FFD93D'
-        size='sm'
-        icon={
-         <ListCollapse color='white' />
-        }
-      />
-            </span>
-           <Link href={card.link} target='_blank'>
-                <ArrowButton
-          text='Live Link'
-          textColor='#FBFBFB'
-          buttonOverlayColor='#5668DE'
-          borderColor='#5668DE'
-          size="sm"
-          icon={<ExternalLink color='white' />}
-        />
-           </Link>
-          
+                    text='View Details'
+                    textColor='#FBFBFB'
+                    buttonOverlayColor='#FFD93D'
+                    borderColor='#FFD93D'
+                    size='sm'
+                    icon={<ListCollapse color='white' />}
+                  />
+                </span>
+                <Link href={card.link} target='_blank'>
+                  <ArrowButton
+                    text='Live Link'
+                    textColor='#FBFBFB'
+                    buttonOverlayColor='#5668DE'
+                    borderColor='#5668DE'
+                    size='sm'
+                    icon={<ExternalLink color='white' />}
+                  />
+                </Link>
               </div>
             </div>
           </motion.div>
