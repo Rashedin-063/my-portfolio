@@ -43,7 +43,7 @@ export const gridItems = [
     className: 'lg:col-span-2 md:col-span-3 md:row-span-1',
     imgClassName: '',
     titleClassName: 'justify-start',
-    img: '/grid.png',
+    img: '/grid.svg',
     spareImg: '/b4.svg',
   },
   {
@@ -62,8 +62,8 @@ export const gridItems = [
     className: '',
     imgClassName: 'absolute right-0 bottom-0 md:w-96 w-60 opacity-75',
     titleClassName: 'justify-center md:justify-start lg:justify-center',
-    img: '/b5.png',
-    spareImg: '/grid.png',
+    img: '/b5.svg',
+    spareImg: '/grid.svg',
   },
 
 ];
@@ -91,7 +91,7 @@ export const hobbiesAndInterests = [
     title: 'Next Level Web Development',
      timeline: 'October, 2024 - present',
     desc: 'Currently I am exploring advanced react 19 concepts, next.js 15, Redux toolkit, Mongoose and the latest version of node.js. I also intend to learning MySQL, PostgreSQL and building innovative projects to become a highly skilled full stack developer.',
-    thumbnail: '/ph.png',
+    thumbnail: '/ph.jpg',
      credential: '##'
   },
   {
@@ -99,7 +99,7 @@ export const hobbiesAndInterests = [
     title: 'Complete Web Development',
      timeline: 'February, 2024 - September, 2024',
     desc: 'From Html5 to CSS3, from JavaScript to React, I have learned so much and built some amazing full stack website throughout the journey.',
-    thumbnail: '/ph.png',
+    thumbnail: '/ph.jpg',
      credential: '##'
   },
   {
