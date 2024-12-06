@@ -32,9 +32,9 @@ export const gridItems = [
     title:
       'I value clear communication and collaboration, I approach challenges with a calm and problem solving mindset ',
     className: 'lg:col-span-2 md:col-span-3 md:row-span-2',
-    imgClassName: 'opacity-45',
-    titleClassName: 'justify-start',
-    img: '/b1.png',
+    imgClassName: '',
+    titleClassName: 'justify-start z-10',
+    img: '/b1.svg',
     spareImg: '',
   },
   {
@@ -105,7 +105,7 @@ export const hobbiesAndInterests = [
   {
     id: 5,
     title: 'SuiteTrack - Team Project',
-     timeline: 'Nomveber, 2024',
+     timeline: 'November, 2024',
     desc: 'I have led an amazing group of 5 members, built a hotel management website, engineered with next.js 15 with mongoose and mongodb.',
     thumbnail: '/music.png',
      credential: '##'

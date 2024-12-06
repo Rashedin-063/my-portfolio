@@ -65,10 +65,15 @@ const config: Config = {
           from: { transform: 'rotate(0deg)' },
           to: { transform: 'rotate(360deg)' },
         },
+        wave: {
+          '0%, 100%': { transform: 'rotate(0deg)' },
+          '50%': { transform: 'rotate(30deg)' },
+        },
       },
       animation: {
         shimmer: 'shimmer 2s linear infinite',
         spin: 'spin 3s linear infinite',
+         wave: 'wave 2s ease-in-out infinite',
       },
     },
     plugins: [addVariablesForColors],

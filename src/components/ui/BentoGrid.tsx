@@ -75,7 +75,7 @@ export const BentoGridItem = ({
     {
       text: 'Tailwind CSS',
       icon: (
-        <SiTailwindcss className='text-blue-500 text-[19px] lg:text-[22px]' />
+        <SiTailwindcss className='text-blue-500 text-[19px] lg:text-[22px] animate-wave' />
       ),
     },
     {
@@ -104,7 +104,7 @@ export const BentoGridItem = ({
       text: 'MongoDB',
       icon: (
         <SiMongodb
-          className='text-green-900 animate-bounce text-[18px] lg:text-[24px]'
+          className='text-green-900 animate-bounce text-[18px] lg:text-[24px]transition ease'
           style={{ animationDuration: '2s' }}
         />
       ),
@@ -137,7 +137,7 @@ export const BentoGridItem = ({
               height='200'
               src={img}
               alt={img}
-              className={cn(imgClassName, 'object-cover object-center')}
+              className={cn(imgClassName, `object-cover object-right-top ${id === 3 ? 'opacity-30 bg-transparent -pt-8' : 'opacity-60'}`)}
             />
           )}
         </div>
