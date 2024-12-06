@@ -24,7 +24,10 @@ const Hero = () => {
       <div className='space-y-4 text-white-pearl text-center lg:text-start'>
         <div>
           <h2 className='text-lg md:text-xl xl:text-2xl font-semibold flex gap-2 items-center justify-center lg:justify-start'>
-            <span className="animate-wave text-faded-pearl"><FaHandsClapping /></span> Hello there, I am{' '}
+            <span className='animate-wave text-faded-pearl'>
+              <FaHandsClapping />
+            </span>{' '}
+            Hello there, I am{' '}
           </h2>
           <h1 className='font-bold text-4xl md:text-5xl xl:text-6xl bg-gradient-text text-transparent bg-clip-text mt-1'>
             {' '}
@@ -37,11 +40,11 @@ const Hero = () => {
             An innovative web developer, passionate about
           </span>
           <br />
-         
+
           <FlipWords words={words} />
         </div>
 
-        <p className='lg:text-lg text-[#FBFBFB] max-w-xl -ml-2 md:-ml-0 pt-6 lg:pt-12'>
+        <p className='lg:text-lg text-[#FBFBFB] max-w-xl -ml-2 md:-ml-0 pt-2 lg:pt-4'>
           Frontend, Backend, or Full Stack — Let&apos;s create magic together!
         </p>
         {/* Buttons */}

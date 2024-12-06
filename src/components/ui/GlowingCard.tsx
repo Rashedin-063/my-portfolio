@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import img from '../../../public/profile-sketch.png';
+import img from '../../../public/profile.png';
 
 interface GlowCardProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
