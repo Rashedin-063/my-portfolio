@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaReadme } from '@/data/icons';
+import { IoDocumentText } from '@/data/icons';
 import SectionTitle from './ui/SectionTitle';
 import { milestonesAndMemories } from '@/data';
 import ArrowButton from './ui/Btn';
@@ -35,7 +35,7 @@ const Milestones = () => {
             >
               {/* thumbnail and timeline */}
               <div className='flex justify-between gap-4 items-end font-josefinSans'>
-                <Image width='30' height='30' src={thumbnail} alt={title} />
+                <Image width='30' height='30' src={thumbnail} alt={title} className="rounded-full"/>
                 <p>{timeline}</p>
               </div>
               {/* title, des, and the btn */}
@@ -56,7 +56,7 @@ const Milestones = () => {
                     buttonOverlayColor='#FFD93D'
                     borderColor='#FFD93D'
                     size='sm'
-                    icon={<FaReadme color='white' size='20' />}
+                    icon={<IoDocumentText color='white' size='24' className="font-bold" />}
                   />
                 </Link>
               </div>
