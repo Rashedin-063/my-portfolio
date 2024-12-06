@@ -11,6 +11,16 @@ const About = dynamic(() => import('@/components/About'))
 const Projects = dynamic(() => import('@/components/Projects'))
 const Journey = dynamic(() => import('@/components/Journey'));
 const Contact = dynamic(() => import('@/components/Contact'));
+const FlipWords = dynamic(() => import('@/components/ui/FlipWords'));
+// import FlipWords from "./ui/FlipWords"
+
+
+
+const words = [
+  'Crafting Seamless User Experiences',
+  'Designing Sleek Frontend Interfaces',
+  'Building Scalable Web Applications',
+];
 
 const Home: NextPage = () => {
   return (
@@ -31,7 +41,10 @@ const Home: NextPage = () => {
       <div className='absolute top-96 right-4 md:right-8 lg:right-10 xl:right-12 z-30'>
         <RightSidebar />
       </div>
-
+{/* flip words */}
+<div className="absolute top-96 text-lg lg:text-xl font-semibold text-yellow-sunshine left-40">
+    <FlipWords words={words} />
+</div>
       {/* Main Content */}
       <div className='container mx-auto px-8 lg:px-16 xl:px-24 relative flex justify-center items-center flex-col'>
         <Hero />
