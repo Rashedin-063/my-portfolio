@@ -31,7 +31,7 @@ const Home: NextPage = () => {
       <div className='absolute top-96 right-4 md:right-8 lg:right-10 xl:right-12 z-30'>
         <RightSidebar />
       </div>
-</div>
+
       {/* Main Content */}
       <div className='container mx-auto px-8 lg:px-16 xl:px-24 relative flex justify-center items-center flex-col'>
         <Hero />
