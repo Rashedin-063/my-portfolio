@@ -3,7 +3,7 @@ export const navItems = [
   { to: '#hero', label: 'Home' },
   { to: '#about', label: 'About' },
   { to: '#projects', label: 'Projects' },
-  { to: '#journey', label: 'Journey' },
+  { to: '#milestones', label: 'Milestones' },
   { to: '#contact', label: 'Contact' },
 ];
 
@@ -15,8 +15,8 @@ export const gridItems = [
     className: 'lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[50vh]',
     imgClassName: 'w-full h-full',
     titleClassName: 'items-center',
-    img: '',
-    spareImg: '',
+    img: '/grid.svg',
+    spareImg: '/grid.svg',
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ export const gridItems = [
     className: 'lg:col-span-2 md:col-span-3 md:row-span-2',
     imgClassName: '',
     titleClassName: 'justify-start z-10',
-    img: '/b1.svg',
+    img: '/b1.png',
     spareImg: '',
   },
   {
@@ -62,52 +62,56 @@ export const gridItems = [
     className: '',
     imgClassName: 'absolute right-0 bottom-0 md:w-96 w-60 opacity-75',
     titleClassName: 'justify-center md:justify-start lg:justify-center',
-    img: '/b5.svg',
+    img: '/b5.png',
     spareImg: '/grid.svg',
   },
 
 ];
 
 
-export const hobbiesAndInterests = [
+export const milestonesAndMemories = [
   {
     id: 1,
-    title: 'Intro to Frontend Development',
-     timeline: 'November, 2023',
-    desc: 'Here I have learned the common conventions and best practices to follow for frontend development from the best engineers of Meta.',
-    thumbnail: '/meta.png',
-    credential: ''
+    title: 'Complete Web Development',
+    timeline: 'February, 2024 - September, 2024',
+    desc: 'Became skilled in the MERN Stack, developed strong problem-solving skills, built impressive full-stack websites throughout this journey.',
+    thumbnail: '/ph.jpg',
+    credential:
+      'https://drive.google.com/file/d/1BlbMMaQZkX2sWtj-tHrn_PV_zFTcpVF-/view',
   },
-  {
+   {
     id: 2,
-    title: 'Modern JavaScript 2.0',
-    timeline: 'March, 2024',
-    desc: 'I have learned basic to advanced concepts of vanilla JavaScript from Brad Traversy as well as implementing them in practical projects.',
-    thumbnail: '/udemy.webp',
-     credential: '##'
+    title: 'SuiteTrack - Team Project',
+    timeline: 'November, 2024',
+    desc: 'Led a team of 5 members to build a hotel management website using Next.js 15. Gained proficiency in Git collaboration and bug fixing.',
+    thumbnail: '/team.png',
+    credential: 'https://github.com/Rashedin-063/SuiteTrack-Project',
   },
   {
     id: 3,
     title: 'Next Level Web Development',
-     timeline: 'October, 2024 - present',
-    desc: 'Currently I am exploring advanced react 19 concepts, next.js 15, Redux toolkit, Mongoose and the latest version of node.js. I also intend to learning MySQL, PostgreSQL and building innovative projects to become a highly skilled full stack developer.',
+    timeline: 'October, 2024 - present',
+    desc: 'Currently exploring advanced React 19 concepts, Next.js 15, Redux Toolkit, Mongoose, and the latest Node.js. Planning to learn MySQL and PostgreSQL while building innovative projects to gain high analytical ability and become a skilled full-stack developer.',
     thumbnail: '/ph.jpg',
-     credential: '##'
+    credential:
+      'https://github.com/Rashedin-063/PH-Next-Level-Web-Development-Course',
   },
   {
     id: 4,
-    title: 'Complete Web Development',
-     timeline: 'February, 2024 - September, 2024',
-    desc: 'From Html5 to CSS3, from JavaScript to React, I have learned so much and built some amazing full stack website throughout the journey.',
-    thumbnail: '/ph.jpg',
-     credential: '##'
+    title: 'Intro to Frontend Development',
+    timeline: 'November, 2023',
+    desc: `Gained foundational knowledge of frontend development by learning best practices and conventions from Meta's experienced engineers.`,
+    thumbnail: '/meta.png',
+    credential:
+      'https://drive.google.com/file/d/1KQSIGIaHv9yM-Q6s1Vs2cifsbjuC11yV/view',
   },
   {
     id: 5,
-    title: 'SuiteTrack - Team Project',
-     timeline: 'November, 2024',
-    desc: 'I have led an amazing group of 5 members, built a hotel management website, engineered with next.js 15 with mongoose and mongodb.',
-    thumbnail: '/team.png',
-     credential: '##'
+    title: 'Modern JavaScript 2.0',
+    timeline: 'March, 2024',
+    desc: 'Learned foundational to advanced concepts of vanilla JavaScript from Brad Traversy and applied them in practical projects.',
+    thumbnail: '/udemy.webp',
+    credential:
+      'https://drive.google.com/file/d/1ZpoCCvHWDIsIBkAVMYn25jVVULV4Nrcg/view',
   },
 ];

@@ -9,7 +9,7 @@ const LeftSidebar = dynamic(() => import('@/components/LeftSideBar'))
 const RightSidebar = dynamic(() => import('@/components/RightSidebar'))
 const About = dynamic(() => import('@/components/About'))
 const Projects = dynamic(() => import('@/components/Projects'))
-const Journey = dynamic(() => import('@/components/Journey'));
+const Journey = dynamic(() => import('@/components/Milestones'));
 const Contact = dynamic(() => import('@/components/Contact'));
 
 const Home: NextPage = () => {
